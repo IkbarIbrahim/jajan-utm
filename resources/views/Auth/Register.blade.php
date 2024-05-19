@@ -1,6 +1,6 @@
 
 @extends('Auth.Master')
-@section('title', 'Register')
+@section('title-auth', 'Register')
 @section('navbar-title', 'Getting Started ')
 
 @section('content-auth')
