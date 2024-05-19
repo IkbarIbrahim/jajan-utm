@@ -23,3 +23,4 @@ Route::get('/login', function(){return view('Auth.login');})->name('login');
 Route::post('/submit-form', [FormRegisterController::class, 'handleForm'])->name('form.submit');
 
 Route::get('/register', function(){return view('Auth.Register');})->name('register');
+Route::get('/merchant', function(){return view('Merchant.index');})->name('merchant');
