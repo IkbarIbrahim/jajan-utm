@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('Homepage');
 });
 
+Route::get('/postingan', function(){return view('Postingan');})->name('post-product');
 Route::get('/login', function(){return view('Auth.login');})->name('login');
 // web.php
 Route::post('/submit-form', [FormRegisterController::class, 'handleForm'])->name('form.submit');
