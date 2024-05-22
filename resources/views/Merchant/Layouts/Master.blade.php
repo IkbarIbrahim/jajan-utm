@@ -12,10 +12,10 @@
 </head>
 <body>
     <div class="bg-gray-500">
-        @include('Merchant.layouts.Sidebar')
+        @include('Merchant.Layouts.Sidebar')
         @yield('content')
 
-        @include('Merchant.layouts.Footer')
+        @include('Merchant.Layouts.Footer')
         
       </div>
       
