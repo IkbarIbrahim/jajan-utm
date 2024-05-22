@@ -372,7 +372,7 @@
                                 <h4 class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
                             </a>
                             <div class="flex items-baseline mb-1 space-x-2">
-                                <p class="text-xl text-white font-semibold">Rp. 12.000</p>
+                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
                             </div>
                             
                             <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
@@ -421,7 +421,7 @@
                                 <h4 class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
                             </a>
                             <div class="flex items-baseline mb-1 space-x-2">
-                                <p class="text-xl text-white font-semibold">Rp. 12.000</p>
+                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
                             </div>
                             
                             <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
@@ -470,7 +470,7 @@
                                 <h4 class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
                             </a>
                             <div class="flex items-baseline mb-1 space-x-2">
-                                <p class="text-xl text-white font-semibold">Rp. 12.000</p>
+                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
                             </div>
                             
                             <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
@@ -519,7 +519,7 @@
                                 <h4 class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
                             </a>
                             <div class="flex items-baseline mb-1 space-x-2">
-                                <p class="text-xl text-white font-semibold">Rp. 12.000</p>
+                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
                             </div>
                             
                             <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
@@ -568,7 +568,7 @@
                                 <h4 class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
                             </a>
                             <div class="flex items-baseline mb-1 space-x-2">
-                                <p class="text-xl text-white font-semibold">Rp. 12.000</p>
+                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
                             </div>
                             
                             <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
@@ -617,7 +617,7 @@
                                 <h4 class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
                             </a>
                             <div class="flex items-baseline mb-1 space-x-2">
-                                <p class="text-xl text-white font-semibold">Rp. 12.000</p>
+                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
                             </div>
                             
                             <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
@@ -667,7 +667,7 @@
                                 <h4 class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
                             </a>
                             <div class="flex items-baseline mb-1 space-x-2">
-                                <p class="text-xl text-white font-semibold">Rp. 12.000</p>
+                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
                             </div>
                             
                             <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
@@ -717,7 +717,7 @@
                                 <h4 class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
                             </a>
                             <div class="flex items-baseline mb-1 space-x-2">
-                                <p class="text-xl text-white font-semibold">Rp. 12.000</p>
+                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
                             </div>
                             
                             <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
@@ -767,7 +767,7 @@
                                 <h4 class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
                             </a>
                             <div class="flex items-baseline mb-1 space-x-2">
-                                <p class="text-xl text-white font-semibold">Rp. 12.000</p>
+                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
                             </div>
                             
                             <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">

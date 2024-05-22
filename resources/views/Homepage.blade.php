@@ -19,9 +19,7 @@
                                     JAJAN UTM
                                 </h1>
                                 <p class="mb-8 max-w-[480px] text-white text-base text-body-color dark:text-dark-6">
-                                    With TailGrids, business and students thrive together. Business
-                                    can perfectly match their staffing to changing demand throughout
-                                    the dayed.
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque fugit magni est deleniti, consequuntur eaque itaque corrupti, obcaecati doloremque corporis quasi a, autem labore rerum voluptatum mollitia. Ducimus, impedit non.
                                 </p>
                                 <button id="dropdownHoverButton2" data-dropdown-toggle="dropdownHover2"
                                     data-dropdown-trigger="hover"
@@ -99,8 +97,8 @@
                     
                     <div class="w-full px-4 md:w-1/2 lg:w-1/3 ">
                         <div
-                            class="mb-9 rounded-[20px] bg-white p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 dark:bg-gray-600">
-                            <div class="mb-8 flex h-[80%] w-[100%] items-center justify-center rounded-2xl bg-white-300 dark:bg-gray-700">
+                            class="mb-9 rounded-lg bg-white p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 dark:bg-gray-600">
+                            <div class="mb-8 flex h-[80%] w-[100%] items-center justify-center rounded-lg bg-white-300 dark:bg-gray-700">
                                <img class="w-full h-full rounded-lg mx-auto" src="assets/img/sate.jpg" alt="">
                             </div>
                             <h4 class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
@@ -121,8 +119,8 @@
                     </div>
                     <div class="w-full px-4 md:w-1/2 lg:w-1/3">
                         <div
-                            class="mb-9 rounded-[20px] bg-white p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 dark:bg-gray-600">
-                            <div class="mb-8 flex h-[80%] w-[100%] items-center justify-center rounded-2xl bg-white-300 dark:bg-gray-700">
+                            class="mb-9 rounded-lg bg-white p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 dark:bg-gray-600">
+                            <div class="mb-8 flex h-[80%] w-[100%] items-center justify-center rounded-lg bg-white-300 dark:bg-gray-700">
                                <img class="w-full h-full rounded-lg mx-auto" src="assets/img/sate.jpg" alt="">
                             </div>
                             <h4 class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
@@ -144,8 +142,8 @@
                     </div>
                     <div class="w-full px-4 md:w-1/2 lg:w-1/3">
                         <div
-                            class="mb-9 rounded-[20px] bg-white p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 dark:bg-gray-600">
-                            <div class="mb-8 flex h-[80%] w-[100%] items-center justify-center rounded-2xl bg-white-300 dark:bg-gray-700">
+                            class="mb-9 rounded-lg bg-white p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 dark:bg-gray-600">
+                            <div class="mb-8 flex h-[80%] w-[100%] items-center justify-center rounded-lg bg-white-300 dark:bg-gray-700">
                                <img class="w-full h-full rounded-lg mx-auto" src="assets/img/sate.jpg" alt="">
                             </div>
                             <h4 class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
@@ -167,8 +165,8 @@
                     </div>
                     <div class="w-full px-4 md:w-1/2 lg:w-1/3">
                         <div
-                            class="mb-9 rounded-[20px] bg-white p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 dark:bg-gray-600">
-                            <div class="mb-8 flex h-[80%] w-[100%] items-center justify-center rounded-2xl bg-white-300 dark:bg-gray-700">
+                            class="mb-9 rounded-lg bg-white p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 dark:bg-gray-600">
+                            <div class="mb-8 flex h-[80%] w-[100%] items-center justify-center rounded-lg bg-white-300 dark:bg-gray-700">
                                <img class="w-full h-full rounded-lg mx-auto" src="assets/img/sate.jpg" alt="">
                             </div>
                             <h4 class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
@@ -190,8 +188,8 @@
                     </div>
                     <div class="w-full px-4 md:w-1/2 lg:w-1/3">
                         <div
-                            class="mb-9 rounded-[20px] bg-white p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 dark:bg-gray-600">
-                            <div class="mb-8 flex h-[80%] w-[100%] items-center justify-center rounded-2xl bg-white-300 dark:bg-gray-700">
+                            class="mb-9 rounded-lg bg-white p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 dark:bg-gray-600">
+                            <div class="mb-8 flex h-[80%] w-[100%] items-center justify-center rounded-lg bg-white-300 dark:bg-gray-700">
                                <img class="w-full h-full rounded-lg mx-auto" src="assets/img/sate.jpg" alt="">
                             </div>
                             <h4 class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
@@ -213,8 +211,8 @@
                     </div>
                     <div class="w-full px-4 md:w-1/2 lg:w-1/3">
                         <div
-                            class="mb-9 rounded-[20px] bg-white p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 dark:bg-gray-600">
-                            <div class="mb-8 flex h-[80%] w-[100%] items-center justify-center rounded-2xl bg-white-300 dark:bg-gray-700">
+                            class="mb-9 rounded-lg bg-white p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 dark:bg-gray-600">
+                            <div class="mb-8 flex h-[80%] w-[100%] items-center justify-center rounded-lg bg-white-300 dark:bg-gray-700">
                                <img class="w-full h-full rounded-lg mx-auto" src="assets/img/sate.jpg" alt="">
                             </div>
                             <h4 class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
@@ -239,7 +237,7 @@
             </div>
         </section>
 
-        <section class="dark:bg-gray-400 overflow-hidden bg-tg-bg pb-20 pt-20 lg:pb-[120px] lg:pt-[120px]">
+        <section class="dark:bg-gray-400 bg-gray-300 overflow-hidden bg-tg-bg pb-20 pt-20 lg:pb-[120px] lg:pt-[120px]">
             <div class="container mx-auto">
                 <div class="mx-4 flex flex-wrap">
                 <div class="w-full px-4 ">
