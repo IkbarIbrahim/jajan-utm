@@ -13,8 +13,8 @@
     <div class="bg-gray-200 dark:bg-gray-500">
         @include('User.Layouts.Header')
 
-        {{-- @yield('content')
-        
+         @yield('content')
+        {{--
         <button
         class="hidden fixed bottom-5 right-5 p-2 bg-blue-500 text-white rounded"
         @click="window.scrollTo({top: 0, behavior: 'smooth'})"
