@@ -21,9 +21,10 @@ Route::get('/', function () {
 Route::get('/contact', function(){return view('Pages.Contact');})->name('contact');
 Route::get('/postingan/detail', function(){return view('Pages.Postingan-desc');})->name('post-product-detail');
 Route::get('/postingan', function(){return view('Pages.Postingan');})->name('post-product');
-Route::get('/login', function(){return view('Auth.login');})->name('login');
+Route::get('/login', function(){return view('Auth.Login');})->name('login');
 // web.php
 Route::post('/submit-form', [FormRegisterController::class, 'handleForm'])->name('form.submit');
 
 Route::get('/register', function(){return view('Auth.Register');})->name('register');
-Route::get('/merchant', function(){return view('Merchant.index');})->name('merchant');
+Route::get('/login', function(){return view('Auth.Login');})->name('login');
+Route::get('/merchant', function(){return view('Merchant.Index');})->name('merchant');
