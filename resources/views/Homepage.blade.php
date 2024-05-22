@@ -259,7 +259,7 @@
                 <div class="w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4">
                     <div class="shadow-1 dark:shadow-box-dark group mb-8 rounded-[5px] bg-white px-5 pb-10 pt-12 dark:bg-gray-600">
                     <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
-                        <img src="src/assets/images/team/image-07/image-01.png" alt="profile" class="h-[120px] w-[120px] rounded-full">
+                        <img src="" alt="profile" class="h-[120px] w-[120px] rounded-full">
                         <span class="absolute bottom-0 left-0 -z-10 h-10 w-10 rounded-full bg-secondary opacity-0 transition-all group-hover:opacity-100"></span>
                         <span class="absolute right-0 top-0 -z-10 opacity-0 transition-all group-hover:opacity-100">
                         <svg width="45" height="53" viewBox="0 0 45 53" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -315,7 +315,7 @@
                 <div class="w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4">
                     <div class="shadow-1 dark:shadow-box-dark group mb-8 rounded-[5px] bg-white px-5 pb-10 pt-12 dark:bg-gray-600">
                     <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
-                        <img src="src/assets/images/team/image-07/image-02.png" alt="profile" class="h-[120px] w-[120px] rounded-full">
+                        <img src="" alt="profile" class="h-[120px] w-[120px] rounded-full">
                         <span class="absolute bottom-0 left-0 -z-10 h-10 w-10 rounded-full bg-secondary opacity-0 transition-all group-hover:opacity-100"></span>
                         <span class="absolute right-0 top-0 -z-10 opacity-0 transition-all group-hover:opacity-100">
                         <svg width="45" height="53" viewBox="0 0 45 53" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -371,7 +371,7 @@
                 <div class="w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4">
                     <div class="shadow-1 dark:shadow-box-dark group mb-8 rounded-[5px] bg-white px-5 pb-10 pt-12 dark:bg-gray-600">
                     <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
-                        <img src="src/assets/images/team/image-07/image-03.png" alt="profile" class="h-[120px] w-[120px] rounded-full">
+                        <img src="" alt="profile" class="h-[120px] w-[120px] rounded-full">
                         <span class="absolute bottom-0 left-0 -z-10 h-10 w-10 rounded-full bg-secondary opacity-0 transition-all group-hover:opacity-100"></span>
                         <span class="absolute right-0 top-0 -z-10 opacity-0 transition-all group-hover:opacity-100">
                         <svg width="45" height="53" viewBox="0 0 45 53" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -427,7 +427,7 @@
                 <div class="w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4">
                     <div class="shadow-1 dark:shadow-box-dark group mb-8 rounded-[5px] bg-white px-5 pb-10 pt-12 dark:bg-gray-600">
                     <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
-                        <img src="src/assets/images/team/image-07/image-04.png" alt="profile" class="h-[120px] w-[120px] rounded-full">
+                        <img src="" alt="profile" class="h-[120px] w-[120px] rounded-full">
                         <span class="absolute bottom-0 left-0 -z-10 h-10 w-10 rounded-full bg-secondary opacity-0 transition-all group-hover:opacity-100"></span>
                         <span class="absolute right-0 top-0 -z-10 opacity-0 transition-all group-hover:opacity-100">
                         <svg width="45" height="53" viewBox="0 0 45 53" fill="none" xmlns="http://www.w3.org/2000/svg">
