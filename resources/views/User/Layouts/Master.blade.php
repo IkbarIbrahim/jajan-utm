@@ -1,17 +1,30 @@
 <!doctype html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>@yield('title')</title>
-  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title')</title>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+
 <body class="bg-gray-200 dark:bg-gray-500">
     <div class="bg-gray-200 dark:bg-gray-500">
-   
+        @include('User.Layouts.Header')
+        @yield('content')
+        <button type="button"  class="!fixed bottom-5 z-50 end-5 hidden rounded-full bg-blue-600 p-3 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg"
+            id="scroll-to-top">
+            <span class="[&>svg]:w-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+                </svg>
+            </span>
+        </button>
+        @include('User.Layouts.Footer')
     </div>
 
     <script>
@@ -21,7 +34,8 @@
             var themeToggleBtn = document.getElementById('theme-toggle');
 
             // Initial theme check
-            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window
+                    .matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.classList.add('dark');
                 if (themeToggleLightIcon) themeToggleLightIcon.classList.remove('hidden');
                 if (themeToggleDarkIcon) themeToggleDarkIcon.classList.add('hidden');
@@ -74,15 +88,15 @@
 
         var collapseTriggerEl = document.querySelector('[data-collapse-toggle]');
         if (collapseTriggerEl) {
-         
+
             var collapse = new Collapse(collapseTriggerEl);
-            collapseTriggerEl.addEventListener('click', function () {
+            collapseTriggerEl.addEventListener('click', function() {
                 collapse.toggle();
                 collapseTriggerEl.classList.remove('hidden');
             });
         }
 
-        
+
         function layoutData() {
             return {
                 layout: localStorage.getItem('layout') || 'grid',
@@ -92,9 +106,9 @@
                 }
             }
         }
-    
     </script>
-    
+
     <script src="https://unpkg.com/@popperjs/core@2"></script>
 </body>
+
 </html>
