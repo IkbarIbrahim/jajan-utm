@@ -51,6 +51,14 @@ Route::get('/merchant', function () {
     return view('Merchant.Index');
 })->name('merchant');
 
+Route::prefix('merchant')->name('merchant.')->group(function () {
+    Route::prefix('products')->name('products.')->group(function () {
+        Route::get('/{product}/edit', function () {
+            return view('Merchant.Products.Edit');
+        })->name('edit');
+    });
+});
+
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', function () {
         return view('Admin.Index');
