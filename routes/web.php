@@ -69,5 +69,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/', function () {
             return view('Admin.Merchants.Index');
         })->name('index');
+        Route::get('/{merchant}/edit', function () {
+            return view('Admin.Merchants.Edit');
+        })->name('edit');
     });
 });
