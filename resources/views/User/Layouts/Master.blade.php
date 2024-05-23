@@ -80,14 +80,27 @@
             e.name = e.name === 'menu' ? 'close' : 'menu';
         }
 
-        // Initialize Flowbite Collapse (make sure elements are correctly defined in your HTML)
         var collapseTriggerEl = document.querySelector('[data-collapse-toggle]');
         if (collapseTriggerEl) {
+         
             var collapse = new Collapse(collapseTriggerEl);
             collapseTriggerEl.addEventListener('click', function () {
                 collapse.toggle();
+                collapseTriggerEl.classList.remove('hidden');
             });
         }
+
+        
+        function layoutData() {
+            return {
+                layout: localStorage.getItem('layout') || 'grid',
+                setLayout(value) {
+                    this.layout = value;
+                    localStorage.setItem('layout', value);
+                }
+            }
+        }
+    
     </script>
     
     <script src="https://unpkg.com/@popperjs/core@2"></script>

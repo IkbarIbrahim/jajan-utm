@@ -1,25 +1,30 @@
 @extends('User.Layouts.Master')
 @section('content')
-   
-   <div class="w-full pt-20 mb-8">
-         <!-- breadcrumb -->
+    <div class="w-full pt-20 mb-8">
+        <!-- breadcrumb -->
         <div class="container py-4 flex items-center gap-3 ps-10 lg:ps-20 dark:bg-gray-700">
             <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                 <li class="inline-flex items-center">
-                <a href="#" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-dark-600 dark:text-gray-400 dark:hover:text-white">
-                    <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
-                    </svg>
-                    Home
-                </a>
+                    <a href="#"
+                        class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-dark-600 dark:text-gray-400 dark:hover:text-white">
+                        <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path
+                                d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
+                        </svg>
+                        Home
+                    </a>
                 </li>
                 <li aria-current="page">
-                <div class="flex items-center">
-                    <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                    </svg>
-                    <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Postingan product</span>
-                </div>
+                    <div class="flex items-center">
+                        <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 9 4-4-4-4" />
+                        </svg>
+                        <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Postingan
+                            product</span>
+                    </div>
                 </li>
             </ol>
         </div>
@@ -30,7 +35,9 @@
             <!-- sidebar -->
             <!-- drawer init and toggle -->
             <div class="text-center md:hidden">
-                <button class="text-white hover:bg-gray-800 focus:ring-4 focus:ring-dark-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-600 dark:hover:bg-dark-700 focus:outline-none dark:focus:ring-dark-800 block md:hidden" type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
+                <button
+                    class="text-white hover:bg-gray-800 focus:ring-4 focus:ring-dark-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-600 dark:hover:bg-dark-700 focus:outline-none dark:focus:ring-dark-800 block md:hidden"
+                    type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
                     aria-controls="drawer-example">
                     <ion-icon class="text-2xl" name="list"></ion-icon>
                 </button>
@@ -64,17 +71,17 @@
                         <div class="space-y-2">
                             <div class="flex items-center">
                                 <input type="checkbox" name="cat-1" id="cat-1"
-                                    class="text-primary focus:ring-0 rounded-sm cursor-pointer">
+                                    class=" focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
                                 <label for="cat-1" class="dark:text-white  ml-3 cusror-pointer">Makanan</label>
                                 <div class="ml-auto dark:text-white  text-sm">(15)</div>
                             </div>
                             <div class="flex items-center">
                                 <input type="checkbox" name="cat-2" id="cat-2"
-                                    class="text-primary focus:ring-0 rounded-sm cursor-pointer">
+                                    class=" focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
                                 <label for="cat-2" class="dark:text-white  ml-3 cusror-pointer">Minuman</label>
                                 <div class="ml-auto dark:text-white  text-sm">(9)</div>
                             </div>
-                        
+
                         </div>
                     </div>
 
@@ -83,31 +90,32 @@
                         <div class="space-y-2">
                             <div class="flex items-center">
                                 <input type="checkbox" name="brand-1" id="brand-1"
-                                    class="dark:text-white focus:ring-0 rounded-sm cursor-pointer">
+                                    class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
                                 <label for="brand-1" class="dark:text-white ml-3 cusror-pointer">Cafe</label>
                                 <div class="ml-auto dark:text-white text-sm">(15)</div>
                             </div>
                             <div class="flex items-center">
                                 <input type="checkbox" name="brand-2" id="brand-2"
-                                    class="dark:text-white focus:ring-0 rounded-sm cursor-pointer">
+                                    class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
                                 <label for="brand-2" class="dark:text-white ml-3 cusror-pointer">Lapak Mahasiswa</label>
                                 <div class="ml-auto dark:text-white text-sm">(9)</div>
                             </div>
                             <div class="flex items-center">
                                 <input type="checkbox" name="brand-3" id="brand-3"
-                                    class="dark:text-white focus:ring-0 rounded-sm cursor-pointer">
-                                <label for="brand-3" class="dark:text-white ml-3 cusror-pointer">Pedagang Keliling</label>
+                                    class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
+                                <label for="brand-3" class="dark:text-white ml-3 cusror-pointer">Pedagang
+                                    Keliling</label>
                                 <div class="ml-auto dark:text-white text-sm">(21)</div>
                             </div>
                             <div class="flex items-center">
                                 <input type="checkbox" name="brand-4" id="brand-4"
-                                    class="dark:text-white focus:ring-0 rounded-sm cursor-pointer">
+                                    class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
                                 <label for="brand-4" class="dark:text-white ml-3 cusror-pointer">UMKM</label>
                                 <div class="ml-auto dark:text-white text-sm">(10)</div>
                             </div>
                             <div class="flex items-center">
                                 <input type="checkbox" name="brand-5" id="brand-5"
-                                    class="dark:text-white focus:ring-0 rounded-sm cursor-pointer">
+                                    class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
                                 <label for="brand-5" class="dark:text-white ml-3 cusror-pointer">Warung Makan</label>
                                 <div class="ml-auto dark:text-white text-sm">(10)</div>
                             </div>
@@ -163,24 +171,24 @@
                         <div class="space-y-2">
                             <div class="flex items-center">
                                 <input type="checkbox" name="tersedia" id="brand-1"
-                                    class="dark:text-white focus:ring-0 rounded-sm cursor-pointer">
+                                    class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
                                 <label for="tersedia" class="dark:text-white ml-3 cusror-pointer">Tersedia</label>
                                 <div class="ml-auto dark:text-white text-sm">(15)</div>
                             </div>
                             <div class="flex items-center">
                                 <input type="checkbox" name="habis" id="habis"
-                                    class="dark:text-white focus:ring-0 rounded-sm cursor-pointer">
+                                    class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
                                 <label for="habis" class="dark:text-white ml-3 cusror-pointer">habis</label>
                                 <div class="ml-auto dark:text-white text-sm">(9)</div>
                             </div>
-                           
+
                         </div>
                     </div>
 
-                    
+
 
                 </div>
-            
+
             </div>
 
             <!-- ./sidebar -->
@@ -201,7 +209,7 @@
                                 <label for="cat-2" class="dark:text-white  ml-3 cusror-pointer">Minuman</label>
                                 <div class="ml-auto dark:text-white  text-sm">(9)</div>
                             </div>
-                        
+
                         </div>
                     </div>
 
@@ -210,31 +218,32 @@
                         <div class="space-y-2">
                             <div class="flex items-center">
                                 <input type="checkbox" name="brand-1" id="brand-1"
-                                    class="dark:text-white focus:ring-0 rounded-sm cursor-pointer">
+                                    class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
                                 <label for="brand-1" class="dark:text-white ml-3 cusror-pointer">Cafe</label>
                                 <div class="ml-auto dark:text-white text-sm">(15)</div>
                             </div>
                             <div class="flex items-center">
                                 <input type="checkbox" name="brand-2" id="brand-2"
-                                    class="dark:text-white focus:ring-0 rounded-sm cursor-pointer">
+                                    class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
                                 <label for="brand-2" class="dark:text-white ml-3 cusror-pointer">Lapak Mahasiswa</label>
                                 <div class="ml-auto dark:text-white text-sm">(9)</div>
                             </div>
                             <div class="flex items-center">
                                 <input type="checkbox" name="brand-3" id="brand-3"
-                                    class="dark:text-white focus:ring-0 rounded-sm cursor-pointer">
-                                <label for="brand-3" class="dark:text-white ml-3 cusror-pointer">Pedagang Keliling</label>
+                                    class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
+                                <label for="brand-3" class="dark:text-white ml-3 cusror-pointer">Pedagang
+                                    Keliling</label>
                                 <div class="ml-auto dark:text-white text-sm">(21)</div>
                             </div>
                             <div class="flex items-center">
                                 <input type="checkbox" name="brand-4" id="brand-4"
-                                    class="dark:text-white focus:ring-0 rounded-sm cursor-pointer">
+                                    class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
                                 <label for="brand-4" class="dark:text-white ml-3 cusror-pointer">UMKM</label>
                                 <div class="ml-auto dark:text-white text-sm">(10)</div>
                             </div>
                             <div class="flex items-center">
                                 <input type="checkbox" name="brand-5" id="brand-5"
-                                    class="dark:text-white focus:ring-0 rounded-sm cursor-pointer">
+                                    class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
                                 <label for="brand-5" class="dark:text-white ml-3 cusror-pointer">Warung Makan</label>
                                 <div class="ml-auto dark:text-white text-sm">(10)</div>
                             </div>
@@ -247,7 +256,7 @@
                             <input type="text" name="min" id="min"
                                 class="w-full border-gray-300 focus:border-primary rounded focus:ring-0 px-3 py-1 text-gray-600 shadow-sm"
                                 placeholder="min">
-                            <span class="mx-3 text-gray-500">-</span>
+                            <span class="mx-3 text-gray-500"> - </span>
                             <input type="text" name="max" id="max"
                                 class="w-full border-gray-300 focus:border-primary rounded focus:ring-0 px-3 py-1 text-gray-600 shadow-sm"
                                 placeholder="max">
@@ -290,49 +299,54 @@
                         <div class="space-y-2">
                             <div class="flex items-center">
                                 <input type="checkbox" name="tersedia" id="brand-1"
-                                    class="dark:text-white focus:ring-0 rounded-sm cursor-pointer">
+                                    class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
                                 <label for="tersedia" class="dark:text-white ml-3 cusror-pointer">Tersedia</label>
                                 <div class="ml-auto dark:text-white text-sm">(15)</div>
                             </div>
                             <div class="flex items-center">
                                 <input type="checkbox" name="habis" id="habis"
-                                    class="dark:text-white focus:ring-0 rounded-sm cursor-pointer">
+                                    class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
                                 <label for="habis" class="dark:text-white ml-3 cusror-pointer">habis</label>
                                 <div class="ml-auto dark:text-white text-sm">(9)</div>
                             </div>
-                           
+
                         </div>
                     </div>
 
-                    
+
 
                 </div>
             </div>
             <!-- products -->
-            
-            <div class="col-span-3">
-                <form class="w-full mb-6 mx-auto">   
-                    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+
+            {{-- <div class="col-span-3">
+                <form class="w-full mb-6 mx-auto">
+                    <label for="default-search"
+                        class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                     <div class="relative">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                             </svg>
                         </div>
-                        <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search . . ." required />
-                        <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                        <input type="search" id="default-search"
+                            class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Search . . ." required />
+                        <button type="submit"
+                            class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                     </div>
                 </form>
                 <div class="flex justify-between  mb-4">
                     <form class="w-40px ">
-                        <select id="sort" class="bg-gray-50 px-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <select id="sort"
+                            class="bg-gray-50 px-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option class="py-2" selected>default</option>
-                            <option class="py-2" >Terbaru</option>
-                            <option class="py-2" >terlama</option>
+                            <option class="py-2">Terbaru</option>
+                            <option class="py-2">terlama</option>
                         </select>
                     </form>
-                    
-                  
 
                     <div class="flex gap-2 ml-auto">
                         <div
@@ -368,13 +382,16 @@
                         </div>
                         <div class="pt-5 pb-3 px-4">
                             <a href="#">
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Tersedia</span>
-                                <h4 class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
+                                <span
+                                    class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Tersedia</span>
+                                <h4
+                                    class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">
+                                    Seblak</h4>
                             </a>
                             <div class="flex items-baseline mb-1 space-x-2">
                                 <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
                             </div>
-                            
+
                             <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
                                 <a href="">
                                     <ion-icon name="pin"></ion-icon> Lokasi
@@ -394,442 +411,334 @@
                                 <div class="text-xs text-gray-500 ml-3">(150)</div>
                             </div>
                         </div>
-                        
-                    </div>
 
-                    <div class="bg-white dark:bg-gray-600 shadow rounded overflow-hidden group ">
-                        <div class="relative">
-                            <img src="assets/img/product/food2.jpg" alt="product 1" class="w-full">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                            justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                <a href="#"
-                                    class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    title="view product">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </a>
-                                <a href="#"
-                                    class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    title="add to wishlist">
-                                    <i class="fa-solid fa-heart"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="pt-5 pb-3 px-4">
-                            <a href="#">
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Tersedia</span>
-                                <h4 class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
-                            </a>
-                            <div class="flex items-baseline mb-1 space-x-2">
-                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
-                            </div>
-                            
-                            <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
-                                <a href="">
-                                    <ion-icon name="pin"></ion-icon> Lokasi
-                                </a>
-                                <a href="">
-                                    <ion-icon name="cart"></ion-icon> Toko
-                                </a>
-                            </div>
-                            <div class="flex items-center mt-2">
-                                <div class="flex gap-1 text-sm text-yellow-400">
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                </div>
-                                <div class="text-xs text-gray-500 ml-3">(150)</div>
-                            </div>
-                        </div>
-                        
-                    </div>
-
-                    <div class="bg-white dark:bg-gray-600 shadow rounded overflow-hidden group ">
-                        <div class="relative">
-                            <img src="assets/img/product/food3.jpg" alt="product 1" class="w-full">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                            justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                <a href="#"
-                                    class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    title="view product">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </a>
-                                <a href="#"
-                                    class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    title="add to wishlist">
-                                    <i class="fa-solid fa-heart"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="pt-5 pb-3 px-4">
-                            <a href="#">
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Tersedia</span>
-                                <h4 class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
-                            </a>
-                            <div class="flex items-baseline mb-1 space-x-2">
-                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
-                            </div>
-                            
-                            <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
-                                <a href="">
-                                    <ion-icon name="pin"></ion-icon> Lokasi
-                                </a>
-                                <a href="">
-                                    <ion-icon name="cart"></ion-icon> Toko
-                                </a>
-                            </div>
-                            <div class="flex items-center mt-2">
-                                <div class="flex gap-1 text-sm text-yellow-400">
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                </div>
-                                <div class="text-xs text-gray-500 ml-3">(150)</div>
-                            </div>
-                        </div>
-                        
-                    </div>
-
-                    <div class="bg-white dark:bg-gray-600 shadow rounded overflow-hidden group ">
-                        <div class="relative">
-                            <img src="assets/img/product/food4.jpg" alt="product 1" class="w-full">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                            justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                <a href="#"
-                                    class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    title="view product">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </a>
-                                <a href="#"
-                                    class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    title="add to wishlist">
-                                    <i class="fa-solid fa-heart"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="pt-5 pb-3 px-4">
-                            <a href="#">
-                                <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Habis</span>
-                                <h4 class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
-                            </a>
-                            <div class="flex items-baseline mb-1 space-x-2">
-                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
-                            </div>
-                            
-                            <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
-                                <a href="">
-                                    <ion-icon name="pin"></ion-icon> Lokasi
-                                </a>
-                                <a href="">
-                                    <ion-icon name="cart"></ion-icon> Toko
-                                </a>
-                            </div>
-                            <div class="flex items-center mt-2">
-                                <div class="flex gap-1 text-sm text-yellow-400">
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                </div>
-                                <div class="text-xs text-gray-500 ml-3">(150)</div>
-                            </div>
-                        </div>
-                        
-                    </div>
-
-                    <div class="bg-white dark:bg-gray-600 shadow rounded overflow-hidden group ">
-                        <div class="relative">
-                            <img src="assets/img/product/food5.jpg" alt="product 1" class="w-full">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                            justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                <a href="#"
-                                    class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    title="view product">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </a>
-                                <a href="#"
-                                    class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    title="add to wishlist">
-                                    <i class="fa-solid fa-heart"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="pt-5 pb-3 px-4">
-                            <a href="#">
-                                <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Habis</span>
-                                <h4 class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
-                            </a>
-                            <div class="flex items-baseline mb-1 space-x-2">
-                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
-                            </div>
-                            
-                            <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
-                                <a href="">
-                                    <ion-icon name="pin"></ion-icon> Lokasi
-                                </a>
-                                <a href="">
-                                    <ion-icon name="cart"></ion-icon> Toko
-                                </a>
-                            </div>
-                            <div class="flex items-center mt-2">
-                                <div class="flex gap-1 text-sm text-yellow-400">
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                </div>
-                                <div class="text-xs text-gray-500 ml-3">(150)</div>
-                            </div>
-                        </div>
-                        
-                    </div>
-
-                    <div class="bg-white dark:bg-gray-600 shadow rounded overflow-hidden group ">
-                        <div class="relative">
-                            <img src="assets/img/product/food6.jpg" alt="product 1" class="w-full">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                            justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                <a href="#"
-                                    class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    title="view product">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </a>
-                                <a href="#"
-                                    class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    title="add to wishlist">
-                                    <i class="fa-solid fa-heart"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="pt-5 pb-3 px-4">
-                            <a href="#">
-                                <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Habis</span>
-                                <h4 class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
-                            </a>
-                            <div class="flex items-baseline mb-1 space-x-2">
-                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
-                            </div>
-                            
-                            <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
-                                <a href="">
-                                    <ion-icon name="pin"></ion-icon> Lokasi
-                                </a>
-                                <a href="">
-                                    <ion-icon name="cart"></ion-icon> Toko
-                                </a>
-                            </div>
-                            <div class="flex items-center mt-2">
-                                <div class="flex gap-1 text-sm text-yellow-400">
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                </div>
-                                <div class="text-xs text-gray-500 ml-3">(150)</div>
-                            </div>
-                        </div>
-                        
                     </div>
 
 
-                    <div class="bg-white dark:bg-gray-600 shadow rounded overflow-hidden group ">
-                        <div class="relative">
-                            <img src="assets/img/product/food1.jpg" alt="product 1" class="w-full">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                            justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                <a href="#"
-                                    class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    title="view product">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </a>
-                                <a href="#"
-                                    class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    title="add to wishlist">
-                                    <i class="fa-solid fa-heart"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="pt-5 pb-3 px-4">
-                            <a href="#">
-                                <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Habis</span>
-                                <h4 class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
-                            </a>
-                            <div class="flex items-baseline mb-1 space-x-2">
-                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
-                            </div>
-                            
-                            <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
-                                <a href="">
-                                    <ion-icon name="pin"></ion-icon> Lokasi
-                                </a>
-                                <a href="">
-                                    <ion-icon name="cart"></ion-icon> Toko
-                                </a>
-                            </div>
-                            <div class="flex items-center mt-2">
-                                <div class="flex gap-1 text-sm text-yellow-400">
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                </div>
-                                <div class="text-xs text-gray-500 ml-3">(150)</div>
-                            </div>
-                        </div>
-                        
-                    </div>
-
-
-                    <div class="bg-white dark:bg-gray-600 shadow rounded overflow-hidden group ">
-                        <div class="relative">
-                            <img src="assets/img/product/food1.jpg" alt="product 1" class="w-full">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                            justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                <a href="#"
-                                    class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    title="view product">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </a>
-                                <a href="#"
-                                    class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    title="add to wishlist">
-                                    <i class="fa-solid fa-heart"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="pt-5 pb-3 px-4">
-                            <a href="#">
-                                <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Habis</span>
-                                <h4 class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
-                            </a>
-                            <div class="flex items-baseline mb-1 space-x-2">
-                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
-                            </div>
-                            
-                            <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
-                                <a href="">
-                                    <ion-icon name="pin"></ion-icon> Lokasi
-                                </a>
-                                <a href="">
-                                    <ion-icon name="cart"></ion-icon> Toko
-                                </a>
-                            </div>
-                            <div class="flex items-center mt-2">
-                                <div class="flex gap-1 text-sm text-yellow-400">
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                </div>
-                                <div class="text-xs text-gray-500 ml-3">(150)</div>
-                            </div>
-                        </div>
-                        
-                    </div>
-
-
-                    <div class="bg-white dark:bg-gray-600 shadow rounded overflow-hidden group ">
-                        <div class="relative">
-                            <img src="assets/img/product/food1.jpg" alt="product 1" class="w-full">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                            justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                <a href="#"
-                                    class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    title="view product">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </a>
-                                <a href="#"
-                                    class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    title="add to wishlist">
-                                    <i class="fa-solid fa-heart"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="pt-5 pb-3 px-4">
-                            <a href="#">
-                                <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Habis</span>
-                                <h4 class="uppercase dark:text-white font-bold  text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
-                            </a>
-                            <div class="flex items-baseline mb-1 space-x-2">
-                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
-                            </div>
-                            
-                            <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
-                                <a href="">
-                                    <ion-icon name="pin"></ion-icon> Lokasi
-                                </a>
-                                <a href="">
-                                    <ion-icon name="cart"></ion-icon> Toko
-                                </a>
-                            </div>
-                            <div class="flex items-center mt-2">
-                                <div class="flex gap-1 text-sm text-yellow-400">
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                </div>
-                                <div class="text-xs text-gray-500 ml-3">(150)</div>
-                            </div>
-                        </div>
-                        
-                    </div>
 
 
                 </div>
-
-
-
-
-
-
-
+            </div> --}}
+            <div class="col-span-3 mb-12" x-data="layoutData()">
+                <form class="w-full mb-6 mx-auto">
+                    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                        </div>
+                        <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search . . ." required />
+                        <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                    </div>
+                </form>
+        
+                <div class="flex justify-between mb-4">
+                    <form class="w-40px">
+                        <select id="sort" class="bg-gray-50 px-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option class="py-2" selected>default</option>
+                            <option class="py-2">Terbaru</option>
+                            <option class="py-2">terlama</option>
+                        </select>
+                    </form>
+        
+                    <div class="flex gap-2 ml-auto">
+                        <div @click="setLayout('grid')" :class="{ 'bg-blue-700 text-white': layout === 'grid', 'dark:bg-gray-600 bg-white': layout !== 'grid' }" class="w-10 h-9 flex items-center justify-center rounded cursor-pointer">
+                            <i class="fa-solid fa-grip-vertical"></i>
+                        </div>
+                        <div @click="setLayout('list')" :class="{ 'bg-blue-700 text-white': layout === 'list', 'dark:bg-gray-600 bg-white': layout !== 'list' }" class="border border-gray-300 w-10 h-9 flex items-center justify-center  rounded cursor-pointer">
+                            <i class="fa-solid fa-list"></i>
+                        </div>
+                    </div>
+                </div>
                 
-            </div>
+                <div :class="layout === 'grid' ? 'grid md:grid-cols-3 grid-cols-2 gap-6' : 'flex flex-col gap-4'">
+                    <div :class="layout === 'grid' ? 'bg-white dark:bg-gray-600 shadow rounded overflow-hidden group' : 'flex items-center p-4 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-700 rounded-lg shadow-md'">
+                        <div class="relative ">
+                            <img src="assets/img/product/food1.jpg" alt="product 1" class="w-full h-48 object-cover">
+                            <div :class="layout === 'grid' ? 'absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition ' : 'inset-0 flex gap-2 mt-2'">
+                                <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="view product">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </a>
+                                <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="add to wishlist">
+                                    <i class="fa-solid fa-heart"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div :class="layout === 'list' ? 'ml-4' : 'pt-5 pb-3 px-4'">
+                            <a href="#">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Tersedia</span>
+                                <h4 class="uppercase dark:text-white font-bold text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
+                            </a>
+                            <div class="flex items-baseline mb-1 space-x-2">
+                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
+                            </div>
+        
+                            <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
+                                <a href="">
+                                    <ion-icon name="pin"></ion-icon> Lokasi
+                                </a>
+                                <a href="">
+                                    <ion-icon name="cart"></ion-icon> Toko
+                                </a>
+                            </div>
+                            <div class="flex items-center mt-2">
+                                <div class="flex gap-1 text-sm text-yellow-400">
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                </div>
+                                <div class="text-xs text-gray-500 ml-3">(150)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div :class="layout === 'grid' ? 'bg-white dark:bg-gray-600 shadow rounded overflow-hidden group' : 'flex items-center p-4 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-700 rounded-lg shadow-md'">
+                        <div class="relative ">
+                            <img src="assets/img/product/food2.jpg" alt="product 1" class="w-full h-48 object-cover">
+                            <div :class="layout === 'grid' ? 'absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition ' : 'inset-0 flex gap-2 mt-2'">
+                                <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="view product">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </a>
+                                <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="add to wishlist">
+                                    <i class="fa-solid fa-heart"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div :class="layout === 'list' ? 'ml-4' : 'pt-5 pb-3 px-4'">
+                            <a href="#">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Tersedia</span>
+                                <h4 class="uppercase dark:text-white font-bold text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
+                            </a>
+                            <div class="flex items-baseline mb-1 space-x-2">
+                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
+                            </div>
+        
+                            <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
+                                <a href="">
+                                    <ion-icon name="pin"></ion-icon> Lokasi
+                                </a>
+                                <a href="">
+                                    <ion-icon name="cart"></ion-icon> Toko
+                                </a>
+                            </div>
+                            <div class="flex items-center mt-2">
+                                <div class="flex gap-1 text-sm text-yellow-400">
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                </div>
+                                <div class="text-xs text-gray-500 ml-3">(150)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div :class="layout === 'grid' ? 'bg-white dark:bg-gray-600 shadow rounded overflow-hidden group' : 'flex items-center p-4 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-700 rounded-lg shadow-md'">
+                        <div class="relative ">
+                            <img src="assets/img/product/food3.jpg" alt="product 1" class="w-full h-48 object-cover">
+                            <div :class="layout === 'grid' ? 'absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition ' : 'inset-0 flex gap-2 mt-2'">
+                                <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="view product">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </a>
+                                <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="add to wishlist">
+                                    <i class="fa-solid fa-heart"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div :class="layout === 'list' ? 'ml-4' : 'pt-5 pb-3 px-4'">
+                            <a href="#">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Tersedia</span>
+                                <h4 class="uppercase dark:text-white font-bold text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
+                            </a>
+                            <div class="flex items-baseline mb-1 space-x-2">
+                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
+                            </div>
+        
+                            <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
+                                <a href="">
+                                    <ion-icon name="pin"></ion-icon> Lokasi
+                                </a>
+                                <a href="">
+                                    <ion-icon name="cart"></ion-icon> Toko
+                                </a>
+                            </div>
+                            <div class="flex items-center mt-2">
+                                <div class="flex gap-1 text-sm text-yellow-400">
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                </div>
+                                <div class="text-xs text-gray-500 ml-3">(150)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div :class="layout === 'grid' ? 'bg-white dark:bg-gray-600 shadow rounded overflow-hidden group' : 'flex items-center p-4 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-700 rounded-lg shadow-md'">
+                        <div class="relative ">
+                            <img src="assets/img/product/food4.jpg" alt="product 1" class="w-full h-48 object-cover">
+                            <div :class="layout === 'grid' ? 'absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition ' : 'inset-0 flex gap-2 mt-2'">
+                                <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="view product">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </a>
+                                <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="add to wishlist">
+                                    <i class="fa-solid fa-heart"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div :class="layout === 'list' ? 'ml-4' : 'pt-5 pb-3 px-4'">
+                            <a href="#">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Tersedia</span>
+                                <h4 class="uppercase dark:text-white font-bold text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
+                            </a>
+                            <div class="flex items-baseline mb-1 space-x-2">
+                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
+                            </div>
+        
+                            <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
+                                <a href="">
+                                    <ion-icon name="pin"></ion-icon> Lokasi
+                                </a>
+                                <a href="">
+                                    <ion-icon name="cart"></ion-icon> Toko
+                                </a>
+                            </div>
+                            <div class="flex items-center mt-2">
+                                <div class="flex gap-1 text-sm text-yellow-400">
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                </div>
+                                <div class="text-xs text-gray-500 ml-3">(150)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div :class="layout === 'grid' ? 'bg-white dark:bg-gray-600 shadow rounded overflow-hidden group' : 'flex items-center p-4 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-700 rounded-lg shadow-md'">
+                        <div class="relative ">
+                            <img src="assets/img/product/food5.jpg" alt="product 1" class="w-full h-48 object-cover">
+                            <div :class="layout === 'grid' ? 'absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition ' : 'inset-0 flex gap-2 mt-2'">
+                                <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="view product">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </a>
+                                <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="add to wishlist">
+                                    <i class="fa-solid fa-heart"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div :class="layout === 'list' ? 'ml-4' : 'pt-5 pb-3 px-4'">
+                            <a href="#">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Tersedia</span>
+                                <h4 class="uppercase dark:text-white font-bold text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
+                            </a>
+                            <div class="flex items-baseline mb-1 space-x-2">
+                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
+                            </div>
+        
+                            <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
+                                <a href="">
+                                    <ion-icon name="pin"></ion-icon> Lokasi
+                                </a>
+                                <a href="">
+                                    <ion-icon name="cart"></ion-icon> Toko
+                                </a>
+                            </div>
+                            <div class="flex items-center mt-2">
+                                <div class="flex gap-1 text-sm text-yellow-400">
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                </div>
+                                <div class="text-xs text-gray-500 ml-3">(150)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div :class="layout === 'grid' ? 'bg-white dark:bg-gray-600 shadow rounded overflow-hidden group' : 'flex items-center p-4 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-700 rounded-lg shadow-md'">
+                        <div class="relative ">
+                            <img src="assets/img/product/food1.jpg" alt="product 1" class="w-full h-48 object-cover">
+                            <div :class="layout === 'grid' ? 'absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition ' : 'inset-0 flex gap-2 mt-2'">
+                                <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="view product">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </a>
+                                <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="add to wishlist">
+                                    <i class="fa-solid fa-heart"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div :class="layout === 'list' ? 'ml-4' : 'pt-5 pb-3 px-4'">
+                            <a href="#">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Tersedia</span>
+                                <h4 class="uppercase dark:text-white font-bold text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
+                            </a>
+                            <div class="flex items-baseline mb-1 space-x-2">
+                                <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
+                            </div>
+        
+                            <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
+                                <a href="">
+                                    <ion-icon name="pin"></ion-icon> Lokasi
+                                </a>
+                                <a href="">
+                                    <ion-icon name="cart"></ion-icon> Toko
+                                </a>
+                            </div>
+                            <div class="flex items-center mt-2">
+                                <div class="flex gap-1 text-sm text-yellow-400">
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="fa-solid fa-star"></i></span>
+                                </div>
+                                <div class="text-xs text-gray-500 ml-3">(150)</div>
+                            </div>
+                        </div>
+                    </div>
+        
+
+
+
+                </div>
+            <nav aria-label="Page navigation example" class="w-full flex justify-center lg:justify-end  lg:pe-40 mt-12">
+                <ul class="inline-flex -space-x-px text-base h-10">
+                    <li>
+                        <a href="#"
+                            class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center justify-center px-4 h-10 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- ./products -->
+        </div>
+
        
-        <!-- ./products -->
     </div>
-    <nav aria-label="Page navigation example" class="w-full flex justify-center lg:justify-end  lg:pe-40">
-        <ul class="inline-flex -space-x-px text-base h-10">
-            <li>
-                <a href="#" class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
-            </li>
-            <li>
-                <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-            </li>
-            <li>
-                <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-            </li>
-            <li>
-                <a href="#"  class="flex items-center justify-center px-4 h-10 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-            </li>
-            <li>
-                <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
-            </li>
-            <li>
-                <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-            </li>
-            <li>
-                <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
-            </li>
-            </ul>
-      </nav>
-   </div>
 @endsection

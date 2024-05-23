@@ -20,6 +20,7 @@ Route::get('/admin', function () {return view('Admin.Index');})-> name('adm-dash
 Route::get('/contact', function(){return view('Pages.Contact');})->name('contact');
 Route::get('/postingan/detail', function(){return view('Pages.Postingan-desc');})->name('post-product-detail');
 Route::get('/postingan', function(){return view('Pages.Postingan');})->name('post-product');
+Route::get('/merchant-list', function(){return view('Pages.Merchant');})->name('merch-list');
 Route::get('/login', function(){return view('Auth.Login');})->name('login');
 
 Route::post('/submit-form', [FormRegisterController::class, 'handleForm'])->name('form.submit');

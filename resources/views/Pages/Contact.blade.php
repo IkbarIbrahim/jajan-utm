@@ -3,19 +3,19 @@
 
 @section('content')
     <!-- ====== Contact Section Start -->
-    <section class="w-full pt-20 lg:pt-40 px-8 lg:px-40">
-        <div class="container mx-auto">
+    <section class="w-full pt-20 lg:pt-40 px-8 lg:px-40 ">
+        <div class="container mx-auto mb-12">
             <div class="mx-4 flex flex-wrap lg:justify-between">
                 <div class="w-full px-4 lg:w-1/2 xl:w-6/12">
                     <div class="mb-12 max-w-[570px] lg:mb-0">
-                        <span class="mb-4 block text-base font-semibold text-primary">
+                        <span class="mb-4 block text-base font-semibold dark:text-white">
                             Contact Us
                         </span>
                         <h2
-                            class="mb-6 text-[32px] font-bold uppercase text-dark sm:text-[40px] lg:text-[36px] xl:text-[40px] dark:text-white">
+                            class="mb-6 text-[32px]  font-bold uppercase text-dark sm:text-[40px] lg:text-[36px] xl:text-[40px] dark:text-white">
                             GET IN TOUCH WITH US
                         </h2>
-                        <p class="mb-9 text-base leading-relaxed text-body-color dark:text-dark-6">
+                        <p class="mb-9 text-base leading-relaxed text-body-color dark:text-gray-800">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eius tempor incididunt ut labore et dolore magna aliqua. Ut enim
                             adiqua minim veniam quis nostrud exercitation ullamco
@@ -23,7 +23,7 @@
 
                         <div class="mb-8 flex w-full max-w-[370px]">
                             <div
-                                class="mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[70px] sm:max-w-[70px]">
+                                class="mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-gray-200 dark:bg-white text-primary sm:h-[70px] sm:max-w-[70px]">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -43,7 +43,7 @@
 
                         <div class="mb-8 flex w-full max-w-[370px]">
                             <div
-                                class="mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[70px] sm:max-w-[70px]">
+                                class="mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-gray-200 dark:bg-white text-primary sm:h-[70px] sm:max-w-[70px]">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_941_17577)">
@@ -76,7 +76,7 @@
 
                         <div class="mb-8 flex w-full max-w-[370px]">
                             <div
-                                class="mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[70px] sm:max-w-[70px]">
+                                class="mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-gray-200 dark:bg-white text-primary sm:h-[70px] sm:max-w-[70px]">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -96,7 +96,7 @@
                     </div>
                 </div>
                 <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
-                    <div class="relative rounded-lg bg-white p-8 shadow-lg sm:p-12 dark:bg-dark-2">
+                    <div class="relative rounded-lg bg-gray-200 dark:bg-gray-600 shadow-lg sm:p-12 ">
                         <form>
                             <div class="mb-6">
                                 <input type="text" placeholder="Your Name"
