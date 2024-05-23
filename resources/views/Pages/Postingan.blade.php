@@ -1,7 +1,7 @@
 @extends('User.Layouts.Master')
 @section('content')
    
-   <div class="w-full pt-20 ">
+   <div class="w-full pt-20 mb-8">
          <!-- breadcrumb -->
         <div class="container py-4 flex items-center gap-3 ps-10 lg:ps-20 dark:bg-gray-700">
             <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">

@@ -13,72 +13,81 @@
     <div class="bg-gray-200 dark:bg-gray-500">
         @include('User.Layouts.Header')
 
-        {{-- @yield('content')
+        @yield('content')
         
-        <button
-        class="hidden fixed bottom-5 right-5 p-2 bg-blue-500 text-white rounded"
-        @click="window.scrollTo({top: 0, behavior: 'smooth'})"
-        :class="{ 'uc' : scrollTop }">
-        <svg class="uh se qd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
-        </svg>
-        </button> --}}
+        <button x-data="{}" @click="window.scrollTo({ top: 0, behavior: 'smooth' })" id="scroll-to-top" class="fixed bottom-10 right-10 z-50 rounded-full dark:bg-gray-100 w-12 h-12 hidden justify-center items-center shadow-md">
+            <i class="fas fa-arrow-up text-3xl"></i>
+        </button>
+      
         @include('User.Layouts.Footer')
-       
     </div>
 
-
     <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-        var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        document.addEventListener('DOMContentLoaded', (event) => {
+            var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+            var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+            var themeToggleBtn = document.getElementById('theme-toggle');
 
-        // Initial theme check
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-            if (themeToggleLightIcon) themeToggleLightIcon.classList.remove('hidden');
-            if (themeToggleDarkIcon) themeToggleDarkIcon.classList.add('hidden');
-        } else {
-            document.documentElement.classList.remove('dark');
-            if (themeToggleLightIcon) themeToggleLightIcon.classList.add('hidden');
-            if (themeToggleDarkIcon) themeToggleDarkIcon.classList.remove('hidden');
+            // Initial theme check
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                if (themeToggleLightIcon) themeToggleLightIcon.classList.remove('hidden');
+                if (themeToggleDarkIcon) themeToggleDarkIcon.classList.add('hidden');
+            } else {
+                document.documentElement.classList.remove('dark');
+                if (themeToggleLightIcon) themeToggleLightIcon.classList.add('hidden');
+                if (themeToggleDarkIcon) themeToggleDarkIcon.classList.remove('hidden');
+            }
+
+            // Theme toggle button event listener
+            if (themeToggleBtn) {
+                themeToggleBtn.addEventListener('click', function() {
+                    themeToggleDarkIcon.classList.toggle('hidden');
+                    themeToggleLightIcon.classList.toggle('hidden');
+
+                    if (localStorage.getItem('color-theme')) {
+                        if (localStorage.getItem('color-theme') === 'light') {
+                            document.documentElement.classList.add('dark');
+                            localStorage.setItem('color-theme', 'dark');
+                        } else {
+                            document.documentElement.classList.remove('dark');
+                            localStorage.setItem('color-theme', 'light');
+                        }
+                    } else {
+                        if (document.documentElement.classList.contains('dark')) {
+                            document.documentElement.classList.remove('dark');
+                            localStorage.setItem('color-theme', 'light');
+                        } else {
+                            document.documentElement.classList.add('dark');
+                            localStorage.setItem('color-theme', 'dark');
+                        }
+                    }
+                });
+            }
+
+            // Scroll to top button
+            var scrollToTopButton = document.getElementById('scroll-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 100) {
+                    scrollToTopButton.style.display = 'flex';
+                } else {
+                    scrollToTopButton.style.display = 'none';
+                }
+            });
+        });
+
+        function onToggleMenu(e) {
+            e.name = e.name === 'menu' ? 'close' : 'menu';
         }
 
-        // Theme toggle button event listener
-        var themeToggleBtn = document.getElementById('theme-toggle');
-        themeToggleBtn.addEventListener('click', function() {
-            themeToggleDarkIcon.classList.toggle('hidden');
-            themeToggleLightIcon.classList.toggle('hidden');
-
-            if (localStorage.getItem('color-theme')) {
-                if (localStorage.getItem('color-theme') === 'light') {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                }
-            } else {
-                if (document.documentElement.classList.contains('dark')) {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                } else {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                }
-            }
-        });
-    });
-
-    function onToggleMenu(e) {
-        e.name = e.name === 'menu' ? 'close' : 'menu';
-    }
-
-    const collapse = new Collapse($targetEl, $triggerEl, options, instanceOptions);
-
-    $triggerEl.addEventListener('click', function () {
-        collapse.toggle();
-    });
+        // Initialize Flowbite Collapse (make sure elements are correctly defined in your HTML)
+        var collapseTriggerEl = document.querySelector('[data-collapse-toggle]');
+        if (collapseTriggerEl) {
+            var collapse = new Collapse(collapseTriggerEl);
+            collapseTriggerEl.addEventListener('click', function () {
+                collapse.toggle();
+            });
+        }
     </script>
     
     <script src="https://unpkg.com/@popperjs/core@2"></script>

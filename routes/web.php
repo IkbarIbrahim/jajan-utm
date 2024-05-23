@@ -14,15 +14,14 @@ use App\Http\Controllers\FormRegisterController;
 |
 */
 
-Route::get('/', function () {
-    return view('Homepage');
-})-> name('home');
+Route::get('/', function () {return view('Homepage');})-> name('home');
+Route::get('/admin', function () {return view('Admin.Index');})-> name('adm-dashboard');
 
 Route::get('/contact', function(){return view('Pages.Contact');})->name('contact');
 Route::get('/postingan/detail', function(){return view('Pages.Postingan-desc');})->name('post-product-detail');
 Route::get('/postingan', function(){return view('Pages.Postingan');})->name('post-product');
 Route::get('/login', function(){return view('Auth.Login');})->name('login');
-// web.php
+
 Route::post('/submit-form', [FormRegisterController::class, 'handleForm'])->name('form.submit');
 
 Route::get('/register', function(){return view('Auth.Register');})->name('register');
