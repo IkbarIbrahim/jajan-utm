@@ -18,6 +18,11 @@ Route::get('/', function () {
     return view('Homepage');
 })->name('home');
 
+
+
+Route::get('/merchant-list', function(){return view('Pages.Merchant');})->name('merch-list');
+
+
 Route::get('/contact', function () {
     return view('Pages.Contact');
 })->name('contact');
@@ -30,6 +35,7 @@ Route::get('/postingan', function () {
 Route::get('/login', function () {
     return view('Auth.Login');
 })->name('login');
+
 
 Route::post('/submit-form', [FormRegisterController::class, 'handleForm'])->name('form.submit');
 
