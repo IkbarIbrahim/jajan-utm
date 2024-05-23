@@ -20,7 +20,9 @@ Route::get('/', function () {
 
 
 
-Route::get('/merchant-list', function(){return view('Pages.Merchant');})->name('merch-list');
+Route::get('/merchant-list', function () {
+    return view('Pages.Merchant');
+})->name('merch-list');
 
 
 Route::get('/contact', function () {
@@ -58,6 +60,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/', function () {
             return view('Admin.Users.Index');
         })->name('index');
+        Route::get('/{user}/edit', function () {
+            return view('Admin.Users.Edit');
+        })->name('edit');
     });
 
     Route::prefix('merchants')->name('merchants.')->group(function () {
