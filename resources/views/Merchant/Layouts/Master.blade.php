@@ -17,7 +17,7 @@
 
         @include('Merchant.Layouts.Footer')
         
-      </div>
+    </div>
       
     <script>
 
