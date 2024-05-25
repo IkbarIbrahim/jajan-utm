@@ -1,5 +1,5 @@
 @extends('User.Layouts.Master')
-@section('title', 'Postingan detail')
+@section('title', 'Merchant')
 @section('content')
     <section class="w-full pt-20 ">
         <!-- breadcrumb -->

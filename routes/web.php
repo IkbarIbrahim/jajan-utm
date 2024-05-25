@@ -21,10 +21,50 @@ Route::get('/contact', function(){return view('Pages.Contact');})->name('contact
 Route::get('/postingan/detail', function(){return view('Pages.Postingan-desc');})->name('post-product-detail');
 Route::get('/postingan', function(){return view('Pages.Postingan');})->name('post-product');
 Route::get('/merchant-list', function(){return view('Pages.Merchant');})->name('merch-list');
+Route::get('/globalchat', function(){return view('Pages.Global-chat');})->name('global');
 Route::get('/login', function(){return view('Auth.Login');})->name('login');
+
 
 Route::post('/submit-form', [FormRegisterController::class, 'handleForm'])->name('form.submit');
 
-Route::get('/register', function(){return view('Auth.Register');})->name('register');
-Route::get('/login', function(){return view('Auth.Login');})->name('login');
-Route::get('/merchant', function(){return view('Merchant.Index');})->name('merchant');
+Route::get('/register', function () {
+    return view('Auth.Register');
+})->name('register');
+Route::get('/login', function () {
+    return view('Auth.Login');
+})->name('login');
+Route::get('/merchant', function () {
+    return view('Merchant.Index');
+})->name('merchant');
+
+Route::prefix('merchant')->name('merchant.')->group(function () {
+    Route::prefix('products')->name('products.')->group(function () {
+        Route::get('/{product}/edit', function () {
+            return view('Merchant.Products.Edit');
+        })->name('edit');
+    });
+});
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', function () {
+        return view('Admin.Index');
+    })->name('index');
+
+    Route::prefix('users')->name('users.')->group(function () {
+        Route::get('/', function () {
+            return view('Admin.Users.Index');
+        })->name('index');
+        Route::get('/{user}/edit', function () {
+            return view('Admin.Users.Edit');
+        })->name('edit');
+    });
+
+    Route::prefix('merchants')->name('merchants.')->group(function () {
+        Route::get('/', function () {
+            return view('Admin.Merchants.Index');
+        })->name('index');
+        Route::get('/{merchant}/edit', function () {
+            return view('Admin.Merchants.Edit');
+        })->name('edit');
+    });
+});

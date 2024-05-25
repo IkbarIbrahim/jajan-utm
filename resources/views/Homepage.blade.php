@@ -97,142 +97,149 @@
                     
                     <div class="w-full px-4 md:w-1/2 lg:w-1/3 ">
                         <div
-                            class="mb-9 rounded-lg bg-white p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 dark:bg-gray-600">
-                            <div class="mb-8 flex h-[80%] w-[100%] items-center justify-center rounded-lg bg-white-300 dark:bg-gray-700">
-                               <img class="w-full h-full rounded-lg mx-auto" src="assets/img/sate.jpg" alt="">
+                            class="mb-9 rounded-sm bg-white  shadow-2 hover:shadow-lg  dark:bg-gray-600">
+                            <div class="mb-2 flex items-center justify-center  bg-white-300 dark:bg-gray-700">
+                               <img class="w-full h-full rounded-sm mx-auto" src="assets/img/sate.jpg" alt="">
                             </div>
-                            <h4 class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
-                                Sate Ayam <span class="text-lg font-bold ">Rp.12.000</span>
-                            </h4>
-                            <p class="text-body-color hover:text-pretty dark:text-white mb-8 text-center truncate hover:text-clip">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quis totam reprehenderit, dicta sint adipisci debitis possimus porro sed, sequi reiciendis fuga quidem mollitia. Voluptatem ipsa doloribus facilis laudantium quis.
-                            </p>
-                            <div class="flex flex-col gap-5 text-black dark:text-white">
-                                <a href="">
-                                    <ion-icon name="pin"></ion-icon> Lokasi
-                                </a>
-                                <a href="">
-                                    <ion-icon name="cart"></ion-icon> Toko
-                                </a>
+                            <div class="p-4">
+                                <h4 class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
+                                    Sate Ayam <span class="text-lg font-bold ">Rp.12.000</span>
+                                </h4>
+                                <p class="text-body-color hover:text-pretty dark:text-white mb-8 text-center truncate hover:text-clip">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quis totam reprehenderit, dicta sint adipisci debitis possimus porro sed, sequi reiciendis fuga quidem mollitia. Voluptatem ipsa doloribus facilis laudantium quis.
+                                </p>
+                                <div class="flex flex-col gap-5 text-black dark:text-white">
+                                    <a href="">
+                                        <ion-icon name="pin"></ion-icon> Lokasi
+                                    </a>
+                                    <a href="">
+                                        <ion-icon name="cart"></ion-icon> Toko
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+                    <div class="w-full px-4 md:w-1/2 lg:w-1/3 ">
                         <div
-                            class="mb-9 rounded-lg bg-white p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 dark:bg-gray-600">
-                            <div class="mb-8 flex h-[80%] w-[100%] items-center justify-center rounded-lg bg-white-300 dark:bg-gray-700">
-                               <img class="w-full h-full rounded-lg mx-auto" src="assets/img/sate.jpg" alt="">
+                            class="mb-9 rounded-sm bg-white  shadow-2 hover:shadow-lg  dark:bg-gray-600">
+                            <div class="mb-2 flex items-center justify-center  bg-white-300 dark:bg-gray-700">
+                               <img class="w-full h-full rounded-sm mx-auto" src="assets/img/sate.jpg" alt="">
                             </div>
-                            <h4 class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
-                                Sate Ayam <span class="text-lg font-bold ">Rp.12.000</span>
-                            </h4>
-                            <p class="text-body-color hover:text-pretty dark:text-white mb-8 text-center truncate hover:text-clip">
-                                We dejoy working with discerning clients, people for whom
-                                qualuty, service, integrity & aesthetics.
-                            </p>
-                            <div class="flex flex-col gap-5 text-black dark:text-white">
-                                <a href="">
-                                    <ion-icon name="pin"></ion-icon> Lokasi
-                                </a>
-                                <a href="">
-                                    <ion-icon name="cart"></ion-icon> Toko
-                                </a>
+                            <div class="p-4">
+                                <h4 class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
+                                    Sate Ayam <span class="text-lg font-bold ">Rp.12.000</span>
+                                </h4>
+                                <p class="text-body-color hover:text-pretty dark:text-white mb-8 text-center truncate hover:text-clip">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quis totam reprehenderit, dicta sint adipisci debitis possimus porro sed, sequi reiciendis fuga quidem mollitia. Voluptatem ipsa doloribus facilis laudantium quis.
+                                </p>
+                                <div class="flex flex-col gap-5 text-black dark:text-white">
+                                    <a href="">
+                                        <ion-icon name="pin"></ion-icon> Lokasi
+                                    </a>
+                                    <a href="">
+                                        <ion-icon name="cart"></ion-icon> Toko
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+                    <div class="w-full px-4 md:w-1/2 lg:w-1/3 ">
                         <div
-                            class="mb-9 rounded-lg bg-white p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 dark:bg-gray-600">
-                            <div class="mb-8 flex h-[80%] w-[100%] items-center justify-center rounded-lg bg-white-300 dark:bg-gray-700">
-                               <img class="w-full h-full rounded-lg mx-auto" src="assets/img/sate.jpg" alt="">
+                            class="mb-9 rounded-sm bg-white  shadow-2 hover:shadow-lg  dark:bg-gray-600">
+                            <div class="mb-2 flex items-center justify-center  bg-white-300 dark:bg-gray-700">
+                               <img class="w-full h-full rounded-sm mx-auto" src="assets/img/sate.jpg" alt="">
                             </div>
-                            <h4 class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
-                                Sate Ayam <span class="text-lg font-bold ">Rp.12.000</span>
-                            </h4>
-                            <p class="text-body-color hover:text-pretty dark:text-white mb-8 text-center truncate hover:text-clip">
-                                We dejoy working with discerning clients, people for whom
-                                qualuty, service, integrity & aesthetics.
-                            </p>
-                            <div class="flex flex-col gap-5 text-black dark:text-white">
-                                <a href="">
-                                    <ion-icon name="pin"></ion-icon> Lokasi
-                                </a>
-                                <a href="">
-                                    <ion-icon name="cart"></ion-icon> Toko
-                                </a>
+                            <div class="p-4">
+                                <h4 class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
+                                    Sate Ayam <span class="text-lg font-bold ">Rp.12.000</span>
+                                </h4>
+                                <p class="text-body-color hover:text-pretty dark:text-white mb-8 text-center truncate hover:text-clip">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quis totam reprehenderit, dicta sint adipisci debitis possimus porro sed, sequi reiciendis fuga quidem mollitia. Voluptatem ipsa doloribus facilis laudantium quis.
+                                </p>
+                                <div class="flex flex-col gap-5 text-black dark:text-white">
+                                    <a href="">
+                                        <ion-icon name="pin"></ion-icon> Lokasi
+                                    </a>
+                                    <a href="">
+                                        <ion-icon name="cart"></ion-icon> Toko
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+                    <div class="w-full px-4 md:w-1/2 lg:w-1/3 ">
                         <div
-                            class="mb-9 rounded-lg bg-white p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 dark:bg-gray-600">
-                            <div class="mb-8 flex h-[80%] w-[100%] items-center justify-center rounded-lg bg-white-300 dark:bg-gray-700">
-                               <img class="w-full h-full rounded-lg mx-auto" src="assets/img/sate.jpg" alt="">
+                            class="mb-9 rounded-sm bg-white  shadow-2 hover:shadow-lg  dark:bg-gray-600">
+                            <div class="mb-2 flex items-center justify-center  bg-white-300 dark:bg-gray-700">
+                               <img class="w-full h-full rounded-sm mx-auto" src="assets/img/sate.jpg" alt="">
                             </div>
-                            <h4 class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
-                                Sate Ayam <span class="text-lg font-bold ">Rp.12.000</span>
-                            </h4>
-                            <p class="text-body-color hover:text-pretty dark:text-white mb-8 text-center truncate hover:text-clip">
-                                We dejoy working with discerning clients, people for whom
-                                qualuty, service, integrity & aesthetics.
-                            </p>
-                            <div class="flex flex-col gap-5 text-black dark:text-white">
-                                <a href="">
-                                    <ion-icon name="pin"></ion-icon> Lokasi
-                                </a>
-                                <a href="">
-                                    <ion-icon name="cart"></ion-icon> Toko
-                                </a>
+                            <div class="p-4">
+                                <h4 class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
+                                    Sate Ayam <span class="text-lg font-bold ">Rp.12.000</span>
+                                </h4>
+                                <p class="text-body-color hover:text-pretty dark:text-white mb-8 text-center truncate hover:text-clip">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quis totam reprehenderit, dicta sint adipisci debitis possimus porro sed, sequi reiciendis fuga quidem mollitia. Voluptatem ipsa doloribus facilis laudantium quis.
+                                </p>
+                                <div class="flex flex-col gap-5 text-black dark:text-white">
+                                    <a href="">
+                                        <ion-icon name="pin"></ion-icon> Lokasi
+                                    </a>
+                                    <a href="">
+                                        <ion-icon name="cart"></ion-icon> Toko
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+                    <div class="w-full px-4 md:w-1/2 lg:w-1/3 ">
                         <div
-                            class="mb-9 rounded-lg bg-white p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 dark:bg-gray-600">
-                            <div class="mb-8 flex h-[80%] w-[100%] items-center justify-center rounded-lg bg-white-300 dark:bg-gray-700">
-                               <img class="w-full h-full rounded-lg mx-auto" src="assets/img/sate.jpg" alt="">
+                            class="mb-9 rounded-sm bg-white  shadow-2 hover:shadow-lg  dark:bg-gray-600">
+                            <div class="mb-2 flex items-center justify-center  bg-white-300 dark:bg-gray-700">
+                               <img class="w-full h-full rounded-sm mx-auto" src="assets/img/sate.jpg" alt="">
                             </div>
-                            <h4 class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
-                                Sate Ayam <span class="text-lg font-bold ">Rp.12.000</span>
-                            </h4>
-                            <p class="text-body-color hover:text-pretty dark:text-white mb-8 text-center truncate hover:text-clip">
-                                We dejoy working with discerning clients, people for whom
-                                qualuty, service, integrity & aesthetics.
-                            </p>
-                            <div class="flex flex-col gap-5 text-black dark:text-white">
-                                <a href="">
-                                    <ion-icon name="pin"></ion-icon> Lokasi
-                                </a>
-                                <a href="">
-                                    <ion-icon name="cart"></ion-icon> Toko
-                                </a>
+                            <div class="p-4">
+                                <h4 class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
+                                    Sate Ayam <span class="text-lg font-bold ">Rp.12.000</span>
+                                </h4>
+                                <p class="text-body-color hover:text-pretty dark:text-white mb-8 text-center truncate hover:text-clip">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quis totam reprehenderit, dicta sint adipisci debitis possimus porro sed, sequi reiciendis fuga quidem mollitia. Voluptatem ipsa doloribus facilis laudantium quis.
+                                </p>
+                                <div class="flex flex-col gap-5 text-black dark:text-white">
+                                    <a href="">
+                                        <ion-icon name="pin"></ion-icon> Lokasi
+                                    </a>
+                                    <a href="">
+                                        <ion-icon name="cart"></ion-icon> Toko
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+                    <div class="w-full px-4 md:w-1/2 lg:w-1/3 ">
                         <div
-                            class="mb-9 rounded-lg bg-white p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10 dark:bg-gray-600">
-                            <div class="mb-8 flex h-[80%] w-[100%] items-center justify-center rounded-lg bg-white-300 dark:bg-gray-700">
-                               <img class="w-full h-full rounded-lg mx-auto" src="assets/img/sate.jpg" alt="">
+                            class="mb-9 rounded-sm bg-white  shadow-2 hover:shadow-lg  dark:bg-gray-600">
+                            <div class="mb-2 flex items-center justify-center  bg-white-300 dark:bg-gray-700">
+                               <img class="w-full h-full rounded-sm mx-auto" src="assets/img/sate.jpg" alt="">
                             </div>
-                            <h4 class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
-                                Sate Ayam <span class="text-lg font-bold ">Rp.12.000</span>
-                            </h4>
-                            <p class="text-body-color hover:text-pretty dark:text-white mb-8 text-center truncate hover:text-clip">
-                                We dejoy working with discerning clients, people for whom
-                                qualuty, service, integrity & aesthetics.
-                            </p>
-                            <div class="flex flex-col gap-5 text-black dark:text-white">
-                                <a href="">
-                                    <ion-icon name="pin"></ion-icon> Lokasi
-                                </a>
-                                <a href="">
-                                    <ion-icon name="cart"></ion-icon> Toko
-                                </a>
+                            <div class="p-4">
+                                <h4 class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
+                                    Sate Ayam <span class="text-lg font-bold ">Rp.12.000</span>
+                                </h4>
+                                <p class="text-body-color hover:text-pretty dark:text-white mb-8 text-center truncate hover:text-clip">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quis totam reprehenderit, dicta sint adipisci debitis possimus porro sed, sequi reiciendis fuga quidem mollitia. Voluptatem ipsa doloribus facilis laudantium quis.
+                                </p>
+                                <div class="flex flex-col gap-5 text-black dark:text-white">
+                                    <a href="">
+                                        <ion-icon name="pin"></ion-icon> Lokasi
+                                    </a>
+                                    <a href="">
+                                        <ion-icon name="cart"></ion-icon> Toko
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                   
+              
                 </div>
             </div>
         </section>
