@@ -1,4 +1,5 @@
 @extends('User.Layouts.Master')
+@section('title', 'Postingan Product')
 @section('content')
     <div class="w-full pt-20 ">
         <!-- breadcrumb -->

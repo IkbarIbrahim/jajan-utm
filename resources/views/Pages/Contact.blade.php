@@ -1,5 +1,6 @@
 @extends('User.Layouts.Master')
 @section('title', 'Contact')
+@section('title', 'Contact')
 
 @section('content')
     <!-- ====== Contact Section Start -->
