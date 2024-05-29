@@ -24,6 +24,28 @@ class MerchantController extends Controller
         ]);
     }
 
+    public function edit(Merchant $merchant)
+    {
+        return view('Admin.Merchants.Edit', [
+            'merchant' => Merchant::findOrFail($merchant->id),
+        ]);
+    }
+
+    public function updatePassword(Request $request, Merchant $merchant)
+    {
+        $validated = $request->validate([
+            'password' => ['required', 'min:8', 'max:100'],
+            'password_confirmation' => ['required', 'min:8', 'max:100', 'same:password'],
+        ]);
+
+        $merchant->update($validated);
+
+        return redirect()->route('admin.merchants.edit', ['merchant' => $merchant->id])->with(
+            'success',
+            'Password berhasil diubah.'
+        );
+    }
+
     public function destroy(Merchant $merchant)
     {
         $products = $merchant->products();

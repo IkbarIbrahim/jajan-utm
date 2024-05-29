@@ -10,6 +10,18 @@ class Merchant extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'description',
+        'address',
+        'type',
+        'owner',
+        'logo',
+        'cover',
+    ];
+
     protected $hidden = [
         'password',
     ];
