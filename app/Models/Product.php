@@ -15,4 +15,6 @@ class Product extends Model
         'rating' => 'float',
         'merchant_id' => 'integer',
     ];
+
+    public $timestamps = false;
 }
