@@ -6,7 +6,7 @@
             <nav class="mb-4 flex" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 rtl:space-x-reverse md:space-x-3">
                     <li class="inline-flex items-center">
-                        <a href="#"
+                        <a href="{{ route('admin.index') }}"
                             class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
                             <ion-icon name="home" class="me-2.5 h-4 w-4"></ion-icon>
                             Dashboard
