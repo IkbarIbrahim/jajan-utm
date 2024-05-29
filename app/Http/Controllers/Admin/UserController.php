@@ -22,6 +22,28 @@ class UserController extends Controller
         ]);
     }
 
+    public function edit(User $user)
+    {
+        return view('Admin.Users.Edit', [
+            'user' => User::findOrFail($user->id),
+        ]);
+    }
+
+    public function updatePassword(Request $request, User $user)
+    {
+        $validated = $request->validate([
+            'password' => ['required', 'min:8', 'max:100'],
+            'password_confirmation' => ['required', 'min:8', 'max:100', 'same:password'],
+        ]);
+
+        $user->update($validated);
+
+        return redirect()->route('admin.users.edit', ['user' => $user->id])->with(
+            'success',
+            'Password berhasil diubah.'
+        );
+    }
+
     public function destroy(User $user)
     {
         $user->favorites()->delete();
