@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\MerchantController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormRegisterController;
 
@@ -76,23 +78,19 @@ Route::prefix('admin')
         Route::prefix('users')
             ->name('users.')
             ->group(function () {
-                Route::get('/', function () {
-                    return view('Admin.Users.Index');
-                })->name('index');
-                Route::get('/{user}/edit', function () {
-                    return view('Admin.Users.Edit');
-                })->name('edit');
+                Route::get('/', [UserController::class, 'index'])->name('index');
+                Route::get('/{user}/edit', [UserController::class, 'edit'])->name('edit');
+                Route::put('/{user}/change-password', [UserController::class, 'updatePassword'])->name('update-password');
+                Route::delete('/{user}', [UserController::class, 'destroy'])->name('destroy');
             });
 
         Route::prefix('merchants')
             ->name('merchants.')
             ->group(function () {
-                Route::get('/', function () {
-                    return view('Admin.Merchants.Index');
-                })->name('index');
-                Route::get('/{merchant}/edit', function () {
-                    return view('Admin.Merchants.Edit');
-                })->name('edit');
+                Route::get('/', [MerchantController::class, 'index'])->name('index');
+                Route::get('/{merchant}/edit', [MerchantController::class, 'edit'])->name('edit');
+                Route::put('/{merchant}/change-password', [MerchantController::class, 'updatePassword'])->name('update-password');
+                Route::delete('/{merchant}', [MerchantController::class, 'destroy'])->name('destroy');
             });
         Route::prefix('products')
             ->name('products.')

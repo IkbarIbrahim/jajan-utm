@@ -12,11 +12,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\Admin::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        for ($i = 1; $i <= 10; $i++) {
+            \App\Models\Merchant::factory()->create();
+            \App\Models\User::factory()->create();
+            \App\Models\Product::factory()->create(['merchant_id' => $i]);
+            \App\Models\Favorite::factory()->create(['user_id' => $i, 'product_id' => $i]);
+            \App\Models\Comment::factory()->create(['user_id' => $i, 'product_id' => $i]);
+            \App\Models\Chat::factory()->create(['user_id' => $i]);
+        }
     }
 }

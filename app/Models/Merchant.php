@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+class Merchant extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'description',
+        'address',
+        'type',
+        'owner',
+        'logo',
+        'cover',
+    ];
+
+    protected $hidden = [
+        'password',
+    ];
+
+    protected $casts = [
+        'id' => 'integer',
+        'password' => 'hashed',
+    ];
+
+    public $timestamps = false;
+
+    public function products(): HasMany
+    {
+        return $this->hasMany(Product::class);
+    }
+}
