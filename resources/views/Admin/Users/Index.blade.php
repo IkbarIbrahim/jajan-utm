@@ -1,5 +1,5 @@
 @extends('Admin.Layout.Master')
-
+@section('title', 'User Manage')
 @section('content')
     <div class="min-h-screen p-4 sm:ml-64">
         <div class="mt-14 rounded-lg p-4">

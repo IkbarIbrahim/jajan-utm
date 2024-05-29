@@ -43,9 +43,7 @@ Route::get('/postingan', function () {
 Route::get('/login', function () {
     return view('Auth.Login');
 })->name('login');
-Route::get('/merchant', function () {
-    return view('Merchant.Index');
-})->name('merchant');
+
 Route::get('/global', function () {
     return view('Pages.Global-chat');
 })->name('global');
@@ -53,9 +51,15 @@ Route::get('/global', function () {
 Route::prefix('merchant')
     ->name('merchant.')
     ->group(function () {
+        Route::get('/', function () {
+            return view('Merchant.Index');
+        })->name('index');
         Route::prefix('products')
             ->name('products.')
             ->group(function () {
+                Route::get('/', function () {
+                    return view('Merchant.Products.Index');
+                })->name('index');
                 Route::get('/{product}/edit', function () {
                     return view('Merchant.Products.Edit');
                 })->name('edit');
@@ -105,3 +109,5 @@ Route::prefix('admin')
                 })->name('index');
             });
     });
+
+
