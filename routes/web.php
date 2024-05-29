@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormRegisterController;
 
@@ -72,12 +73,10 @@ Route::prefix('admin')
         Route::prefix('users')
             ->name('users.')
             ->group(function () {
-                Route::get('/', function () {
-                    return view('Admin.Users.Index');
-                })->name('index');
-                Route::get('/{user}/edit', function () {
-                    return view('Admin.Users.Edit');
-                })->name('edit');
+                Route::get('/', [UserController::class, 'index'])->name('index');
+                Route::get('/{user}/edit', [UserController::class, 'edit'])->name('edit');
+                Route::put('/{user}', [UserController::class, 'update'])->name('update');
+                Route::delete('/{user}', [UserController::class, 'destroy'])->name('destroy');
             });
 
         Route::prefix('merchants')
