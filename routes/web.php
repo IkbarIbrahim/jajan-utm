@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\MerchantController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormRegisterController;
+use App\Http\Controllers\Merchant\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,9 +46,6 @@ Route::get('/postingan', function () {
 Route::get('/login', function () {
     return view('Auth.Login');
 })->name('login');
-Route::get('/merchant', function () {
-    return view('Merchant.Index');
-})->name('merchant');
 Route::get('/global', function () {
     return view('Pages.Global-chat');
 })->name('global');
@@ -55,12 +53,16 @@ Route::get('/global', function () {
 Route::prefix('merchant')
     ->name('merchant.')
     ->group(function () {
+        Route::get('/', function () {
+            return view('Merchant.Index');
+        })->name('index');
+
         Route::prefix('products')
             ->name('products.')
             ->group(function () {
-                Route::get('/{product}/edit', function () {
-                    return view('Merchant.Products.Edit');
-                })->name('edit');
+                Route::get('/{product}/edit', [ProductController::class, 'edit'])->name('edit');
+                Route::put('/{product}', [ProductController::class, 'update'])->name('update');
+                Route::delete('/{product}', [ProductController::class, 'destroy'])->name('destroy');
             });
     });
 
