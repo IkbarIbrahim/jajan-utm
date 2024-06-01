@@ -18,9 +18,13 @@ class HomeController extends Controller
           
     }   
 
-    public function productDetail($slug){
-        $product_detail = Product::getProductById($slug);
-        return view('Pages.Postingan-desc')->with('product_detail',$product_detail);
+    public function productDetail($slug)
+    {
+        $product_detail = Product::getProductBySlug($slug);
+        if (!$product_detail) {
+            abort(404, 'Product not found');
+        }
+        return view('Pages.Postingan-desc')->with('product_detail', $product_detail);
     }
 
     public function productGrids(Request $request)
