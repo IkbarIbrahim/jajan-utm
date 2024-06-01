@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
@@ -30,6 +31,7 @@ class Product extends Model
 
     public $timestamps = false;
 
+
     public function favorites(): HasMany
     {
         return $this->hasMany(Favorite::class);
@@ -38,5 +40,13 @@ class Product extends Model
     public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
+    }
+    public function merchant(): BelongsTo
+    {
+        return $this->belongsTo(Merchant::class);
+    }
+    public static function getProductBySlug($slug)
+    {
+        return self::where('id', $slug)->with('merchant')->first();
     }
 }

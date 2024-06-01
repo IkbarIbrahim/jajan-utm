@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\MerchantController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormRegisterController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Merchant\ProductController;
 
 /*
@@ -17,17 +18,15 @@ use App\Http\Controllers\Merchant\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('Homepage');
-})->name('home');
+Route::post('/submit-form', [FormRegisterController::class, 'handleForm'])->name('form.submit');
+Route::get('/', [HomeController::class,'home'] )->name('home');
+Route::get('/postingan', [HomeController::class,'productGrids'])->name('post-product');
+Route::get('/postingan/detail/{slug}', [HomeController::class, 'productDetail'])->name('post-product-detail');
+
+
 Route::get('/admin', function () {
     return view('Admin.Index');
 })->name('adm-dashboard');
-Route::get('/', function () {
-    return view('Homepage');
-})->name('home');
-
-Route::post('/submit-form', [FormRegisterController::class, 'handleForm'])->name('form.submit');
 Route::get('/merchant-list', function () {
     return view('Pages.Merchant');
 })->name('merch-list');
@@ -37,12 +36,8 @@ Route::get('/register', function () {
 Route::get('/contact', function () {
     return view('Pages.Contact');
 })->name('contact');
-Route::get('/postingan/detail', function () {
-    return view('Pages.Postingan-desc');
-})->name('post-product-detail');
-Route::get('/postingan', function () {
-    return view('Pages.Postingan');
-})->name('post-product');
+
+
 Route::get('/login', function () {
     return view('Auth.Login');
 })->name('login');

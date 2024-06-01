@@ -35,73 +35,68 @@
         </div>
         <!-- ./breadcrumb -->
 
-        <div class="container  pb-8">
+        <div class="container pb-8">
             <div class="w-full px-2 lg:px-40">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="justify-center m-3">
-                        <img src="https://via.placeholder.com/350x350" alt="Italian L-Shape Sofa" class="w-full rounded-lg shadow-md">
+                        <img src="{{ $product_detail->main_image_url ?? 'https://via.placeholder.com/350x350' }}" alt="{{ $product_detail->name }}" class="w-full rounded-lg shadow-md">
                         <div class="flex flex-wrap gap-4 justify-start pt-5">
-                            <div class="w-20 md:w-40 h-auto">
-                                <img src="https://via.placeholder.com/110x110" alt="Posadecija" class="w-full rounded-lg">
-                            </div>
-                            <div class="w-20 md:w-40 h-auto">
-                                <img src="https://via.placeholder.com/115x115" alt="Posadecija" class="w-full rounded-lg">
-                            </div>
-                            <div class="w-20 md:w-40 h-auto">
-                                <img src="https://via.placeholder.com/115x115" alt="Posadecija" class="w-full rounded-lg">
-                            </div>
+                            {{-- @foreach($product_detail->additional_images as $image) --}}
+                                <div class="w-20 md:w-40 h-auto">
+                                    <img src="" alt="" class="w-full rounded-lg">
+                                </div>
+                            {{-- @endforeach --}}
                         </div>
                     </div>
                     <div class="m-3">
-                        <h1 class="text-2xl font-bold text-gray-800 mb-4 dark:text-white">NAMA PRODUK</h1>
+                        <h1 class="text-2xl font-bold text-gray-800 mb-4 dark:text-white">{{ $product_detail->name }}</h1>
                         <div class="flex items-center mb-4">
-                            <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-                            </svg>
-                            <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-                            </svg>
-                            <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-                            </svg>
-                            <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-                            </svg>
-                            <svg class="w-4 h-4 me-1 text-gray-300 dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-                            </svg>
-                            <span class="text-gray-500 ms-4 dark:text-white">(5 reviews)</span>
+                            @php
+                                $rating = round($product_detail->rating);
+                            @endphp
+                            @for($i = 1; $i <= 5; $i++)
+                                @if($i <= $rating)
+                                    <ion-icon name="star"></ion-icon>
+                                @elseif($i > $rating && $i - 1 < $rating)
+                                    <ion-icon name="star-half-outline"></ion-icon>
+                                @else
+                                    <ion-icon name="star-outline"></ion-icon>
+                                @endif
+                            @endfor
+                            <span class="text-gray-500 ms-4 dark:text-white">({{ $product_detail->reviews_count }} reviews)</span>
                         </div>
-                            <p class="text-black font-bold mb-4 dark:text-white">Harga: <span class="font-normal">10.000</span></p>
-                            <p class="text-black font-bold mb-4 dark:text-white">Category: <span class="font-normal">Makanan</span></p>
-                            <p class="text-black font-bold mb-4 dark:text-white">Deskripsi: <span class="font-normal dark:text-white line-clamp-3 hover:line-clamp-none">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas saepe nobis nemo, enim, beatae ab odit quae repudiandae deserunt obcaecati iusto eveniet adipisci. Adipisci voluptatibus esse veniam omnis beatae ipsa.
-                                Voluptas soluta esse, amet, aspernatur tempore earum ipsam ipsum numquam quam quasi commodi placeat molestiae consequuntur dignissimos corrupti inventore tempora nobis consequatur praesentium eos cum! Sequi earum nam et iusto!
-                                Maiores perferendis sapiente eligendi. Aliquam qui nesciunt ea, exercitationem, debitis placeat harum vero assumenda numquam sequi quo velit. Voluptatum repellendus itaque temporibus voluptas est aut, maxime exercitationem magnam magni. Saepe.0
-                            </span></p>
-                            <p class="text-black font-bold mb-4 dark:text-white">Stok: <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Tersedia</span></p>
-    
-                            <div class="flex items-center space-x-3 p-2 mb-4 ">
-                                
-                                <div class="relative">
-                                    <img class="w-20 h-20 rounded-full" src="https://via.placeholder.com/64" alt="Profile Picture">
-                                </div>
-                                <div>
-                                    <div class="dark:text-white font-semibold text-base">Toko Asik</div>
-                                    <div class="text-xs dark:text-white ">Aktif 1 Jam Lalu</div>
-                                    <button class="flex items-center bg-gray-100 text-gray-600 px-1 rounded hover:bg-gray-200 mt-2 border-2">
-                                        <span class="store-icon mr-1"></span>
-                                        Kunjungi Toko
-                                    </button>
-                                </div>
-                                
+                        <p class="text-black font-bold mb-4 dark:text-white">Harga: <span class="font-normal">{{ number_format($product_detail->price, 0, ',', '.') }}</span></p>
+                        <p class="text-black font-bold mb-4 dark:text-white">Category: <span class="font-normal">{{ $product_detail->category }}</span></p>
+                        <p class="text-black font-bold mb-4 dark:text-white">Deskripsi: <span class="font-normal dark:text-white line-clamp-3 hover:line-clamp-none">{{ $product_detail->description }}</span></p>
+                        <p class="text-black font-bold mb-4 dark:text-white">Stok: 
+                            @if($product_detail->status == 'tersedia')
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Tersedia</span>
+                            @else
+                                <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Tidak Tersedia</span>
+                            @endif
+                        </p>
+        
+                        <div class="flex items-center space-x-3 p-2 mb-4 ">
+                            <div class="relative">
+                                <img class="w-20 h-20 rounded-full" src="{{ $product_detail->merchant->profile_image_url ?? 'https://via.placeholder.com/64' }}" alt="Profile Picture">
                             </div>
-    
+                            <div>
+                                <div class="dark:text-white font-semibold text-base">{{ $product_detail->merchant->name }}</div>
+                                <div class="text-xs dark:text-white">Aktif {{ $product_detail->merchant->last_active }}</div>
+                                <button class="flex items-center bg-gray-100 text-gray-600 px-1 rounded hover:bg-gray-200 mt-2 border-2">
+                                    <span class="store-icon mr-1"></span>
+                                    Kunjungi Toko
+                                </button>
+                            </div>
+                        </div>
+        
                         <div class="flex items-center mb-4">
                             <button class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition-colors duration-300 mr-2">Favourite</button>
                         </div>
                     </div>
                 </div>
+            
+        
     
                 <div class="m-3 mt-8">
                     <h2 class="text-xl font-bold pb-4 p-2 dark:text-white">3 Komentar</h2> <hr class="pb-4">
