@@ -77,4 +77,46 @@ class HomeController extends Controller
 
         return view('Pages.postingan')->with('products', $products);
     }
+
+    public function merchantGrids(Request $request)
+    {
+        $merchants = Merchant::query();
+
+        // // Filter by merchant type
+        // if ($request->filled('merchant')) {
+        //     $merchants = $request->input('merchant');
+        //     $merchants->whereHas('merchant', function ($query) use ($merchants) {
+        //         $query->whereIn('type', $merchants);
+        //     });
+        // }
+
+
+        // Search logic
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $merchants->where(function ($query) use ($search) {
+                $query->where('name', 'LIKE', '%' . $search . '%')
+                    ->orWhere('description', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner', 'LIKE', '%' . $search . '%')
+                    ->orWhere('address', 'LIKE', '%' . $search . '%');
+            });
+        }
+
+
+        // Sorting logic
+        if ($request->filled('sort')) {
+            $sort = $request->input('sort');
+            if ($sort == 'terbaru') {
+                $merchants->orderBy('id', 'desc');
+            } elseif ($sort == 'terlama') {
+                $merchants->orderBy('id', 'asc');
+            }
+        }
+
+        // Pagination
+        $show = $request->input('show', 10);
+        $merchants = $merchants->paginate($show);
+
+        return view('Pages.Merchant')->with('merchants', $merchants);
+    }
 }

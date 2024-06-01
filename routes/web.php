@@ -22,14 +22,12 @@ Route::post('/submit-form', [FormRegisterController::class, 'handleForm'])->name
 Route::get('/', [HomeController::class,'home'] )->name('home');
 Route::get('/postingan', [HomeController::class,'productGrids'])->name('post-product');
 Route::get('/postingan/detail/{slug}', [HomeController::class, 'productDetail'])->name('post-product-detail');
-
+Route::get('/merchant-list', [HomeController::class, 'merchantGrids'])->name('merch-list');
 
 Route::get('/admin', function () {
     return view('Admin.Index');
 })->name('adm-dashboard');
-Route::get('/merchant-list', function () {
-    return view('Pages.Merchant');
-})->name('merch-list');
+
 Route::get('/register', function () {
     return view('Auth.Register');
 })->name('register');
