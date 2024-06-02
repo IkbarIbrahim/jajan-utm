@@ -1,10 +1,13 @@
 <?php
 
-use App\Http\Controllers\Admin\MerchantController;
-use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\ChatController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FormRegisterController;
+
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\FormRegisterController;
+use App\Http\Controllers\Admin\MerchantController;
+use App\Http\Controllers\Admin\PostinganController;
 use App\Http\Controllers\Merchant\ProductController;
 
 /*
@@ -86,15 +89,13 @@ Route::prefix('admin')
         Route::prefix('products')
             ->name('products.')
             ->group(function () {
-                Route::get('/', function () {
-                    return view('Admin.Products.Index');
-                })->name('index');
+                Route::get('/', [PostinganController::class, 'index'])->name('index');
+                Route::get('/postingan-detail/{slug}', [HomeController::class, 'productDetail'])->name('post-product-detail');
+                Route::delete('/{product}', [PostinganController::class, 'destroy'])->name('destroy');
             });
         Route::prefix('global-chat')
             ->name('global-chat.')
             ->group(function () {
-                Route::get('/', function () {
-                    return view('Admin.Chat.Index');
-                })->name('index');
+                Route::get('/',[ChatController::class, 'index'] )->name('index');
             });
     });

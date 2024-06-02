@@ -14,7 +14,7 @@
 
 <body>
     <div class="bg-gray-200 dark:bg-gray-500">
-
+        @include('sweetalert::alert')
         @include('Merchant.Layouts.Sidebar')
 
         @yield('content')

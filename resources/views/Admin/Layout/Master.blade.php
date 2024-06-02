@@ -8,18 +8,21 @@
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
+    {{-- <link rel="stylesheet" href="assets/css/style.css"> --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
 </head>
 
 <body>
     <div class="bg-gray-200 dark:bg-gray-500">
+        @include('sweetalert::alert')
         @include('Admin.Layout.Sidebar')
         <button x-data="{}" @click="window.scrollTo({ top: 0, behavior: 'smooth' })" id="scroll-to-top" class="fixed bottom-10 right-10 z-50 rounded-full dark:bg-gray-100 w-12 h-12 hidden justify-center items-center shadow-md">
             <i class="fas fa-arrow-up text-3xl"></i>
         </button>
         @yield('content')
 
+        
     </div>
 
     <script>
@@ -65,15 +68,9 @@
             });
         });
 
-        function onToggleMenu(e) {
-            e.name = e.name === 'menu' ? 'close' : 'menu'
-        }
-        const collapse = new Collapse($targetEl, $triggerEl, options, instanceOptions);
-
-        $triggerEl.addEventListener('click', function() {
-            collapse.toggle();
-        });
+       
     </script>
+   
 
     <script src="https://unpkg.com/@popperjs/core@2"></script>
 </body>
