@@ -35,7 +35,7 @@
 
             // Initial theme check
             if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window
-                    .matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    .matchMedia('(prefers-color-scheme: ligth)').matches)) {
                 document.documentElement.classList.add('dark');
                 if (themeToggleLightIcon) themeToggleLightIcon.classList.remove('hidden');
                 if (themeToggleDarkIcon) themeToggleDarkIcon.classList.add('hidden');

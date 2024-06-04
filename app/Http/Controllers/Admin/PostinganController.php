@@ -13,9 +13,7 @@ class PostinganController extends Controller
 {
     public function index()
     {
-        $title = 'Delete User!';
-        $text = "Are you sure you want to delete?";
-        confirmDelete($title, $text);
+        
 
         
         $products = Product::when(request('search') ?? false, function ($query, $search) {
@@ -23,6 +21,7 @@ class PostinganController extends Controller
         })  ->withCount('comments')
             ->paginate(10)
             ->withQueryString();    
+        
             $totalProducts = Product::count();
 
         return view('Admin.Products.Index', [

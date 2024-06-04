@@ -10,16 +10,23 @@ class ChatController extends Controller
 {
     public function index()
     {
-        $chats = Chat::with('users')->when(request('search') ?? false, function ($query, $search) {
-            return $query->where('name', 'LIKE', "%$search%");
-        })  ->paginate(10)
-            ; 
+        $chats = Chat::with('user')
+            ->when(request('search'), function ($query, $search) {
+                return $query->where('body', 'LIKE', "%$search%");
+            })
+            ->paginate(10);
 
-            $totalchats = Chat::count();
+        $totalChats = Chat::count();
+
         return view('Admin.Chat.Index', [
             'chats' => $chats,
-            'totalchats' => $totalchats,
-
+            'totalChats' => $totalChats,
         ]);
+    }
+
+    public function destroy(Chat $chat)
+    {
+        
+        return redirect()->route('admin.global-chat.index');
     }
 }

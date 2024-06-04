@@ -97,12 +97,15 @@
                                                 class="font-medium text-blue-600 hover:underline dark:text-blue-500">Edit</a>
                                             |
                                             <form
+                                                id="deleteForm-{{ $merchant->id }}"
                                                 action="{{ route('admin.merchants.destroy', ['merchant' => $merchant->id]) }}"
                                                 method="POST" class="inline-block"
-                                                onsubmit="return confirm('Apakah Anda yakin ingin menghapus merchant?')">
+                                                onclick="confirmDelete({{ $merchant->id }})"
+                                                >
+                                                
                                                 @method('delete')
                                                 @csrf
-                                                <button type="submit"
+                                                <button type="button"
                                                     class="font-medium text-blue-600 hover:underline dark:text-blue-500">Hapus</button>
                                         </td>
                                     </tr>

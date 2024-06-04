@@ -52,18 +52,45 @@
                         <h1 class="text-2xl font-bold text-gray-800 mb-4 dark:text-white">{{ $product_detail->name }}</h1>
                         <div class="flex items-center mb-4">
                             @php
-                                $rating = round($product_detail->rating);
-                            @endphp
-                            @for($i = 1; $i <= 5; $i++)
-                                @if($i <= $rating)
-                                    <ion-icon name="star"></ion-icon>
-                                @elseif($i > $rating && $i - 1 < $rating)
-                                    <ion-icon name="star-half-outline"></ion-icon>
-                                @else
-                                    <ion-icon name="star-outline"></ion-icon>
-                                @endif
+                            $rating = $product_detail->rating; 
+                            $fullStars = floor($rating); 
+                            $halfStar = ($rating - $fullStars) >= 0.5 ? 1 : 0; 
+                            $emptyStars = 5 - ($fullStars + $halfStar); 
+                        @endphp
+                        <div class="flex gap-1 text-sm text-yellow-400">
+                            @for ($i = 0; $i < $fullStars; $i++)
+                            <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor"
+                            viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
                             @endfor
-                            <span class="text-gray-500 ms-4 dark:text-white">({{ $product_detail->reviews_count }} reviews)</span>
+                            @if ($halfStar)
+                            <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <clipPath id="half">
+                                        <rect x="0" y="0" width="10" height="20" />
+                                    </clipPath>
+                                </defs>
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                    fill="currentColor"
+                                    clip-path="url(#half)"/>
+                                <path fill='none'  stroke="currentColor" stroke-width="1" 
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            
+                            @endif
+                            @for ($i = 0; $i < $emptyStars; $i++)
+                            <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" stroke-width="1" 
+                            viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            @endfor
+                        </div>
+                        <span class="ml-1 text-gray-500 dark:text-gray-400">{{$product_detail->rating}}</span>
+                            <span class="text-gray-500 ms-4 dark:text-white">({{$product_detail['getReview']->count()}} reviews)</span>
                         </div>
                         <p class="text-black font-bold mb-4 dark:text-white">Harga: <span class="font-normal">{{ number_format($product_detail->price, 0, ',', '.') }}</span></p>
                         <p class="text-black font-bold mb-4 dark:text-white">Category: <span class="font-normal">{{ $product_detail->category }}</span></p>
@@ -99,64 +126,29 @@
         
     
                 <div class="m-3 mt-8">
-                    <h2 class="text-xl font-bold pb-4 p-2 dark:text-white">3 Komentar</h2> <hr class="pb-4">
+                    <h2 class="text-xl font-bold pb-4 p-2 dark:text-white">{{$product_detail['getReview']->count()}} Komentar</h2> <hr class="pb-4">
+                    @foreach($product_detail['getReview'] as $data)
                     <div class="space-y-6">
                         <div class="flex">
                             <div class="flex-shrink-0 mr-4">
                                 <img class="w-10 h-10 rounded-full" src="https://via.placeholder.com/40x40" alt="Avatar">
                             </div>
                             <div>
-                                <h3 class="font-bold dark:text-white">Pengguna 1</h3>
-                                <p class="text-gray-600 mb-2 dark:text-white">Produk ini sangat bagus, saya sangat puas dengan kualitasnya.</p>
+                                <h3 class="font-bold dark:text-white">{{$data->user_info['email']}}</h3>
+                                <p class="text-gray-600 mb-2 dark:text-white">{{$data->body}}</p>
                                 <div class="flex items-center text-gray-500 text-sm">
                                     <svg class="w-4 h-4 mr-1 fill-white"  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M8 2a1 1 0 000 2h2a1 1 0 100-2H8z"></path>
                                         <path d="M3 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6h-4.586l1.293 1.293a1 1 0 01-1.414 1.414L9 10.414V17a1 1 0 01-2 0v-6.586l-1.293 1.293a1 1 0 01-1.414-1.414L6.586 9H3V5z"></path>
                                     </svg>
-                                    <span class="dark:text-white">1 jam yang lalu</span>
+                                    <span class="dark:text-white">{{$data->created_at->format('g: i a')}} On {{$data->created_at->format('M d Y')}}</span>
                                 </div>
                             </div>
                         </div>
                         
                     </div>
-                    <div class="space-y-6">
-                        <div class="flex">
-                            <div class="flex-shrink-0 mr-4">
-                                <img class="w-10 h-10 rounded-full" src="https://via.placeholder.com/40x40" alt="Avatar">
-                            </div>
-                            <div>
-                                <h3 class="font-bold dark:text-white">Pengguna 1</h3>
-                                <p class="text-gray-600 mb-2 dark:text-white">Produk ini sangat bagus, saya sangat puas dengan kualitasnya.</p>
-                                <div class="flex items-center text-gray-500 text-sm">
-                                    <svg class="w-4 h-4 mr-1 fill-white"  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8 2a1 1 0 000 2h2a1 1 0 100-2H8z"></path>
-                                        <path d="M3 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6h-4.586l1.293 1.293a1 1 0 01-1.414 1.414L9 10.414V17a1 1 0 01-2 0v-6.586l-1.293 1.293a1 1 0 01-1.414-1.414L6.586 9H3V5z"></path>
-                                    </svg>
-                                    <span class="dark:text-white">1 jam yang lalu</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="space-y-6">
-                        <div class="flex">
-                            <div class="flex-shrink-0 mr-4">
-                                <img class="w-10 h-10 rounded-full" src="https://via.placeholder.com/40x40" alt="Avatar">
-                            </div>
-                            <div>
-                                <h3 class="font-bold dark:text-white">Pengguna 1</h3>
-                                <p class="text-gray-600 mb-2 dark:text-white">Produk ini sangat bagus, saya sangat puas dengan kualitasnya.</p>
-                                <div class="flex items-center text-gray-500 text-sm">
-                                    <svg class="w-4 h-4 mr-1 fill-white"  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8 2a1 1 0 000 2h2a1 1 0 100-2H8z"></path>
-                                        <path d="M3 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6h-4.586l1.293 1.293a1 1 0 01-1.414 1.414L9 10.414V17a1 1 0 01-2 0v-6.586l-1.293 1.293a1 1 0 01-1.414-1.414L6.586 9H3V5z"></path>
-                                    </svg>
-                                    <span class="dark:text-white">1 jam yang lalu</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
+                    @endforeach
+                  
                 </div>
                 
                 <form>

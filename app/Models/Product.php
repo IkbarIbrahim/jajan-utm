@@ -45,8 +45,16 @@ class Product extends Model
     {
         return $this->belongsTo(Merchant::class);
     }
+    public function getReview(){
+        return $this->hasMany(Comment::class,'product_id','id')->with('user_info')->orderBy('id','DESC')->limit(3);
+    }
     public static function getProductBySlug($slug)
     {
-        return self::where('id', $slug)->with('merchant')->first();
+        return self::where('id', $slug)->with(['merchant','getReview'])->first();
     }
+    public function getAverageRatingAttribute()
+    {
+        return $this->comments()->avg('rating');
+    }
+    
 }

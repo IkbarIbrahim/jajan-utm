@@ -403,14 +403,14 @@
                                     @endfor
                                 </div>
                                 <span class="ml-1 text-gray-500 dark:text-gray-400">{{$product->rating}}</span>
-                                <div class="text-xs text-gray-500 ml-3">(150)</div>
+                                <div class="text-xs text-gray-500 ml-3">{{$product['getReview']->count()}}</div>
                             </div>
                         </div>
                     </div>
                     @endforeach
                     @else
                     <h4 class="text-lg w-full text-center">There are no products.</h4>
-                    @endif
+            @endif
                     
         
 

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->text('body');
+            $table->float('rating');
             $table->timestamp('created_at');
             $table->foreignId('user_id')->constrained();
             $table->foreignId('product_id')->constrained();

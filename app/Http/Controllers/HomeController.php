@@ -24,7 +24,16 @@ class HomeController extends Controller
         if (!$product_detail) {
             abort(404, 'Product not found');
         }
-        return view('Pages.Postingan-desc')->with('product_detail', $product_detail);
+        $averageRating = $product_detail->average_rating;
+        return view('Pages.Postingan-desc')->with('product_detail', $product_detail)->with('averageRating', $averageRating);
+    }
+    public function merchantDetail($slug)
+    {
+        $merchant_detail = Merchant::getMerchantBySlug($slug);
+        if (!$merchant_detail) {
+            abort(404, 'merchant not found');
+        }
+        return view('Pages.Merchant-desc')->with('merchant_detail', $merchant_detail);
     }
 
     public function productGrids(Request $request)

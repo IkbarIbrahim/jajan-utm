@@ -23,9 +23,7 @@
             </nav>
             <h2 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-4xl">
                 Daftar Postingan Produk</h2>
-            {{-- <div class="block rounded-lg border border-gray-200 bg-white p-6 shadow dark:border-gray-700 dark:bg-gray-800">
-            
-            </div> --}}
+     
 
             <div class="px-2 mx-auto max-w-screen-2xl lg:px-2">
                 <div class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
@@ -89,126 +87,122 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($products as $product)
-                                <tr class="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
-                                    <td class="w-4 px-4 py-3">
-                                        <div class="flex items-center">
-                                            <input id="checkbox-table-search-1" type="checkbox"
-                                                onclick="event.stopPropagation()"
-                                                class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                            <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
-                                        </div>
-                                    </td>
-                                    <th scope="row"
-                                        class="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        <img src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
-                                            alt="iMac Front Image" class="w-auto h-8 mr-3">
-                                        {{ $product->name }}
-                                    </th>
-                                    <td class="px-4 py-2">
-                                        <span
-                                            class="bg-primary-100 text-primary-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-primary-900 dark:text-primary-300">{{ $product->category }}</span>
-                                    </td>
-                                    <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        <div class="flex items-center">
-                                            @if ($product->status == 'tersedia')
-                                            <div class="inline-block w-4 h-4 mr-2 bg-green-700 rounded-full"></div>
-                                            @else
-                                            <div class="inline-block w-4 h-4 mr-2 bg-red-700 rounded-full"></div>
-                                            @endif
-                                            {{ $product->status }}
-                                        </div>
-                                    </td>
+                                @foreach ($products as $product)
+                                    <tr class="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                        <td class="w-4 px-4 py-3">
+                                            <div class="flex items-center">
+                                                <input id="checkbox-table-search-1" type="checkbox"
+                                                    onclick="event.stopPropagation()"
+                                                    class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
+                                            </div>
+                                        </td>
+                                        <th scope="row"
+                                            class="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            <img src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                                                alt="iMac Front Image" class="w-auto h-8 mr-3">
+                                            {{ $product->name }}
+                                        </th>
+                                        <td class="px-4 py-2">
+                                            <span
+                                                class="bg-primary-100 text-primary-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-primary-900 dark:text-primary-300">{{ $product->category }}</span>
+                                        </td>
+                                        <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            <div class="flex items-center">
+                                                @if ($product->status == 'tersedia')
+                                                    <div class="inline-block w-4 h-4 mr-2 bg-green-700 rounded-full"></div>
+                                                @else
+                                                    <div class="inline-block w-4 h-4 mr-2 bg-red-700 rounded-full"></div>
+                                                @endif
+                                                {{ $product->status }}
+                                            </div>
+                                        </td>
 
-                                    <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        @php
-                                        $rating = $product->rating; 
-                                        $fullStars = floor($rating); 
-                                        $halfStar = ($rating - $fullStars) >= 0.5 ? 1 : 0; 
-                                        $emptyStars = 5 - ($fullStars + $halfStar); 
-                                        @endphp
-                                        <div class="flex items-center">
-                                            @for ($i = 0; $i < $fullStars; $i++)
-                                            <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor"
-                                            viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                            @endfor
-                                            @if ($halfStar)
-                                            <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                <defs>
-                                                    <clipPath id="half">
-                                                        <rect x="0" y="0" width="10" height="20" />
-                                                    </clipPath>
-                                                </defs>
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    fill="currentColor"
-                                                    clip-path="url(#half)"/>
-                                                <path fill='none'  stroke="currentColor" stroke-width="1" 
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                            </svg>
-                                            
-                                            @endif
-                                            @for ($i = 0; $i < $emptyStars; $i++)
-                                            <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" stroke-width="1" 
-                                            viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                            @endfor
-                                            <span class="ml-1 text-gray-500 dark:text-gray-400">{{$product->rating}}</span>
-                                        </div>
-                                    </td>
-                                    <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        <div class="flex items-center">
-                                            {{$product->comments_count}}
-                                        </div>
-                                    </td>
-                                    <td class="px-4 py-2">Rp {{ number_format($product->price, 0, ',', '.') }}</td>
-                                    <td class=" py-3 flex items-start justify-start ps-3">
-                                        <button id="{{ $product->name }}-dropdown-button"
-                                            data-dropdown-toggle="{{ $product->name }}-dropdown"
-                                            class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100"
-                                            type="button">
-                                            <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
-                                                viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
-                                            </svg>
-                                        </button>
-                                        <div id="{{ $product->name }}-dropdown"
-                                            class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
-                                                aria-labelledby="{{ $product->name }}-dropdown-button">
-                                                <li>
-                                                    <a href="{{route('post-product-detail',$product->id)}}"
-                                                        class=" block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Show</a>
-                                                </li>
+                                        <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            @php
+                                                $rating = $product->rating;
+                                                $fullStars = floor($rating);
+                                                $halfStar = $rating - $fullStars >= 0.5 ? 1 : 0;
+                                                $emptyStars = 5 - ($fullStars + $halfStar);
+                                            @endphp
+                                            <div class="flex items-center">
+                                                @for ($i = 0; $i < $fullStars; $i++)
+                                                    <svg aria-hidden="true" class="w-5 h-5 text-yellow-400"
+                                                        fill="currentColor" viewbox="0 0 20 20"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                    </svg>
+                                                @endfor
+                                                @if ($halfStar)
+                                                    <svg aria-hidden="true" class="w-5 h-5 text-yellow-400"
+                                                        fill="currentColor" viewbox="0 0 20 20"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <defs>
+                                                            <clipPath id="half">
+                                                                <rect x="0" y="0" width="10" height="20" />
+                                                            </clipPath>
+                                                        </defs>
+                                                        <path
+                                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                            fill="currentColor" clip-path="url(#half)" />
+                                                        <path fill='none' stroke="currentColor" stroke-width="1"
+                                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                    </svg>
+                                                @endif
+                                                @for ($i = 0; $i < $emptyStars; $i++)
+                                                    <svg aria-hidden="true" class="w-5 h-5 text-yellow-400"
+                                                        fill="none" stroke="currentColor" stroke-width="1"
+                                                        viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                    </svg>
+                                                @endfor
+                                                <span
+                                                    class="ml-1 text-gray-500 dark:text-gray-400">{{ $product->rating }}</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            <div class="flex items-center">
+                                                {{ $product->comments_count }}
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-2">Rp {{ number_format($product->price, 0, ',', '.') }}</td>
+                                        <td class=" py-3 flex items-start justify-start ps-3">
+                                            <button id="{{ $product->name }}-dropdown-button"
+                                                data-dropdown-toggle="{{ $product->name }}-dropdown"
+                                                class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100"
+                                                type="button">
+                                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
+                                                    viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                                                </svg>
+                                            </button>
+                                            <div id="{{ $product->name }}-dropdown"
+                                                class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                                                <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
+                                                    aria-labelledby="{{ $product->name }}-dropdown-button">
+                                                    <li>
+                                                        <a href="{{ route('post-product-detail', $product->id) }}"
+                                                            class=" block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Show</a>
+                                                    </li>
 
-                                            </ul>
-                                            <div class="py-1" x-data>
-                                                
-                                                <form
-                                                action="{{ route('admin.products.destroy', ['product' => $product->id]) }}"
-                                                method="POST" class="inline-block"
-                                                {{-- onsubmit="return confirm('Apakah Anda yakin ingin menghapus product?') --}}
-                                                ">
-                                                @method('delete')
-                                                @csrf
-                                                <button type="submit" data-confirm-delete="true"
-                                                    class="w-full text-center mx-auto py-2 ps-4 pe-28 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                                                        Delete
-                                                    </button>
-    
+                                                </ul>
+                                                <div class="py-1" x-data>
+                                                    <form id="deleteForm-{{ $product->id }}" action="{{ route('admin.products.destroy', ['product' => $product->id]) }}" method="POST" class="inline-block">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button type="button" onclick="confirmDelete({{ $product->id }})" class="w-full text-center mx-auto py-2 ps-4 pe-28 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                                                            Delete
+                                                        </button>
+                                                    </form>
                                                 </div>
-                                            </form>
-                                            
-                                        </div>
-                                    </td>
-                                </tr>
-                                @endforeach
+                                                
+                                            </div>
+                                        </td>
+                                    </tr>
+                             @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -217,7 +211,7 @@
                     </div>
                 </div>
             </div>
-                                    
+
         </div>
     </div>
 

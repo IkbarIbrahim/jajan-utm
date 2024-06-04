@@ -37,4 +37,8 @@ class Merchant extends Model
     {
         return $this->hasMany(Product::class);
     }
+    public static function getMerchantBySlug($slug)
+    {
+        return self::where('id', $slug)->first();
+    }
 }

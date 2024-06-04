@@ -19,7 +19,9 @@ class Chat extends Model
         'user_id' => 'integer',
     ];
 
-    public function users(): BelongsTo
+    protected $fillable = ['body', 'created_at', 'user_id'];
+
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }

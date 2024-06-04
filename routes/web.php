@@ -26,6 +26,7 @@ Route::get('/', [HomeController::class,'home'] )->name('home');
 Route::get('/postingan', [HomeController::class,'productGrids'])->name('post-product');
 Route::get('/postingan/detail/{slug}', [HomeController::class, 'productDetail'])->name('post-product-detail');
 Route::get('/merchant-list', [HomeController::class, 'merchantGrids'])->name('merch-list');
+Route::get('/merchant/detail/{slug}', [HomeController::class, 'merchantDetail'])->name('merch-info');
 
 Route::get('/admin', function () {
     return view('Admin.Index');
@@ -52,6 +53,9 @@ Route::prefix('merchant')
         Route::get('/', function () {
             return view('Merchant.Index');
         })->name('index');
+        Route::get('/preview', function () {
+            return view('Merchant.Pages.Preview-toko');
+        })->name('preview');
 
         Route::prefix('products')
             ->name('products.')
@@ -95,6 +99,12 @@ Route::prefix('admin')
             });
         Route::prefix('global-chat')
             ->name('global-chat.')
+            ->group(function () {
+                Route::get('/',[ChatController::class, 'index'] )->name('index');
+                Route::delete('/{chat}', [ChatController::class, 'destroy'])->name('destroy');
+            });
+        Route::prefix('komentar')
+            ->name('komentar.')
             ->group(function () {
                 Route::get('/',[ChatController::class, 'index'] )->name('index');
             });
