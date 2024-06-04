@@ -26,7 +26,7 @@ class ChatController extends Controller
 
     public function destroy(Chat $chat)
     {
-        
+        $chat->delete();
         return redirect()->route('admin.global-chat.index');
     }
 }

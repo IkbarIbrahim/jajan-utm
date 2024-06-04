@@ -9,7 +9,7 @@
 
                 <div class="container  mx-auto">
 
-                    <div class="mx-6 flex flex-wrap items-center">
+                    <div class="mx-6 lg:mx-20 flex flex-wrap items-center">
                         <div class="w-full px-4 lg:w-5/12">
                             <div class="hero-content ">
                                 <h1
