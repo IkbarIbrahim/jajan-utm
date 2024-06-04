@@ -403,7 +403,7 @@
                                     @endfor
                                 </div>
                                 <span class="ml-1 text-gray-500 dark:text-gray-400">{{$product->rating}}</span>
-                                <div class="text-xs text-gray-500 ml-3">{{$product['getReview']->count()}}</div>
+                                <div class="text-xs text-gray-500 ml-3">{{$product['getReview']->count()}} Review</div>
                             </div>
                         </div>
                     </div>

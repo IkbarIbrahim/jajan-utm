@@ -82,13 +82,13 @@
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
             }).then((result) => {
-            document.getElementById(`deleteForm-${Id}`).submit();
             if (result.isConfirmed) {
                 Swal.fire({
                 title: "Deleted!",
                 text: "Your file has been deleted.",
                 icon: "success"
                 });
+                document.getElementById(`deleteForm-${Id}`).submit();
             }
             });
         }

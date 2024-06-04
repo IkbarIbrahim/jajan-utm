@@ -83,7 +83,7 @@
                     <div class="relative">
                         <img  src="https://via.placeholder.com/300"  :class="layout === 'grid' ? ' w-full rounded-lg mb-4' :'max-w-32 h-32 lg:h-28 lg:w-28 w-32 rounded-lg '">
                         <div :class=" layout === 'grid' ? 'absolute bottom-0 right-0 mb-2 mr-2 w-10 h-10' : 'absolute bottom-0 right-0 mb-2 mr-2 w-12 h-12 lg:block hidden'">
-                            <img src="https://via.placeholder.com/100" alt="Profile Image" class="rounded-full border-2 border-white shadow-md ">
+                            <img src="https://via.placeholder.com/100"  class="rounded-full border-2 border-white shadow-md ">
                         </div>
                     </div>
                     <div :class="layout === 'list' ? 'ml-4' : ''">

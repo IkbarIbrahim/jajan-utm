@@ -193,7 +193,7 @@
                                                     <form id="deleteForm-{{ $product->id }}" action="{{ route('admin.products.destroy', ['product' => $product->id]) }}" method="POST" class="inline-block">
                                                         @method('delete')
                                                         @csrf
-                                                        <button type="button" onclick="confirmDelete({{ $product->id }})" class="w-full text-center mx-auto py-2 ps-4 pe-28 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                                                        <button type="button" onclick="return confirmDelete({{ $product->id }})" class="w-full text-center mx-auto py-2 ps-4 pe-28 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                                                             Delete
                                                         </button>
                                                     </form>

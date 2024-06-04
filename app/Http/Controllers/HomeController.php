@@ -91,13 +91,6 @@ class HomeController extends Controller
     {
         $merchants = Merchant::query();
 
-        // // Filter by merchant type
-        // if ($request->filled('merchant')) {
-        //     $merchants = $request->input('merchant');
-        //     $merchants->whereHas('merchant', function ($query) use ($merchants) {
-        //         $query->whereIn('type', $merchants);
-        //     });
-        // }
 
 
         // Search logic

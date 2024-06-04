@@ -87,9 +87,9 @@ class PostinganController extends Controller
     public function destroy(Product $product)
     {
 
-        // $product->comments()->delete();
-        // $product->favorites()->delete();
-        // $product->delete();
+        $product->comments()->delete();
+        $product->favorites()->delete();
+        $product->delete();
         
         return redirect()->route('admin.products.index')->with('success', 'Product has been deleted successfully.');
     }
