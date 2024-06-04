@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/img/logos/main-logo.png" type="image/png"/>
     <title>@yield('title')</title>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -106,6 +107,21 @@
                 }
             }
         }
+
+        function updateUrlParameters(event) {
+                event.preventDefault();
+                const form = event.target;
+                const formData = new FormData(form);
+                const params = new URLSearchParams(formData);
+
+                for (let pair of params.entries()) {
+                    if (!pair[1]) {
+                        params.delete(pair[0]);
+                    }
+                }
+
+                window.location.search = params.toString();
+            }
     </script>
 
     <script src="https://unpkg.com/@popperjs/core@2"></script>

@@ -68,7 +68,7 @@
                 </button>
            
                 <div class="divide-y divide-gray-200 space-y-5">
-                    <form id="filter-form" method="GET" action="{{ url()->current() }}">
+                    <form id="filter-form" method="GET" action="{{ url()->current() }}"  onsubmit="updateUrlParameters(event)">
                         <div class="divide-y divide-gray-200 space-y-5">
                             <!-- Filter Kategori -->
                             <div>
@@ -173,27 +173,27 @@
                                 </div>
                             </div>
                         </div>
+                    
                     </form>
-
                 </div>
             </div>
 
             <!-- ./sidebar -->
             <div class="col-span-1 bg-white dark:bg-gray-700 px-4 pb-6 shadow rounded overflow-hiddenb hidden md:block">
                 <div class="divide-y divide-gray-200 space-y-5">
-                    <form id="filter-form" method="GET" action="{{ url()->current() }}">
+                    <form id="filter-form-desktop" method="GET" action="{{ url()->current() }}" onsubmit="updateUrlParameters(event)">
                         <div class="divide-y divide-gray-200 space-y-5">
                             <!-- Filter Kategori -->
                             <div>
                                 <h3 class="text-xl dark:text-white my-3 uppercase font-medium">Categories</h3>
                                 <div class="space-y-2">
                                     <div class="flex items-center">
-                                        <input type="checkbox" name="category[]" value="makanan" id="cat-1" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('makanan', request('category', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
+                                        <input type="checkbox" name="category[]" value="makanan" id="cat-1" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('makanan', request('category', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="cat-1" class="dark:text-white ml-3 cursor-pointer">Makanan</label>
                                         <div class="ml-auto dark:text-white text-sm">(15)</div>
                                     </div>
                                     <div class="flex items-center">
-                                        <input type="checkbox" name="category[]" value="minuman" id="cat-2" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('minuman', request('category', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
+                                        <input type="checkbox" name="category[]" value="minuman" id="cat-2" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('minuman', request('category', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="cat-2" class="dark:text-white ml-3 cursor-pointer">Minuman</label>
                                         <div class="ml-auto dark:text-white text-sm">(9)</div>
                                     </div>
@@ -205,27 +205,27 @@
                                 <h3 class="text-xl dark:text-white mb-3 uppercase font-medium">Merchant</h3>
                                 <div class="space-y-2">
                                     <div class="flex items-center">
-                                        <input type="checkbox" name="merchant[]" value="cafe" id="brand-1" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('cafe', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
+                                        <input type="checkbox" name="merchant[]" value="cafe" id="brand-1" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('cafe', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="brand-1" class="dark:text-white ml-3 cursor-pointer">Cafe</label>
                                         <div class="ml-auto dark:text-white text-sm">(15)</div>
                                     </div>
                                     <div class="flex items-center">
-                                        <input type="checkbox" name="merchant[]" value="lapak_mahasiswa" id="brand-2" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('lapak_mahasiswa', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
+                                        <input type="checkbox" name="merchant[]" value="lapak_mahasiswa" id="brand-2" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('lapak_mahasiswa', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="brand-2" class="dark:text-white ml-3 cursor-pointer">Lapak Mahasiswa</label>
                                         <div class="ml-auto dark:text-white text-sm">(9)</div>
                                     </div>
                                     <div class="flex items-center">
-                                        <input type="checkbox" name="merchant[]" value="pedagang_keliling" id="brand-3" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('pedagang_keliling', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
+                                        <input type="checkbox" name="merchant[]" value="pedagang_keliling" id="brand-3" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('pedagang_keliling', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="brand-3" class="dark:text-white ml-3 cursor-pointer">Pedagang Keliling</label>
                                         <div class="ml-auto dark:text-white text-sm">(21)</div>
                                     </div>
                                     <div class="flex items-center">
-                                        <input type="checkbox" name="merchant[]" value="umkm" id="brand-4" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('umkm', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
+                                        <input type="checkbox" name="merchant[]" value="umkm" id="brand-4" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('umkm', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="brand-4" class="dark:text-white ml-3 cursor-pointer">UMKM</label>
                                         <div class="ml-auto dark:text-white text-sm">(10)</div>
                                     </div>
                                     <div class="flex items-center">
-                                        <input type="checkbox" name="merchant[]" value="warung_makan" id="brand-5" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('warung_makan', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
+                                        <input type="checkbox" name="merchant[]" value="warung_makan" id="brand-5" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('warung_makan', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="brand-5" class="dark:text-white ml-3 cursor-pointer">Warung Makan</label>
                                         <div class="ml-auto dark:text-white text-sm">(10)</div>
                                     </div>
@@ -236,9 +236,9 @@
                             <div class="pt-4">
                                 <h3 class="text-xl dark:text-white mb-3 uppercase font-medium">Harga</h3>
                                 <div class="mt-4 flex items-center">
-                                    <input type="text" name="min" id="min" value="{{ request('min') }}" class="w-full border-gray-300 focus:border-primary rounded focus:ring-0 px-3 py-1 text-gray-600 shadow-sm" placeholder="min" onchange="document.getElementById('filter-form').submit();">
+                                    <input type="text" name="min" id="min" value="{{ request('min') }}" class="w-full border-gray-300 focus:border-primary rounded focus:ring-0 px-3 py-1 text-gray-600 shadow-sm" placeholder="min" onchange="document.getElementById('filter-form-desktop').submit();">
                                     <span class="mx-3 text-gray-500">-</span>
-                                    <input type="text" name="max" id="max" value="{{ request('max') }}" class="w-full border-gray-300 focus:border-primary rounded focus:ring-0 px-3 py-1 text-gray-600 shadow-sm" placeholder="max" onchange="document.getElementById('filter-form').submit();">
+                                    <input type="text" name="max" id="max" value="{{ request('max') }}" class="w-full border-gray-300 focus:border-primary rounded focus:ring-0 px-3 py-1 text-gray-600 shadow-sm" placeholder="max" onchange="document.getElementById('filter-form-desktop').submit();">
                                 </div>
                             </div>
                 
@@ -247,23 +247,23 @@
                                 <h3 class="text-xl dark:text-white mb-3 uppercase font-medium">Rating</h3>
                                 <div class="flex items-center gap-2">
                                     <div class="size-selector">
-                                        <input type="radio" name="rating" value="1" id="size-xs" class="hidden" {{ request('rating') == '1' ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
+                                        <input type="radio" name="rating" value="1" id="size-xs" class="hidden" {{ request('rating') == '1' ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="size-xs" class="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm dark:text-white">1</label>
                                     </div>
                                     <div class="size-selector">
-                                        <input type="radio" name="rating" value="2" id="size-sm" class="hidden" {{ request('rating') == '2' ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
+                                        <input type="radio" name="rating" value="2" id="size-sm" class="hidden" {{ request('rating') == '2' ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="size-sm" class="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm dark:text-white">2</label>
                                     </div>
                                     <div class="size-selector">
-                                        <input type="radio" name="rating" value="3" id="size-m" class="hidden" {{ request('rating') == '3' ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
+                                        <input type="radio" name="rating" value="3" id="size-m" class="hidden" {{ request('rating') == '3' ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="size-m" class="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm dark:text-white">3</label>
                                     </div>
                                     <div class="size-selector">
-                                        <input type="radio" name="rating" value="4" id="size-l" class="hidden" {{ request('rating') == '4' ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
+                                        <input type="radio" name="rating" value="4" id="size-l" class="hidden" {{ request('rating') == '4' ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="size-l" class="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm dark:text-white">4</label>
                                     </div>
                                     <div class="size-selector">
-                                        <input type="radio" name="rating" value="5" id="size-xl" class="hidden" {{ request('rating') == '5' ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
+                                        <input type="radio" name="rating" value="5" id="size-xl" class="hidden" {{ request('rating') == '5' ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="size-xl" class="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm dark:text-white">5</label>
                                     </div>
                                 </div>
@@ -274,12 +274,12 @@
                                 <h3 class="text-xl dark:text-white mb-3 uppercase font-medium">Ketersediaan</h3>
                                 <div class="space-y-2">
                                     <div class="flex items-center">
-                                        <input type="checkbox" name="availability[]" value="tersedia" id="tersedia" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('tersedia', request('availability', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
+                                        <input type="checkbox" name="availability[]" value="tersedia" id="tersedia" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('tersedia', request('availability', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="tersedia" class="dark:text-white ml-3 cursor-pointer">Tersedia</label>
                                         <div class="ml-auto dark:text-white text-sm">(15)</div>
                                     </div>
                                     <div class="flex items-center">
-                                        <input type="checkbox" name="availability[]" value="habis" id="habis" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('habis', request('availability', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
+                                        <input type="checkbox" name="availability[]" value="habis" id="habis" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('habis', request('availability', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="habis" class="dark:text-white ml-3 cursor-pointer">Habis</label>
                                         <div class="ml-auto dark:text-white text-sm">(9)</div>
                                     </div>

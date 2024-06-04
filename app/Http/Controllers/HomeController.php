@@ -33,8 +33,11 @@ class HomeController extends Controller
         if (!$merchant_detail) {
             abort(404, 'merchant not found');
         }
-        return view('Pages.Merchant-desc')->with('merchant_detail', $merchant_detail);
+        
+        $products_paginate = Product::where('merchant_id', $merchant_detail->id)->paginate(5);
+        return view('Pages.Merchant-desc')->with('merchant_detail', $merchant_detail)->with('products_paginate', $products_paginate);
     }
+    
 
     public function productGrids(Request $request)
     {

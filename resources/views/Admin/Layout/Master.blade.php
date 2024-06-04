@@ -4,14 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ asset('assets/img/logos/main-logo.png') }}" type="image/png" />
     <title>@yield('title')</title>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     {{-- <link rel="stylesheet" href="assets/css/style.css"> --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
 </head>
+
 
 <body>
     <div class="bg-gray-200 dark:bg-gray-500">
@@ -78,8 +79,8 @@
             text: "You won't be able to revert this!",
             icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
+            confirmButtonColor: "rgb(29 78 216)",
+            cancelButtonColor: "rgb(185 28 28)",
             confirmButtonText: "Yes, delete it!"
             }).then((result) => {
             if (result.isConfirmed) {
