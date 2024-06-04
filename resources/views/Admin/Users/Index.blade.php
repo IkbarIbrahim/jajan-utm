@@ -15,8 +15,7 @@
                     <li aria-current="page">
                         <div class="flex items-center">
                             <i class="mx-1 w-3 text-gray-400 rtl:rotate-180">|</i>
-                            <span class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400 md:ms-2">Daftar
-                                User</span>
+                            <span class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400 md:ms-2">Daftar User</span>
                         </div>
                     </li>
                 </ol>
@@ -52,6 +51,9 @@
                                     Nama
                                 </th>
                                 <th scope="col" class="px-6 py-3">
+                                    Email
+                                </th>
+                                <th scope="col" class="px-6 py-3">
                                     Aksi
                                 </th>
                             </tr>
@@ -66,6 +68,10 @@
                                         <th scope="row"
                                             class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">
                                             {{ $user->first_name }} {{ $user->last_name }}
+                                        </th>
+                                        <th scope="row"
+                                            class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">
+                                            {{ $user->email }} 
                                         </th>
                                         <td class="px-6 py-4">
                                             <a href="{{ route('admin.users.edit', ['user' => $user->id]) }}"
@@ -90,6 +96,10 @@
                                         <th scope="row"
                                             class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">
                                             {{ $user->first_name }} {{ $user->last_name }}
+                                        </th>
+                                        <th scope="row"
+                                            class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">
+                                            {{ $user->email }} 
                                         </th>
                                         <td class="px-6 py-4">
                                             <a href="{{ route('admin.users.edit', ['user' => $user->id]) }}"

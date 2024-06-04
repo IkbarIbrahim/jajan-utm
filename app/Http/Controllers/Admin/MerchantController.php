@@ -54,7 +54,7 @@ class MerchantController extends Controller
         Comment::destroy($products->pluck('id'));
         $products->delete();
         $merchant->delete();
-
+        
         return redirect()->route('admin.merchants.index');
     }
 }

@@ -49,7 +49,10 @@
                                     No
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Nama
+                                    Nama Merchant
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Owner
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     Aksi
@@ -66,6 +69,10 @@
                                         <th scope="row"
                                             class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">
                                             {{ $merchant->name }}
+                                        </th>
+                                        <th scope="row"
+                                            class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">
+                                            {{ $merchant->owner }}
                                         </th>
                                         <td class="px-6 py-4">
                                             <a href="{{ route('admin.merchants.edit', ['merchant' => $merchant->id]) }}"
@@ -92,17 +99,24 @@
                                             class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">
                                             {{ $merchant->name }}
                                         </th>
+                                        <th scope="row"
+                                            class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">
+                                            {{ $merchant->owner }}
+                                        </th>
                                         <td class="px-6 py-4">
                                             <a href="{{ route('admin.merchants.edit', ['merchant' => $merchant->id]) }}"
                                                 class="font-medium text-blue-600 hover:underline dark:text-blue-500">Edit</a>
                                             |
                                             <form
+                                                id="deleteForm-{{ $merchant->id }}"
                                                 action="{{ route('admin.merchants.destroy', ['merchant' => $merchant->id]) }}"
                                                 method="POST" class="inline-block"
-                                                onsubmit="return confirm('Apakah Anda yakin ingin menghapus merchant?')">
+                                                onclick="return confirmDelete({{ $merchant->id }})"
+                                                >
+                                                
                                                 @method('delete')
                                                 @csrf
-                                                <button type="submit"
+                                                <button type="button"
                                                     class="font-medium text-blue-600 hover:underline dark:text-blue-500">Hapus</button>
                                         </td>
                                     </tr>

@@ -276,7 +276,7 @@
             </div>
         </section>
 
-        <section class="relative z-10 overflow-hidden bg-white dark:bg-gray-700 py-20 lg:py-[110px]">
+        <section class="relative z-10 overflow-hidden bg-white dark:bg-gray-700 py-20 lg:py-[110px] mb-8">
             <div class="container mx-auto">
                 <div class="relative overflow-hidden">
                     <div class="-mx-4 flex flex-wrap items-stretch">

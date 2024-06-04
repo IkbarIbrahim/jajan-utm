@@ -24,7 +24,16 @@ class HomeController extends Controller
         if (!$product_detail) {
             abort(404, 'Product not found');
         }
-        return view('Pages.Postingan-desc')->with('product_detail', $product_detail);
+        $averageRating = $product_detail->average_rating;
+        return view('Pages.Postingan-desc')->with('product_detail', $product_detail)->with('averageRating', $averageRating);
+    }
+    public function merchantDetail($slug)
+    {
+        $merchant_detail = Merchant::getMerchantBySlug($slug);
+        if (!$merchant_detail) {
+            abort(404, 'merchant not found');
+        }
+        return view('Pages.Merchant-desc')->with('merchant_detail', $merchant_detail);
     }
 
     public function productGrids(Request $request)
@@ -76,5 +85,40 @@ class HomeController extends Controller
         $products = $products->with('merchant')->paginate($show);
 
         return view('Pages.postingan')->with('products', $products);
+    }
+
+    public function merchantGrids(Request $request)
+    {
+        $merchants = Merchant::query();
+
+
+
+        // Search logic
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $merchants->where(function ($query) use ($search) {
+                $query->where('name', 'LIKE', '%' . $search . '%')
+                    ->orWhere('description', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner', 'LIKE', '%' . $search . '%')
+                    ->orWhere('address', 'LIKE', '%' . $search . '%');
+            });
+        }
+
+
+        // Sorting logic
+        if ($request->filled('sort')) {
+            $sort = $request->input('sort');
+            if ($sort == 'terbaru') {
+                $merchants->orderBy('id', 'desc');
+            } elseif ($sort == 'terlama') {
+                $merchants->orderBy('id', 'asc');
+            }
+        }
+
+        // Pagination
+        $show = $request->input('show', 10);
+        $merchants = $merchants->paginate($show);
+
+        return view('Pages.Merchant')->with('merchants', $merchants);
     }
 }
