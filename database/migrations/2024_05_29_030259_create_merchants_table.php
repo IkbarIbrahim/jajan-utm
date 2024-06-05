@@ -16,12 +16,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->text('address');
             $table->string('type');
             $table->string('owner');
-            $table->string('logo');
-            $table->string('cover');
+            $table->string('logo')->nullable();
+            $table->string('cover')->nullable();
         });
     }
 

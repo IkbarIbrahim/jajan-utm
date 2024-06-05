@@ -10,6 +10,7 @@ use App\Http\Controllers\FormRegisterController;
 use App\Http\Controllers\Admin\MerchantController;
 use App\Http\Controllers\Admin\PostinganController;
 use App\Http\Controllers\Merchant\ProductController;
+use App\Http\Controllers\LoginUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,10 @@ Route::get('/postingan', [HomeController::class,'productGrids'])->name('post-pro
 Route::get('/postingan/detail/{slug}', [HomeController::class, 'productDetail'])->name('post-product-detail');
 Route::get('/merchant-list', [HomeController::class, 'merchantGrids'])->name('merch-list');
 Route::get('/merchant/detail/{slug}', [HomeController::class, 'merchantDetail'])->name('merch-info');
+
+Route::get('/login', [LoginUserController::class, 'login_user']);       
+Route::post('/login', [LoginUserController::class, 'login_users']);
+Route::get('/logout', [LoginUserController::class, 'logout']);
 
 Route::get('/admin', function () {
     return view('Admin.Index');
