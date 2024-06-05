@@ -77,13 +77,14 @@
                                             <a href="{{ route('admin.users.edit', ['user' => $user->id]) }}"
                                                 class="font-medium text-blue-600 hover:underline dark:text-blue-500">Edit</a>
                                             |
-                                            <form action="{{ route('admin.users.destroy', ['user' => $user->id]) }}"
-                                                method="POST" class="inline-block"
-                                                onsubmit="return confirm('Apakah Anda yakin ingin menghapus user?')">
-                                                @method('delete')
-                                                @csrf
-                                                <button type="submit"
-                                                    class="font-medium text-blue-600 hover:underline dark:text-blue-500">Hapus</button>
+                                            <form
+                                            id="deleteForm-{{ $user->id }}"
+                                            action="{{ route('admin.users.destroy', ['user' => $user->id]) }}"
+                                            method="POST" class="inline-block" >
+                                            @method('delete')
+                                            @csrf
+                                            <button type="button" id="user-{{ $user->id }}" onclick="return confirmDelete({{ $user->id }})"
+                                                class="font-medium text-blue-600 hover:underline dark:text-blue-500">Hapus</button>
                                             </form>
                                         </td>
                                     </tr>
@@ -105,13 +106,17 @@
                                             <a href="{{ route('admin.users.edit', ['user' => $user->id]) }}"
                                                 class="font-medium text-blue-600 hover:underline dark:text-blue-500">Edit</a>
                                             |
-                                            <form action="{{ route('admin.users.destroy', ['user' => $user->id]) }}"
-                                                method="POST" class="inline-block"
-                                                onsubmit="return confirm('Apakah Anda yakin ingin menghapus user?')">
-                                                @method('delete')
-                                                @csrf
-                                                <button type="submit"
-                                                    class="font-medium text-blue-600 hover:underline dark:text-blue-500">Hapus</button>
+                                            <form
+                                            id="deleteForm-{{ $user->id }}"
+                                            action="{{ route('admin.users.destroy', ['user' => $user->id]) }}"
+                                            method="POST" class="inline-block"
+                                            >
+                                            
+                                            @method('delete')
+                                            @csrf
+                                            <button type="button" id="user-{{ $user->id }}" onclick="return confirmDelete({{ $user->id }})"
+                                                class="font-medium text-blue-600 hover:underline dark:text-blue-500">Hapus</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endif

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ChatController;
+use App\Http\Controllers\Admin\KomentarController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
@@ -106,6 +107,6 @@ Route::prefix('admin')
         Route::prefix('komentar')
             ->name('komentar.')
             ->group(function () {
-                Route::get('/',[ChatController::class, 'index'] )->name('index');
+                Route::get('/',[KomentarController::class, 'index'] )->name('index');
             });
     });

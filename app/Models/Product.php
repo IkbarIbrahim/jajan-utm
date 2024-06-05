@@ -46,7 +46,7 @@ class Product extends Model
         return $this->belongsTo(Merchant::class);
     }
     public function getReview(){
-        return $this->hasMany(Comment::class,'product_id','id')->with('user_info')->orderBy('id','DESC')->limit(3);
+        return $this->hasMany(Comment::class,'product_id','id')->with('user_info')->orderBy('id','DESC');
     }
     public static function getProductBySlug($slug)
     {

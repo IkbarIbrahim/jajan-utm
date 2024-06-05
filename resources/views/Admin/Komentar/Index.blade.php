@@ -20,8 +20,8 @@
                     </li>
                 </ol>
             </nav>
-            <h2 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-4xl">
-                Daftar Chat</h2>
+            <h2 class="mb-4 text-3xl font-bold leading-none tracking-tight text-gray-900 dark:text-white md:text-4xl">
+                Daftar Komentar Postingan Product</h2>
 
                 <div class="px-2 mx-auto max-w-screen-2xl lg:px-2">
                     <div class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
@@ -29,7 +29,7 @@
                             <div class="flex items-center flex-1 space-x-4">
                                 <h5>
                                     <span class="text-gray-500">All Chat:</span>
-                                    <span class="dark:text-white">{{$totalChats}}</span>
+                                    <span class="dark:text-white">{{$totalComments}}</span>
                                 </h5>
                                 <form action="" method="GET" class="w-full mx-auto">
                                     <label for="default-search"
@@ -64,22 +64,27 @@
                                     <tr>
                                         <th scope="col" class="px-4 py-3">User</th>
                                         <th scope="col" class="px-4 py-3">Chat</th>
+                                        <th scope="col" class="px-4 py-3">Product</th>
+                                        <th scope="col" class="px-4 py-3">Rating</th>
                                         <th scope="col" class="px-4 py-3">Time</th>
                                         <th scope="col" class="px-4 py-3">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if($chats)
-                                    @foreach ($chats as $chat)
+                                    @if($comments)
+                                    @foreach ($comments as $comment)
                                     <tr class="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
                                         
                                         <th scope="row" class="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                            {{$chat->user->email}}
+                                            {{$comment->user_info->email}}
                                         </th>
                                         <td class="px-4 py-2">
-                                            <span class="bg-primary-100 text-primary-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-primary-900 dark:text-primary-300 line-clamp-2"> {{$chat->body}} </span>
+                                            <span class="bg-primary-100 text-primary-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-primary-900 dark:text-primary-300 line-clamp-2"> {{$comment->body}} </span>
                                         </td>
-                                        <td class="px-4 py-2">{{$chat->created_at}}</td>
+                                        <td class="px-4 py-2">
+                                            <span class="bg-primary-100 text-primary-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-primary-900 dark:text-primary-300 line-clamp-2"> {{$comment->rating}} </span>
+                                        </td>
+                                        <td class="px-4 py-2">{{$comment->created_at}}</td>
                                         <td class=" py-3 flex items-start justify-start ps-3">
                                             <button id="xbox-series-s-dropdown-button" data-dropdown-toggle="xbox-series-s-dropdown" class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100" type="button">
                                                 <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -98,7 +103,7 @@
                             </table>
                         </div>
                         <div class="w-full p-8">
-                        {{ $chats->links('Admin.Partials.Pagination') }}
+                        {{ $comments->links('Admin.Partials.Pagination') }}
                         </div>
                     </div>
                 </div>
