@@ -10,10 +10,10 @@ class KomentarController extends Controller
 {
     public function index()
     {
-        $comments = Comment::with('user')
+        $comments = Comment::with('user_info')
             ->when(request('search'), function ($query, $search) {
                 return $query->where('body', 'LIKE', "%$search%");
-            })
+            })->orderBy('created_at', 'DESC')
             ->paginate(10);
 
         $totalComments = Comment::count();

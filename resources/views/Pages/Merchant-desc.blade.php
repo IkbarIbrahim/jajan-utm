@@ -89,8 +89,7 @@
                                     <p class="text-gray-500 mb-3 text-xs">Rp
                                         {{ number_format($product->price, 0, ',', '.') }}</p>
                                     <button
-                                        class="bg-blue-700 text-white px-3 py-1 rounded hover:bg-blue-500 transition-colors duration-300 text-sm">Learn
-                                        More</button>
+                                        class="bg-blue-700 text-white px-3 py-1 rounded hover:bg-blue-500 transition-colors duration-300 text-sm">View</button>
                                 </div>
                             @endforeach
                         </div>

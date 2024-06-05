@@ -51,6 +51,13 @@ class HomeController extends Controller
             });
         }
 
+
+        // rating 
+        if ($request->filled('rating')) {
+            $rating = $request->input('rating');
+            $products->where('rating', '>=', $rating);
+        }
+
         // Filter by price range
         if ($request->filled(['min', 'max'])) {
             $min = $request->input('min');
@@ -93,7 +100,7 @@ class HomeController extends Controller
     public function merchantGrids(Request $request)
     {
         $merchants = Merchant::query();
-
+        
 
 
         // Search logic

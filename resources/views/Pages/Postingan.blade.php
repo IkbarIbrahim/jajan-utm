@@ -37,7 +37,7 @@
             <!-- drawer init and toggle -->
             <div class="text-center md:hidden">
                 <button
-                    class="text-white hover:bg-gray-800 focus:ring-4 focus:ring-dark-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-600 dark:hover:bg-dark-700 focus:outline-none dark:focus:ring-dark-800 block md:hidden"
+                    class="text-white bg-gray-400 hover:bg-gray-800 focus:ring-4 focus:ring-dark-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-600 dark:hover:bg-dark-700 focus:outline-none dark:focus:ring-dark-800 block md:hidden"
                     type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
                     aria-controls="drawer-example">
                     <ion-icon class="text-2xl" name="list"></ion-icon>
@@ -349,7 +349,7 @@
                                 @else
                                 <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">{{$product->status}}</span>
                                 @endif
-                                <h4 class="uppercase dark:text-white font-bold text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">{{$product->name}}</h4>
+                                <h4 class="uppercase dark:text-white font-bold text-xl mb-2 text-gray-800 hover:text-blue-800 transition">{{$product->name}}</h4>
                             </a>
                             <div class="flex items-baseline mb-1 space-x-2">
                                 <p class="text-xl dark:text-white font-semibold">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
@@ -357,10 +357,10 @@
         
                             <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
                                 <a class="flex items-center gap-2 font-medium" href="">
-                                    <ion-icon name="pin"></ion-icon><p class="text-sm text-blue-800 dark:text-blue-300">{{$product->merchant->address}} </p>
+                                    <ion-icon name="pin"></ion-icon><p class="text-xs font-light text-blue-800 dark:text-blue-300">{{$product->merchant->address}} </p>
                                 </a>
                                 <a href="">
-                                    <ion-icon name="cart"></ion-icon> {{$product->merchant->name}}
+                                    <p class="text-sm font-bold" >[ {{$product->merchant->type}} ]</p> {{$product->merchant->name}} 
                                 </a>
                             </div>
                             <div class="flex items-center mt-2">

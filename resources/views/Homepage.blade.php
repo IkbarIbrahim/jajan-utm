@@ -118,7 +118,7 @@
                                                 {{ number_format($item->price, 0, ',', '.') }}</span>
                                         </h4>
                                         <p
-                                            class="text-body-color hover:text-pretty dark:text-white mb-8 text-center truncate hover:text-clip">
+                                            class="text-body-color hover:text-pretty dark:text-white mb-8 text-start truncate hover:text-clip">
                                             {{ $item->description }}
                                         </p>
                                         <div class="flex flex-col gap-5 text-black dark:text-white">

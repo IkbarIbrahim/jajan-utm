@@ -79,13 +79,16 @@
                                                 class="font-medium text-blue-600 hover:underline dark:text-blue-500">Edit</a>
                                             |
                                             <form
-                                                action="{{ route('admin.merchants.destroy', ['merchant' => $merchant->id]) }}"
-                                                method="POST" class="inline-block"
-                                                onsubmit="return confirm('Apakah Anda yakin ingin menghapus merchant?')">
-                                                @method('delete')
-                                                @csrf
-                                                <button type="submit"
-                                                    class="font-medium text-blue-600 hover:underline dark:text-blue-500">Hapus</button>
+                                            id="deleteForm-{{ $merchant->id }}"
+                                            action="{{ route('admin.merchants.destroy', ['merchant' => $merchant->id]) }}"
+                                            method="POST" class="inline-block"
+                                            
+                                            >
+                                            
+                                            @method('delete')
+                                            @csrf
+                                            <button type="button" id="merchant-{{ $merchant->id }}" onclick="return confirmDelete({{ $merchant->id }})"
+                                                class="font-medium text-blue-600 hover:underline dark:text-blue-500">Hapus</button>
                                             </form>
                                         </td>
                                     </tr>
@@ -111,13 +114,14 @@
                                                 id="deleteForm-{{ $merchant->id }}"
                                                 action="{{ route('admin.merchants.destroy', ['merchant' => $merchant->id]) }}"
                                                 method="POST" class="inline-block"
-                                                onclick="return confirmDelete({{ $merchant->id }})"
+                                                
                                                 >
                                                 
                                                 @method('delete')
                                                 @csrf
-                                                <button type="button"
+                                                <button type="button" id="merchant-{{ $merchant->id }}" onclick="return confirmDelete({{ $merchant->id }})"
                                                     class="font-medium text-blue-600 hover:underline dark:text-blue-500">Hapus</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endif
