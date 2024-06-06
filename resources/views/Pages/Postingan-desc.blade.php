@@ -166,7 +166,7 @@
                                 </div>
                                 <div>
 
-                                    <div class="flex flex-col lg:flex-row items-start lg:items-center mb-4">
+                                    <div class="flex flex-col lg:flex-row items-start lg:items-center">
                                         <h3 class="font-bold dark:text-white me-3">{{ $data->user_info['email'] }}</h3>
 
                                         @php
@@ -211,7 +211,7 @@
                                         </div>
                                     </div>
                                     <p class="text-gray-600 mb-2 dark:text-white">{{ $data->body }}</p>
-                                    <div class="flex items-center text-gray-500 text-sm">
+                                    <div class="flex items-center text-gray-500 text-sm mb-4">
                                         <svg class="w-4 h-4 mr-1 fill-white" viewBox="0 0 20 20"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M8 2a1 1 0 000 2h2a1 1 0 100-2H8z"></path>
@@ -219,7 +219,7 @@
                                                 d="M3 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6h-4.586l1.293 1.293a1 1 0 01-1.414 1.414L9 10.414V17a1 1 0 01-2 0v-6.586l-1.293 1.293a1 1 0 01-1.414-1.414L6.586 9H3V5z">
                                             </path>
                                         </svg>
-                                        <span class="dark:text-white">{{ $data->created_at->format('g: i a') }} On
+                                        <span class="dark:text-white text-xs">{{ $data->created_at->format('g: i a') }} On
                                             {{ $data->created_at->format('M d Y') }}</span>
                                     </div>
                                 </div>

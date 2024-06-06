@@ -34,7 +34,7 @@ Route::get('/merchant/detail/{slug}', [HomeController::class, 'merchantDetail'])
 
 Route::get('/login', [LoginUserController::class, 'login_user']);       
 Route::post('/login', [LoginUserController::class, 'login_users']);
-Route::get('/logout', [LoginUserController::class, 'logout']);
+Route::get('/logout', [LoginUserController::class, 'logout'])->name('logout');
 
 Route::get('/admin', function () {
     return view('Admin.Index');
