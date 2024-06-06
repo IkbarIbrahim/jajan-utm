@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LoginUserController extends Controller
 {
@@ -25,6 +26,7 @@ class LoginUserController extends Controller
         $ceck = Auth::guard("user")->attempt($request->only(["email", "password"]));
         
         if ($ceck) {
+            Alert::success('Success ', 'Berhasil Login');
             return redirect('/')->with('success', 'Login berhasil!');
         } else {
             return redirect('/login')

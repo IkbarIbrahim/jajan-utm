@@ -36,7 +36,7 @@ class CommentController extends Controller
             'product_id' => $productId,
             'user_id' => $userId,
         ]);
-
+        Alert::success('Comment', 'Berhasil');
         return redirect()->back()->with('success', 'Komentar berhasil ditambahkan!');
     }
 }
