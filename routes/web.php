@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\MerchantController;
 use App\Http\Controllers\Admin\PostinganController;
 use App\Http\Controllers\Merchant\ProductController;
 use App\Http\Controllers\LoginUserController;
+use App\Http\Controllers\LoginAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,9 @@ Route::get('/merchant/detail/{slug}', [HomeController::class, 'merchantDetail'])
 Route::get('/login', [LoginUserController::class, 'login_user']);       
 Route::post('/login', [LoginUserController::class, 'login_users']);
 Route::get('/logout', [LoginUserController::class, 'logout']);
+
+Route::get('/login-admin', [LoginAdminController::class, 'index'])->name('login-admin');
+Route::post('/login-admin', [LoginAdminController::class, 'login_admin'])->name('submit-admin');
 
 Route::get('/admin', function () {
     return view('Admin.Index');
