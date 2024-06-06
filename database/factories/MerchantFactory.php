@@ -25,7 +25,7 @@ class MerchantFactory extends Factory
         return [
             'name' => fake()->company(),
             'email' => fake()->unique()->safeEmail(),
-            'password' => static::$password ??= Hash::make('password'),
+            'password' => bcrypt('password'),
             'description' =>  fake()->paragraph(),
             'address' => fake()->address(),
             'type' => fake()->randomElement(['Cafe', 'Lapak Mahasiswa', 'Pedagang Keliling', 'UMKM', 'Warung Makan']),
