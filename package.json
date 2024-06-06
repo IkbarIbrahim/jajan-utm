@@ -21,6 +21,6 @@
         "@tailwindcss/line-clamp": "^0.4.4",
         "flowbite": "^2.3.0",
         "ionicons": "^7.4.0",
-        "sweetalert2": "^11.11.0"
+        "sweetalert2": "^11.6.13"
     }
 }
