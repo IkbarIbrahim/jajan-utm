@@ -41,6 +41,7 @@ Route::get('/login-admin', [LoginAdminController::class, 'index'])->name('login-
 Route::post('/login-admin', [LoginAdminController::class, 'login_admin'])->name('submit-admin');
 Route::get('/logout-admin', [LoginAdminController::class, 'logout'])->name('logout-admin');
 
+
 Route::get('/admin', function () {
     return view('Admin.Index');
 })->name('adm-dashboard');

@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
+
 use Illuminate\Support\Facades\Log;
+
 
 class LoginUserController extends Controller
 {
@@ -48,6 +50,7 @@ class LoginUserController extends Controller
             } else {
                 return redirect('/merchant')->with('success', 'Login berhasil!');
             }
+
         } else {
             Log::warning('Login failed', [
                 'guard' => $guard,
@@ -60,15 +63,17 @@ class LoginUserController extends Controller
     }
 
     public function logout(Request $request) {
+
         $userType = $request->input('user_type', 'user'); 
 
         Auth::guard($userType)->logout();
+
 
         $request->session()->invalidate();
         Alert::info('User', 'Anda telah di logout');
 
         $request->session()->regenerateToken();
-        
+
         return redirect('/');
     }
 }
