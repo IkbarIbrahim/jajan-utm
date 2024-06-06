@@ -14,12 +14,6 @@ class Admin extends Authenticatable
         'password',
     ];
 
-    protected $fillable = [
-        'username',
-        'email',
-        'password',
-    ];
-
     protected $casts = [
         'id' => 'integer',
         'password' => 'hashed',

@@ -1,17 +1,18 @@
 <?php
 
-use App\Http\Controllers\Admin\ChatController;
-use App\Http\Controllers\Admin\KomentarController;
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CommentController;
+
+use App\Http\Controllers\LoginUserController;
+use App\Http\Controllers\Admin\ChatController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\FormRegisterController;
+use App\Http\Controllers\Admin\KomentarController;
 use App\Http\Controllers\Admin\MerchantController;
 use App\Http\Controllers\Admin\PostinganController;
 use App\Http\Controllers\Merchant\ProductController;
-use App\Http\Controllers\LoginUserController;
-use App\Http\Controllers\LoginAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,15 +29,17 @@ Route::post('/submit-form', [FormRegisterController::class, 'handleForm'])->name
 Route::get('/', [HomeController::class,'home'] )->name('home');
 Route::get('/postingan', [HomeController::class,'productGrids'])->name('post-product');
 Route::get('/postingan/detail/{slug}', [HomeController::class, 'productDetail'])->name('post-product-detail');
+Route::post('/comments', [CommentController::class, 'store'])->middleware('auth:user')->name('comments.store');;
 Route::get('/merchant-list', [HomeController::class, 'merchantGrids'])->name('merch-list');
 Route::get('/merchant/detail/{slug}', [HomeController::class, 'merchantDetail'])->name('merch-info');
 
 Route::get('/login', [LoginUserController::class, 'login_user']);       
 Route::post('/login', [LoginUserController::class, 'login_users']);
-Route::get('/logout', [LoginUserController::class, 'logout']);
+Route::get('/logout', [LoginUserController::class, 'logout'])->name('logout');
 
 Route::get('/login-admin', [LoginAdminController::class, 'index'])->name('login-admin');
 Route::post('/login-admin', [LoginAdminController::class, 'login_admin'])->name('submit-admin');
+Route::get('/logout-admin', [LoginAdminController::class, 'logout'])->name('logout-admin');
 
 Route::get('/admin', function () {
     return view('Admin.Index');

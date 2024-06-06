@@ -18,6 +18,7 @@ class CommentFactory extends Factory
     {
         return [
             'body' =>  fake()->sentence(),
+            'rating' => fake()->randomFloat(1, 0, 5),
         ];
     }
 }
