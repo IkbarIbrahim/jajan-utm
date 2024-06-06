@@ -14,6 +14,7 @@
 
 <body class="bg-gray-200 dark:bg-gray-500">
     <div class="bg-gray-200 dark:bg-gray-500">
+        @include('sweetalert::alert')
         @include('User.Layouts.Header')
         @yield('content')
         <button type="button" x-data="{}" @click="window.scrollTo({ top: 0, behavior: 'smooth' })"  class="!fixed bottom-5 z-50 end-5 hidden rounded-full bg-blue-600 p-3 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg"
