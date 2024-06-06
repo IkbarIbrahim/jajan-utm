@@ -7,6 +7,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LoginUserController;
 use App\Http\Controllers\Admin\ChatController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\FormRegisterController;
 use App\Http\Controllers\Admin\KomentarController;
 use App\Http\Controllers\Admin\MerchantController;
@@ -35,6 +36,11 @@ Route::get('/merchant/detail/{slug}', [HomeController::class, 'merchantDetail'])
 Route::get('/login', [LoginUserController::class, 'login_user']);       
 Route::post('/login', [LoginUserController::class, 'login_users']);
 Route::get('/logout', [LoginUserController::class, 'logout'])->name('logout');
+
+Route::get('/login-admin', [LoginAdminController::class, 'index'])->name('login-admin');
+Route::post('/login-admin', [LoginAdminController::class, 'login_admin'])->name('submit-admin');
+Route::get('/logout-admin', [LoginAdminController::class, 'logout'])->name('logout-admin');
+
 
 Route::get('/admin', function () {
     return view('Admin.Index');
