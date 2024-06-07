@@ -9,10 +9,12 @@ use App\Http\Controllers\Admin\ChatController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\FormRegisterController;
+use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\Admin\KomentarController;
 use App\Http\Controllers\Admin\MerchantController;
 use App\Http\Controllers\Admin\PostinganController;
 use App\Http\Controllers\Merchant\ProductController;
+use App\Http\Controllers\RegisterMerchantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +35,7 @@ Route::post('/comments', [CommentController::class, 'store'])->middleware('auth:
 Route::get('/merchant-list', [HomeController::class, 'merchantGrids'])->name('merch-list');
 Route::get('/merchant/detail/{slug}', [HomeController::class, 'merchantDetail'])->name('merch-info');
 
-Route::get('/login', [LoginUserController::class, 'login_user']);       
+Route::get('/login', [LoginUserController::class, 'login_user'])->name('login');       
 Route::post('/login', [LoginUserController::class, 'login_users']);
 Route::get('/logout', [LoginUserController::class, 'logout'])->name('logout');
 
@@ -41,6 +43,11 @@ Route::get('/login-admin', [LoginAdminController::class, 'index'])->name('login-
 Route::post('/login-admin', [LoginAdminController::class, 'login_admin'])->name('submit-admin');
 Route::get('/logout-admin', [LoginAdminController::class, 'logout'])->name('logout-admin');
 
+Route::get('/register-merchant', [RegisterMerchantController::class, 'index'])->name('register-merchant');
+Route::post('/register-merchant', [RegisterMerchantController::class, 'register_merchants'])->name('submit-reg-merchant');
+
+Route::get('/register-user', [RegisterUserController::class, 'index'])->name('register-user');
+Route::post('/register-user', [RegisterUserController::class, 'register_user'])->name('submit-reg-user');
 
 Route::get('/admin', function () {
     return view('Admin.Index');
