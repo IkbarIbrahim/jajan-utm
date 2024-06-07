@@ -26,6 +26,7 @@ class LoginAdminController extends Controller
 
         
         $ceck = Auth::guard("admin")->attempt($request->only(["email", "password"]));
+
         
         if ($ceck) {
             Alert::success('Success', 'Berhasil Login');

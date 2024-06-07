@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
 @extends('Auth.Master')
 @section('title-auth', 'Register')
@@ -74,19 +76,14 @@
     
 @endsection
 
-
-
-
-
 @if ($errors->any())
-<script>
-    console.log('error')
-    document.addEventListener("DOMContentLoaded", function() {
-        var errorMessage = "";
-        @foreach ($errors->all() as $error)
-            errorMessage += "{{ $error }}\n";
-        @endforeach
-        alert(errorMessage);
-    });
-</script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var errorMessage = "";
+            @foreach ($errors->all() as $error)
+                errorMessage += "{{ $error }}\n";
+            @endforeach
+            swal("Error", errorMessage, "error");
+        });
+    </script>
 @endif
