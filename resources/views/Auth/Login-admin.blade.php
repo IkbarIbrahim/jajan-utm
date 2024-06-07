@@ -18,7 +18,7 @@
           </h1>
           
           <div class="w-full flex-1 mt-8">
-          <form action="" method="POST">
+          <form action="{{ route('submit-admin') }}" method="POST">
             @csrf
             <div class="mx-auto max-w-xs">
               <input
