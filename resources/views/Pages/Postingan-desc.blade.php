@@ -167,7 +167,7 @@
                                 <div>
 
                                     <div class="flex flex-col lg:flex-row items-start lg:items-center">
-                                        <h3 class="font-bold dark:text-white me-3">{{ $data->user_info['email'] }}</h3>
+                                        <h3 class="font-bold dark:text-white me-3">{{ $data->user_info['first_name'] }} {{ $data->user_info['last_name'] }}</h3>
 
                                         @php
                                             $rating = $data->rating;

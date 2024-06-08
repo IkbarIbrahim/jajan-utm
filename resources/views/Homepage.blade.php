@@ -73,7 +73,7 @@
                     </div>
 
                 </div>
-                <div class="mt-4 lg:mt-[-210px] w-full z-10 absolute ">
+                <div class="mt-5 lg:mt-[-210px] w-full z-10 absolute ">
                     <svg class="dark:fill-gray-500 fill-gray-200" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 1440 320">
                         <path f fill-opacity="1"
@@ -281,7 +281,7 @@
                 <div class="relative overflow-hidden">
                     <div class="-mx-4 flex flex-wrap items-stretch">
                         <div class="w-full px-4">
-                            <div class="mx-auto max-w-[570px] text-center">
+                            <div class="mx-auto max-w-[570px] text-center sm:z-10">
                                 <h2 class="mb-2.5 text-3xl font-bold leading-snug dark:text-white md:text-[40px]">
                                     <span class="pr-0.5">Wanna join for global chat?</span>
                                     <span class="font-normal"> Get Started Now </span>
@@ -301,25 +301,23 @@
             </div>
 
             <div>
-                <span class="absolute left-0 top-0 ">
+                <span class="absolute left-0 top-0 sm:z-0">
                     <svg class="fill-blue-400 dark:fill-gray-800" width="495" height="470" viewBox="0 0 495 470"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="55" cy="442" r="138" stroke="white" stroke-opacity="0.04"
                             stroke-width="50"></circle>
                         <circle cx="446" r="39" stroke="white" stroke-opacity="0.04" stroke-width="20"></circle>
-                        <path d="M245.406 137.609L233.985 94.9852L276.609 106.406L245.406 137.609Z" stroke="white"
-                            stroke-opacity="0.08" stroke-width="12"></path>
+                       
                     </svg>
                 </span>
-                <span class="absolute bottom-0 right-0">
+                <span class="absolute bottom-0 right-0 sm:z-0">
                     <svg class="fill-blue-400 dark:fill-gray-800" width="493" height="470" viewBox="0 0 493 470"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="462" cy="5" r="138" stroke="white" stroke-opacity="0.04"
                             stroke-width="50"></circle>
                         <circle cx="49" cy="470" r="39" stroke="white" stroke-opacity="0.04"
                             stroke-width="20"></circle>
-                        <path d="M222.393 226.701L272.808 213.192L259.299 263.607L222.393 226.701Z" stroke="white"
-                            stroke-opacity="0.06" stroke-width="13"></path>
+                       
                     </svg>
                 </span>
             </div>

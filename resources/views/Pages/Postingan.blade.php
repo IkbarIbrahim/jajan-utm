@@ -77,12 +77,12 @@
                                     <div class="flex items-center">
                                         <input type="checkbox" name="category[]" value="makanan" id="cat-1" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('makanan', request('category', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
                                         <label for="cat-1" class="dark:text-white ml-3 cursor-pointer">Makanan</label>
-                                        <div class="ml-auto dark:text-white text-sm">(15)</div>
+                                        {{-- <div class="ml-auto dark:text-white text-sm">(15)</div> --}}
                                     </div>
                                     <div class="flex items-center">
                                         <input type="checkbox" name="category[]" value="minuman" id="cat-2" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('minuman', request('category', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
                                         <label for="cat-2" class="dark:text-white ml-3 cursor-pointer">Minuman</label>
-                                        <div class="ml-auto dark:text-white text-sm">(9)</div>
+                                        {{-- <div class="ml-auto dark:text-white text-sm">(9)</div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -94,27 +94,27 @@
                                     <div class="flex items-center">
                                         <input type="checkbox" name="merchant[]" value="cafe" id="brand-1" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('cafe', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
                                         <label for="brand-1" class="dark:text-white ml-3 cursor-pointer">Cafe</label>
-                                        <div class="ml-auto dark:text-white text-sm">(15)</div>
+                                        {{-- <div class="ml-auto dark:text-white text-sm">(15)</div> --}}
                                     </div>
                                     <div class="flex items-center">
                                         <input type="checkbox" name="merchant[]" value="lapak_mahasiswa" id="brand-2" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('lapak_mahasiswa', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
                                         <label for="brand-2" class="dark:text-white ml-3 cursor-pointer">Lapak Mahasiswa</label>
-                                        <div class="ml-auto dark:text-white text-sm">(9)</div>
+                                        {{-- <div class="ml-auto dark:text-white text-sm">(9)</div> --}}
                                     </div>
                                     <div class="flex items-center">
                                         <input type="checkbox" name="merchant[]" value="pedagang_keliling" id="brand-3" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('pedagang_keliling', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
                                         <label for="brand-3" class="dark:text-white ml-3 cursor-pointer">Pedagang Keliling</label>
-                                        <div class="ml-auto dark:text-white text-sm">(21)</div>
+                                        {{-- <div class="ml-auto dark:text-white text-sm">(21)</div> --}}
                                     </div>
                                     <div class="flex items-center">
                                         <input type="checkbox" name="merchant[]" value="umkm" id="brand-4" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('umkm', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
                                         <label for="brand-4" class="dark:text-white ml-3 cursor-pointer">UMKM</label>
-                                        <div class="ml-auto dark:text-white text-sm">(10)</div>
+                                        {{-- <div class="ml-auto dark:text-white text-sm">(10)</div> --}}
                                     </div>
                                     <div class="flex items-center">
                                         <input type="checkbox" name="merchant[]" value="warung_makan" id="brand-5" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('warung_makan', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
                                         <label for="brand-5" class="dark:text-white ml-3 cursor-pointer">Warung Makan</label>
-                                        <div class="ml-auto dark:text-white text-sm">(10)</div>
+                                        {{-- <div class="ml-auto dark:text-white text-sm">(10)</div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -163,12 +163,12 @@
                                     <div class="flex items-center">
                                         <input type="checkbox" name="availability[]" value="tersedia" id="tersedia" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('tersedia', request('availability', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
                                         <label for="tersedia" class="dark:text-white ml-3 cursor-pointer">Tersedia</label>
-                                        <div class="ml-auto dark:text-white text-sm">(15)</div>
+                                        {{-- <div class="ml-auto dark:text-white text-sm">(15)</div> --}}
                                     </div>
                                     <div class="flex items-center">
                                         <input type="checkbox" name="availability[]" value="habis" id="habis" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('habis', request('availability', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form').submit();">
                                         <label for="habis" class="dark:text-white ml-3 cursor-pointer">Habis</label>
-                                        <div class="ml-auto dark:text-white text-sm">(9)</div>
+                                        {{-- <div class="ml-auto dark:text-white text-sm">(9)</div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -190,12 +190,12 @@
                                     <div class="flex items-center">
                                         <input type="checkbox" name="category[]" value="makanan" id="cat-1" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('makanan', request('category', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="cat-1" class="dark:text-white ml-3 cursor-pointer">Makanan</label>
-                                        <div class="ml-auto dark:text-white text-sm">(15)</div>
+                                        {{-- <div class="ml-auto dark:text-white text-sm">(15)</div> --}}
                                     </div>
                                     <div class="flex items-center">
                                         <input type="checkbox" name="category[]" value="minuman" id="cat-2" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('minuman', request('category', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="cat-2" class="dark:text-white ml-3 cursor-pointer">Minuman</label>
-                                        <div class="ml-auto dark:text-white text-sm">(9)</div>
+                                        {{-- <div class="ml-auto dark:text-white text-sm">(9)</div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -207,27 +207,27 @@
                                     <div class="flex items-center">
                                         <input type="checkbox" name="merchant[]" value="cafe" id="brand-1" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('cafe', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="brand-1" class="dark:text-white ml-3 cursor-pointer">Cafe</label>
-                                        <div class="ml-auto dark:text-white text-sm">(15)</div>
+                                        {{-- <div class="ml-auto dark:text-white text-sm">(15)</div> --}}
                                     </div>
                                     <div class="flex items-center">
                                         <input type="checkbox" name="merchant[]" value="lapak_mahasiswa" id="brand-2" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('lapak_mahasiswa', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="brand-2" class="dark:text-white ml-3 cursor-pointer">Lapak Mahasiswa</label>
-                                        <div class="ml-auto dark:text-white text-sm">(9)</div>
+                                        {{-- <div class="ml-auto dark:text-white text-sm">(9)</div> --}}
                                     </div>
                                     <div class="flex items-center">
                                         <input type="checkbox" name="merchant[]" value="pedagang_keliling" id="brand-3" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('pedagang_keliling', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="brand-3" class="dark:text-white ml-3 cursor-pointer">Pedagang Keliling</label>
-                                        <div class="ml-auto dark:text-white text-sm">(21)</div>
+                                        {{-- <div class="ml-auto dark:text-white text-sm">(21)</div> --}}
                                     </div>
                                     <div class="flex items-center">
                                         <input type="checkbox" name="merchant[]" value="umkm" id="brand-4" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('umkm', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="brand-4" class="dark:text-white ml-3 cursor-pointer">UMKM</label>
-                                        <div class="ml-auto dark:text-white text-sm">(10)</div>
+                                        {{-- <div class="ml-auto dark:text-white text-sm">(10)</div> --}}
                                     </div>
                                     <div class="flex items-center">
                                         <input type="checkbox" name="merchant[]" value="warung_makan" id="brand-5" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('warung_makan', request('merchant', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="brand-5" class="dark:text-white ml-3 cursor-pointer">Warung Makan</label>
-                                        <div class="ml-auto dark:text-white text-sm">(10)</div>
+                                        {{-- <div class="ml-auto dark:text-white text-sm">(10)</div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -276,12 +276,12 @@
                                     <div class="flex items-center">
                                         <input type="checkbox" name="availability[]" value="tersedia" id="tersedia" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('tersedia', request('availability', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="tersedia" class="dark:text-white ml-3 cursor-pointer">Tersedia</label>
-                                        <div class="ml-auto dark:text-white text-sm">(15)</div>
+                                        {{-- <div class="ml-auto dark:text-white text-sm">(15)</div> --}}
                                     </div>
                                     <div class="flex items-center">
                                         <input type="checkbox" name="availability[]" value="habis" id="habis" class="focus:ring-0 rounded-sm cursor-pointer dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" {{ in_array('habis', request('availability', [])) ? 'checked' : '' }} onchange="document.getElementById('filter-form-desktop').submit();">
                                         <label for="habis" class="dark:text-white ml-3 cursor-pointer">Habis</label>
-                                        <div class="ml-auto dark:text-white text-sm">(9)</div>
+                                        {{-- <div class="ml-auto dark:text-white text-sm">(9)</div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -363,14 +363,14 @@
                                     <p class="text-sm font-bold" >[ {{$product->merchant->type}} ]</p> {{$product->merchant->name}} 
                                 </a>
                             </div>
-                            <div class="flex items-center mt-2">
+                            <div class="flex lg:items-center mt-2 flex-col lg:flex-row ">
                                 @php
                                     $rating = $product->rating; 
                                     $fullStars = floor($rating); 
                                     $halfStar = ($rating - $fullStars) >= 0.5 ? 1 : 0; 
                                     $emptyStars = 5 - ($fullStars + $halfStar); 
                                 @endphp
-                                <div class="flex gap-1 text-sm text-yellow-400">
+                                <div class="flex gap-1 text-sm text-yellow-400 ">
                                     @for ($i = 0; $i < $fullStars; $i++)
                                     <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor"
                                     viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -402,8 +402,8 @@
                                     </svg>
                                     @endfor
                                 </div>
-                                <span class="ml-1 text-gray-500 dark:text-gray-400">{{$product->rating}}</span>
-                                <div class="text-xs text-gray-500 ml-3">{{$product['getReview']->count()}} Review</div>
+                                <span class="m-0 lg:ml-1 text-gray-500 dark:text-gray-400">{{$product->rating}}</span>
+                                <div class="text-xs text-gray-500 m-0 lg:ml-3">{{$product['getReview']->count()}} Review</div>
                             </div>
                         </div>
                     </div>
