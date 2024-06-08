@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Log;
 
 class LoginUserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest:user,merchant')->except('logout');
+    }
+    
     public function index(){
         return view('Auth.login');
     }

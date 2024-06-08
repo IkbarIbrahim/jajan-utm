@@ -290,10 +290,18 @@
                                     There are many variations of passages of Lorem Ipsum but the
                                     majority have suffered in some form.
                                 </p>
-                                <a href="javascript:void(0)"
+                                @guest('user')
+                                <a href="{{ route('login') }}"
                                     class="inline-block rounded-md border border-transparent bg-blue-600 px-7 py-3 text-base font-medium text-white transition hover:bg-opacity-90">
                                     Get Started now
                                 </a>
+                                @endguest
+                                @auth('user')
+                                <a href="{{ route('global') }}"
+                                    class="inline-block rounded-md border border-transparent bg-blue-600 px-7 py-3 text-base font-medium text-white transition hover:bg-opacity-90">
+                                    Join chat
+                                </a>
+                                @endauth
                             </div>
                         </div>
                     </div>
