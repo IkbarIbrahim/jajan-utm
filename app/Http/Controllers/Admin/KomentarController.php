@@ -23,4 +23,9 @@ class KomentarController extends Controller
             'totalComments' => $totalComments,
         ]);
     }
+    public function destroy(Comment $comment)
+    {
+        $comment->delete();
+        return redirect()->route('admin.komentar.index');
+    }
 }

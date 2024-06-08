@@ -40,7 +40,7 @@ class HomeController extends Controller
     
 
     public function productGrids(Request $request)
-    {
+        {
         $products = Product::query();
 
         // Filter by merchant type

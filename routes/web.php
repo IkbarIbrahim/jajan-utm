@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\MerchantController;
 use App\Http\Controllers\Admin\PostinganController;
 use App\Http\Controllers\Merchant\ProductController;
 use App\Http\Controllers\RegisterMerchantController;
+use App\Http\Controllers\User\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,17 +50,11 @@ Route::post('/register-merchant', [RegisterMerchantController::class, 'register_
 Route::get('/register-user', [RegisterUserController::class, 'index'])->name('register-user');
 Route::post('/register-user', [RegisterUserController::class, 'register_user'])->name('submit-reg-user');
 
-Route::get('/admin', function () {
-    return view('Admin.Index');
-})->name('adm-dashboard');
 
 Route::get('/register', function () {
     return view('Auth.Register');
 })->name('register');
-Route::get('/contact', function () {
-    return view('Pages.Contact');
-})->name('contact');
-
+Route::get('/contact', function () {return view('Pages.Contact');})->name('contact');
 
 Route::get('/login', function () {
     return view('Auth.Login');
@@ -67,6 +62,18 @@ Route::get('/login', function () {
 Route::get('/global', function () {
     return view('Pages.Global-chat');
 })->name('global');
+
+
+Route::prefix('user')->name('user.')->group(
+    function () {
+        Route::get('/', [ProfileController::class, 'showProfile'])->middleware('auth:user')->name('index');
+        Route::post('/profile', [ProfileController::class, 'updateProfile'])->middleware('auth:user')->name('update');
+        Route::get('/fav', function () {
+            return view('User.favourite');
+        })->name('fav');
+        
+    }
+);
 
 Route::prefix('merchant')
     ->name('merchant.')
@@ -128,5 +135,6 @@ Route::prefix('admin')
             ->name('komentar.')
             ->group(function () {
                 Route::get('/',[KomentarController::class, 'index'] )->name('index');
+                Route::delete('/{comment}', [KomentarController::class,'destroy'])->name('destroy');
             });
     });
