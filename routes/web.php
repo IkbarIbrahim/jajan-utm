@@ -75,8 +75,8 @@ Route::prefix('user')->name('user.')->group(
     }
 );
 
-Route::prefix('merchant')
-    ->name('merchant.')
+
+Route::prefix('merchant')->middleware('merchant')
     ->group(function () {
         Route::get('/', function () {
             return view('Merchant.Index');
@@ -94,7 +94,7 @@ Route::prefix('merchant')
             });
     });
 
-Route::prefix('admin')
+Route::prefix('admin')->middleware('admin')
     ->name('admin.')
     ->group(function () {
         Route::get('/', function () {
