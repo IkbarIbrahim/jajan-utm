@@ -68,7 +68,7 @@ Route::get('/global', function () {
     return view('Pages.Global-chat');
 })->name('global');
 
-Route::prefix('merchant')
+Route::prefix('merchant')->middleware('merchant')
     ->name('merchant.')
     ->group(function () {
         Route::get('/', function () {
@@ -87,7 +87,7 @@ Route::prefix('merchant')
             });
     });
 
-Route::prefix('admin')
+Route::prefix('admin')->middleware('admin')
     ->name('admin.')
     ->group(function () {
         Route::get('/', function () {
