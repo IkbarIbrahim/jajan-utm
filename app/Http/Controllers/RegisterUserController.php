@@ -8,10 +8,16 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class RegisterUserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
     public function index()
     {
         return view('Auth.register-form.form-user');
     }
+
 
     public function register_user(Request $request)
     {
