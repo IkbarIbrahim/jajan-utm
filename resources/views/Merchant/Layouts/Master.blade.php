@@ -76,6 +76,29 @@
             collapse.toggle();
         });
     </script>
+     <script>
+        function confirmDelete(Id) {
+        
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "rgb(29 78 216)",
+            cancelButtonColor: "rgb(185 28 28)",
+            confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+                });
+                document.getElementById(`deleteForm-${Id}`).submit();
+            }
+            });
+        }
+    </script>
 
     <script src="https://unpkg.com/@popperjs/core@2"></script>
 </body>

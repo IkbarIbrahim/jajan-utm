@@ -128,6 +128,6 @@ class ProductController extends Controller
         $product->comments()->delete();
         $product->delete();
 
-        return redirect()->route('merchant.index');
+        return redirect()->route('merchant.products.index');
     }
 }
