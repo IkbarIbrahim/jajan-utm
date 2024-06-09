@@ -17,9 +17,9 @@ return new class extends Migration
             $table->text('description');
             $table->string('category');
             $table->unsignedInteger('price');
-            $table->float('rating');
+            $table->float('rating')->nullable();
             $table->string('status');
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->foreignId('merchant_id')->constrained();
         });
     }
