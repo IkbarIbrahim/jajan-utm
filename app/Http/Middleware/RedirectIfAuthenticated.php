@@ -22,7 +22,7 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                Alert :: info('Anda sudah login');
+                Alert :: info('Anda sudah login sebagai ' . $guard . ' !', 'Silahkan logout terlebih dahulu untuk mengakses halaman ini.');
                 return redirect(RouteServiceProvider::HOME);
             }
         }

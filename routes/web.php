@@ -49,7 +49,7 @@ Route::get('/merchant-list', [HomeController::class, 'merchantGrids'])->name('me
 Route::get('/merchant/detail/{slug}', [HomeController::class, 'merchantDetail'])->name('merch-info');
 
 // Route untuk user login
-Route::middleware('guest:user')->group(function () {
+Route::middleware('guest:user,merchant')->group(function () {
     Route::get('/register', function () {
         return view('Auth.Register');
     })->name('register');
@@ -100,13 +100,11 @@ Route::prefix('user')->middleware('auth:user')->name('user.')->group(function ()
 });
 
 // Route untuk merchant
-Route::prefix('merchant')->middleware('auth:merchant')->group(function () {
+Route::prefix('merchant')->middleware('auth:merchant')->name('merchant.')->group(function () {
     Route::get('/', function () {
         return view('Merchant.Index');
     })->name('index');
-    Route::get('/preview', function () {
-        return view('Merchant.Pages.Preview-toko');
-    })->name('preview');
+    Route::get('/preview', function () {return view('Merchant.Pages.Preview-toko'); })->name('preview');
 
     Route::prefix('products')->name('products.')->group(function () {
         Route::get('/{product}/edit', [ProductController::class, 'edit'])->name('edit');
