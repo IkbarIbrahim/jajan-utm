@@ -35,8 +35,6 @@ Route::get('cache-clear', function () {
     return redirect()->back();
 })->name('cache.clear');
 
-// Route untuk form submission
-// Route::post('/submit-form', [FormRegisterController::class, 'handleForm'])->name('form.submit');
 
 // Home route
 Route::get('/', [HomeController::class, 'home'])->name('home');
@@ -49,7 +47,7 @@ Route::get('/merchant-list', [HomeController::class, 'merchantGrids'])->name('me
 Route::get('/merchant/detail/{slug}', [HomeController::class, 'merchantDetail'])->name('merch-info');
 
 // Route untuk user login
-Route::middleware('guest:user')->group(function () {
+Route::middleware('guest:user,merchant')->group(function () {
     Route::get('/register', function () {
         return view('Auth.Register');
     })->name('register');
@@ -100,20 +98,20 @@ Route::prefix('user')->middleware('auth:user')->name('user.')->group(function ()
 });
 
 // Route untuk merchant
-Route::prefix('merchant')->middleware('auth:merchant')->group(function () {
-    Route::get('/', function () {
-        return view('Merchant.Index');
-    })->name('index');
-    Route::get('/preview', function () {
-        return view('Merchant.Pages.Preview-toko');
-    })->name('preview');
+Route::prefix('merchant')->middleware('auth:merchant')->name('merchant.')->group(function () {
+    Route::get('/', function () { return view('Merchant.Index');})->name('index');
+    Route::get('/preview', function () {return view('Merchant.Pages.Preview-toko'); })->name('preview');
 
     Route::prefix('products')->name('products.')->group(function () {
+        Route::get('/', [ProductController::class, 'index'])->name('index');
+        Route::get('/create', [ProductController::class, 'create'])->name('create');
+        Route::post('/', [ProductController::class, 'store'])->name('store');
         Route::get('/{product}/edit', [ProductController::class, 'edit'])->name('edit');
         Route::put('/{product}', [ProductController::class, 'update'])->name('update');
         Route::delete('/{product}', [ProductController::class, 'destroy'])->name('destroy');
     });
 });
+
 
 // Route untuk admin
 Route::prefix('admin')->middleware('auth:admin')->name('admin.')->group(function () {

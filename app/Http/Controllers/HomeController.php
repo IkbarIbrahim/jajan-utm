@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function home(){
+        // if (Auth::guard('merchant')->check()) {
+        //     return redirect('/merchant');
+        // } else {
+        //     return view('Homepage');
+        // }
+
+
         $featured=Product::with('merchant')->where('status','tersedia')->orderBy('id','DESC')->limit(6)->get();
         $new_merchant=Merchant::limit(4)->orderBy('id','DESC')->get();
 

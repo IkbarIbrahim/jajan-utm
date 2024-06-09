@@ -15,7 +15,7 @@ class LoginUserController extends Controller
     {
         $this->middleware('guest:user,merchant')->except('logout');
     }
-    
+
     public function index(){
         return view('Auth.login');
     }
@@ -53,7 +53,7 @@ class LoginUserController extends Controller
             if ($guard == 'user') {
                 return redirect('/')->with('success', 'Login berhasil!');
             } else {
-                return redirect('/merchant')->with('success', 'Login berhasil!');
+                return redirect('/')->with('success', 'Login berhasil!');
             }
 
         } else {
