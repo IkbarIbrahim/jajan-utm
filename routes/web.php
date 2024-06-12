@@ -110,8 +110,23 @@ Route::prefix('merchant')->middleware('auth:merchant')->name('merchant.')->group
         Route::put('/{product}', [ProductController::class, 'update'])->name('update');
         Route::delete('/{product}', [ProductController::class, 'destroy'])->name('destroy');
     });
+  
+    Route::prefix('coment')
+        ->name('coment.')
+        ->group(function () {
+            Route::get('/', function () {
+                return view('Merchant.coment.index');
+            })->name('index');
+        });    
+  
+    Route::prefix('edit_profile')
+        ->name('edit_profile.')
+        ->group(function () {
+            Route::get('/', function () {
+                return view('Merchant.edit_profile.index');
+            })->name('index');
+        });  
 });
-
 
 // Route untuk admin
 Route::prefix('admin')->middleware('auth:admin')->name('admin.')->group(function () {
@@ -119,11 +134,23 @@ Route::prefix('admin')->middleware('auth:admin')->name('admin.')->group(function
         return view('Admin.Index');
     })->name('index');
 
+    Route::get('/change_password', function () {
+        return view('Admin.change_password');
+    })->name('changepassword');
+
     Route::prefix('users')->name('users.')->group(function () {
         Route::get('/', [UserController::class, 'index'])->name('index');
         Route::get('/{user}/edit', [UserController::class, 'edit'])->name('edit');
         Route::put('/{user}/change-password', [UserController::class, 'updatePassword'])->name('update-password');
         Route::delete('/{user}', [UserController::class, 'destroy'])->name('destroy');
+    });
+        
+    Route::prefix('coment')
+    ->name('coment.')
+    ->group(function () {
+        Route::get('/', function () {
+            return view('Admin.coment.index');
+        })->name('index');
     });
 
     Route::prefix('merchants')->name('merchants.')->group(function () {

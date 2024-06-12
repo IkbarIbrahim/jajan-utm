@@ -11,6 +11,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    @yield('head')
 </head>
 
 <body>
