@@ -60,6 +60,20 @@ Route::prefix('merchant')
                     return view('Merchant.Products.Edit');
                 })->name('edit');
             });
+        Route::prefix('coment')
+            ->name('coment.')
+            ->group(function () {
+                Route::get('/', function () {
+                    return view('Merchant.coment.index');
+                })->name('index');
+            });    
+        Route::prefix('edit_profile')
+            ->name('edit_profile.')
+            ->group(function () {
+                Route::get('/', function () {
+                    return view('Merchant.edit_profile.index');
+                })->name('index');
+            });    
     });
 
 Route::prefix('admin')
@@ -68,6 +82,11 @@ Route::prefix('admin')
         Route::get('/', function () {
             return view('Admin.Index');
         })->name('index');
+
+        Route::get('/change_password', function () {
+            return view('Admin.change_password');
+        })->name('changepassword');
+
 
         Route::prefix('users')
             ->name('users.')
@@ -78,6 +97,14 @@ Route::prefix('admin')
                 Route::get('/{user}/edit', function () {
                     return view('Admin.Users.Edit');
                 })->name('edit');
+            });
+        
+            Route::prefix('coment')
+            ->name('coment.')
+            ->group(function () {
+                Route::get('/', function () {
+                    return view('Admin.coment.index');
+                })->name('index');
             });
 
         Route::prefix('merchants')
