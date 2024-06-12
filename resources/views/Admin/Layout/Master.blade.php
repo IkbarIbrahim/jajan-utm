@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{-- <link rel="icon" href="{{ asset('assets/img/logos/main-logo.png') }}" type="image/png" /> --}}
     <title>@yield('title')</title>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -14,14 +15,17 @@
     @yield('head')
 </head>
 
+
 <body>
     <div class="bg-gray-200 dark:bg-gray-500">
+        @include('sweetalert::alert')
         @include('Admin.Layout.Sidebar')
         <button x-data="{}" @click="window.scrollTo({ top: 0, behavior: 'smooth' })" id="scroll-to-top" class="fixed bottom-10 right-10 z-50 rounded-full dark:bg-gray-100 w-12 h-12 hidden justify-center items-center shadow-md">
             <i class="fas fa-arrow-up text-3xl"></i>
         </button>
         @yield('content')
 
+        
     </div>
 
     <script>
@@ -67,16 +71,33 @@
             });
         });
 
-        function onToggleMenu(e) {
-            e.name = e.name === 'menu' ? 'close' : 'menu'
-        }
-        const collapse = new Collapse($targetEl, $triggerEl, options, instanceOptions);
 
-        $triggerEl.addEventListener('click', function() {
-            collapse.toggle();
-        });
+    </script>
+    <script>
+        function confirmDelete(Id) {
+        
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "rgb(29 78 216)",
+            cancelButtonColor: "rgb(185 28 28)",
+            confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+                });
+                document.getElementById(`deleteForm-${Id}`).submit();
+            }
+            });
+        }
     </script>
 
+    @stack('scripts')
     <script src="https://unpkg.com/@popperjs/core@2"></script>
 </body>
 

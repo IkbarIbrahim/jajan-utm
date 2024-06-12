@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{-- <link rel="icon" href="assets/img/logos/main-logo.png" type="image/png"/> --}}
     <title>@yield('title')</title>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -13,6 +14,7 @@
 
 <body class="bg-gray-200 dark:bg-gray-500">
     <div class="bg-gray-200 dark:bg-gray-500">
+        @include('sweetalert::alert')
         @include('User.Layouts.Header')
         @yield('content')
         <button type="button" x-data="{}" @click="window.scrollTo({ top: 0, behavior: 'smooth' })"  class="!fixed bottom-5 z-50 end-5 hidden rounded-full bg-blue-600 p-3 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg"
@@ -35,7 +37,7 @@
 
             // Initial theme check
             if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window
-                    .matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    .matchMedia('(prefers-color-scheme: ligth)').matches)) {
                 document.documentElement.classList.add('dark');
                 if (themeToggleLightIcon) themeToggleLightIcon.classList.remove('hidden');
                 if (themeToggleDarkIcon) themeToggleDarkIcon.classList.add('hidden');
@@ -106,6 +108,21 @@
                 }
             }
         }
+
+        function updateUrlParameters(event) {
+                event.preventDefault();
+                const form = event.target;
+                const formData = new FormData(form);
+                const params = new URLSearchParams(formData);
+
+                for (let pair of params.entries()) {
+                    if (!pair[1]) {
+                        params.delete(pair[0]);
+                    }
+                }
+
+                window.location.search = params.toString();
+            }
     </script>
 
     <script src="https://unpkg.com/@popperjs/core@2"></script>

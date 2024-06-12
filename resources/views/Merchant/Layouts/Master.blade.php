@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/img/logos/main-logo.png" type="image/png"/>
     <title>@yield('title')</title>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -16,7 +17,7 @@
 
 <body>
     <div class="bg-gray-200 dark:bg-gray-500">
-
+        @include('sweetalert::alert')
         @include('Merchant.Layouts.Sidebar')
 
         @yield('content')
@@ -76,6 +77,29 @@
         $triggerEl.addEventListener('click', function() {
             collapse.toggle();
         });
+    </script>
+     <script>
+        function confirmDelete(Id) {
+        
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "rgb(29 78 216)",
+            cancelButtonColor: "rgb(185 28 28)",
+            confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+                });
+                document.getElementById(`deleteForm-${Id}`).submit();
+            }
+            });
+        }
     </script>
 
     <script src="https://unpkg.com/@popperjs/core@2"></script>
