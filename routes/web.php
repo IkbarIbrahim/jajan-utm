@@ -10,6 +10,7 @@ use App\Http\Controllers\FormRegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\LoginUserController;
+use App\Http\Controllers\Merchant\MerchantIndexController;
 use App\Http\Controllers\Merchant\ProductController;
 use App\Http\Controllers\RegisterMerchantController;
 use App\Http\Controllers\RegisterUserController;
@@ -29,11 +30,11 @@ use Illuminate\Support\Facades\Route;
 
 
 // Route untuk membersihkan cache
-Route::get('cache-clear', function () {
-    Artisan::call('optimize:clear');
-    request()->session()->with('success', 'Successfully cache cleared.');
-    return redirect()->back();
-})->name('cache.clear');
+// Route::get('cache-clear', function () {
+//     Artisan::call('optimize:clear');
+//     request()->session()->with('success', 'Successfully cache cleared.');
+//     return redirect()->back();
+// })->name('cache.clear');
 
 
 // Home route
@@ -99,8 +100,8 @@ Route::prefix('user')->middleware('auth:user')->name('user.')->group(function ()
 
 // Route untuk merchant
 Route::prefix('merchant')->middleware('auth:merchant')->name('merchant.')->group(function () {
-    Route::get('/', function () { return view('Merchant.Index');})->name('index');
-    Route::get('/preview', function () {return view('Merchant.Pages.Preview-toko'); })->name('preview');
+    Route::get('/', [MerchantIndexController::class, 'index'])->name('index');
+    Route::get('/preview/{slug}', [MerchantIndexController::class, 'merchantDetail'])->name('preview');
 
     Route::prefix('products')->name('products.')->group(function () {
         Route::get('/', [ProductController::class, 'index'])->name('index');

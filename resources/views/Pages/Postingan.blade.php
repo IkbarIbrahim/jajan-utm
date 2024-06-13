@@ -343,7 +343,7 @@
                             </div>
                         </div>
                         <div :class="layout === 'list' ? 'ml-4' : 'pt-5 pb-3 px-4'">
-                            <a href="#">
+                            <a href="">
                                 @if ( $product-> status == 'tersedia') 
                                 <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">{{$product->status}}</span>
                                 @else

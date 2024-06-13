@@ -4,7 +4,7 @@
 
 <section class="w-full min-h-screen p-4">
     <div class="mt-14 rounded-lg p-0 lg:p-4">
-        <div class="max-w-4xl mx-auto p-5 rounded-lg bg-white">
+        <div class="max-w-4xl mx-auto p-5 rounded-lg bg-white dark:bg-gray-700 dark:text-white">
             <h2 class="text-2xl font-semibold mb-4 pl-2">Informasi Produk</h2>
             <form action="{{ route('merchant.products.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="flex flex-col md:flex-row items-start space-x-2 md:space-x-4 mb-4">
-                    <label for="product-description" class="text-sm font-medium text-gray-700 ml-2 md:ml-14">Deskripsi Produk</label>
+                    <label for="product-description" class="text-sm font-medium  ml-2 md:ml-14">Deskripsi Produk</label>
                     <textarea id="product-description" name="description" rows="5" class="border border-gray-300 rounded-lg pb-6 ml-0 md:ml-7 w-[15rem] md:w-[40rem] focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                 </div>
 

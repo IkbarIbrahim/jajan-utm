@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Merchant;
 
 use App\Models\Product;
+use App\Models\Merchant;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
@@ -130,4 +131,6 @@ class ProductController extends Controller
 
         return redirect()->route('merchant.products.index');
     }
+
+ 
 }

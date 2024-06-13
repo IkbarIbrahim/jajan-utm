@@ -1,9 +1,11 @@
 <html>
   <head>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"/>
+    {{-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"/> --}}
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+    <title>Auth || Login Admin</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
 
   <body class="bg-gray-100 text-gray-900 flex justify-center h-screen">
@@ -14,7 +16,7 @@
         </div>
         <div class="mt-12 flex flex-col items-center">
           <h1 class="text-2xl xl:text-xl font-extrabold">
-            Sign up for Admin
+            Sign In for Admin
           </h1>
           
           <div class="w-full flex-1 mt-8">
@@ -60,20 +62,9 @@
               <button
                 class="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
               >
-                <svg
-                  class="w-6 h-6 -ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                  <circle cx="8.5" cy="7" r="4" />
-                  <path d="M20 8v6M23 11h-6" />
-                </svg>
+               
                 <span class="ml-3">
-                  Sign Up
+                  Sign In
                 </span>
               </button>
               <p class="mt-6 text-xs text-gray-600 text-center">

@@ -41,11 +41,18 @@
                             </div>           
                             <label>Tipe UMKM</label>
                             <div class="mb-3">
-                                <input type="text" class="form-control" name="type" placeholder="Tipe" value="{{ old('type') }}" aria-label="Type" aria-describedby="type-addon">
+                                @php
+                                    $merchants = ['UMKM','Cafe', 'Warung Makan','Lapak Mahasiswa','Pedagang Keliling']
+                                @endphp
+                                <select id="merchant-select" name="type"  class="form-control">
+                                    @foreach ($merchants as $merchant)
+                                        <option value="{{ $merchant}}">{{ $merchant}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <label>Owner</label>
                             <div class="mb-3">
-                                <input type="text" class="form-control" name="owner" placeholder="Tipe" value="{{ old('owner') }}" aria-label="Type" aria-describedby="type-addon">
+                                <input type="text" class="form-control" name="owner" placeholder="Name" value="{{ old('owner') }}" aria-label="Nama" aria-describedby="type-addon">
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign UP</button>
