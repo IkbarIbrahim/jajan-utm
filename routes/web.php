@@ -96,6 +96,7 @@ Route::prefix('user')->middleware('auth:user')->name('user.')->group(function ()
     Route::get('/fav', function () {
         return view('User.favourite');
     })->name('fav');
+    Route::post('/password-update', [ProfileController::class, 'updatePassword'])->name('password.update');
 });
 
 // Route untuk merchant
@@ -111,7 +112,7 @@ Route::prefix('merchant')->middleware('auth:merchant')->name('merchant.')->group
         Route::put('/{product}', [ProductController::class, 'update'])->name('update');
         Route::delete('/{product}', [ProductController::class, 'destroy'])->name('destroy');
     });
-  
+    
     Route::prefix('coment')
         ->name('coment.')
         ->group(function () {
@@ -126,7 +127,9 @@ Route::prefix('merchant')->middleware('auth:merchant')->name('merchant.')->group
             Route::get('/', function () {
                 return view('Merchant.edit_profile.index');
             })->name('index');
-        });  
+        });
+    
+    Route::post('/password-update', [MerchantIndexController::class, 'updatePassword'])->name('password.update');
 });
 
 // Route untuk admin

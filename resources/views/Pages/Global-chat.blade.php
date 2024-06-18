@@ -37,7 +37,7 @@
             <div class="flex flex-col flex-auto h-full px-6">
                 <div
                     class="text-xs py-4 px-4 text-gray-700 uppercase rounded-t-xl bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <h1>This is header</h1>
+                    <h1>Broadcast Chat</h1>
                 </div>
                 <div class="flex flex-col flex-auto flex-shrink-0 rounded-b-xl dark:bg-gray-600 bg-gray-300 max-h-screen p-4">
                     <div class="flex flex-col h-full overflow-x-auto mb-4">
@@ -47,7 +47,7 @@
                                     <div class="flex items-start gap-2.5">
                                         <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
                                             alt="Jese image">
-                                        <div class="flex flex-col gap-1 w-full min-w-[300px] lg:max-w-[520px]">
+                                        <div class="flex flex-col gap-1 w-full min-w-[200px] lg:min-w-[300px] max-w-[200px] lg:max-w-[500px]">
                                             <div class="flex items-center space-x-2 rtl:space-x-reverse">
                                                 <span class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie
                                                     Green</span>
@@ -69,7 +69,7 @@
                                     <div class="flex items-start gap-2.5">
                                         <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
                                             alt="Jese image">
-                                        <div class="flex flex-col gap-1 w-full min-w-[300px] lg:max-w-[520px]">
+                                        <div class="flex flex-col gap-1 w-full min-w-[200px] lg:min-w-[300px] max-w-[200px] lg:max-w-[500px]">
                                             <div class="flex items-center space-x-2 rtl:space-x-reverse">
                                                 <span class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie
                                                     Green</span>
@@ -93,7 +93,7 @@
                                     <div class="flex items-start gap-2.5 " dir="rtl">
                                         <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
                                             alt="Jese image">
-                                        <div class="flex flex-col gap-1 w-full max-w-[320px]">
+                                        <div class="flex flex-col gap-1 w-full min-w-[200px] lg:min-w-[300px] max-w-[200px] lg:max-w-[500px]">
                                             <div class="flex items-center space-x-2 rtl:space-x-reverse">
                                                 <span class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie
                                                     Green</span>
@@ -110,118 +110,8 @@
                                         
                                     </div>
                                 </div>
-                                <div class="col-start-6 col-end-13 p-3 rounded-lg">
-                                    <div class="flex items-center justify-start flex-row-reverse">
-                                        <div
-                                            class="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0">
-                                            A
-                                        </div>
-                                        <div class="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl">
-                                            <div>
-                                                Lorem ipsum dolor sit, amet consectetur adipisicing. ?
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-start-1 col-end-8 p-3 rounded-lg">
-                                    <div class="flex flex-row items-center">
-                                        <div
-                                            class="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0">
-                                            A
-                                        </div>
-                                        <div class="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl">
-                                            <div>Lorem ipsum dolor sit amet !</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-start-6 col-end-13 p-3 rounded-lg">
-                                    <div class="flex items-center justify-start flex-row-reverse">
-                                        <div
-                                            class="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0">
-                                            A
-                                        </div>
-                                        <div class="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl">
-                                            <div>
-                                                Lorem ipsum dolor sit, amet consectetur adipisicing. ?
-                                            </div>
-                                            <div class="absolute text-xs bottom-0 right-0 -mb-5 mr-2 text-gray-500">
-                                                Seen
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-start-1 col-end-8 p-3 rounded-lg">
-                                    <div class="flex flex-row items-center">
-                                        <div
-                                            class="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0">
-                                            A
-                                        </div>
-                                        <div class="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl">
-                                            <div>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                Perspiciatis, in.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-start-1 col-end-8 p-3 rounded-lg">
-                                    <div class="flex flex-row items-center">
-                                        <div
-                                            class="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0">
-                                            A
-                                        </div>
-                                        <div class="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl">
-                                            <div class="flex flex-row items-center">
-                                                <button
-                                                    class="flex items-center justify-center bg-indigo-600 hover:bg-indigo-800 rounded-full h-8 w-10">
-                                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
-                                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="1.5"
-                                                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
-                                                        </path>
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                                                        </path>
-                                                    </svg>
-                                                </button>
-                                                <div class="flex flex-row items-center space-x-px ml-4">
-                                                    <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-4 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-8 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-8 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-10 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-10 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-12 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-10 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-6 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-5 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-4 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-3 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-10 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-10 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-8 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-8 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-1 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-1 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-8 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-8 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                    <div class="h-4 w-1 bg-gray-500 rounded-lg"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                               
+                          
                             </div>
                         </div>
                     </div>

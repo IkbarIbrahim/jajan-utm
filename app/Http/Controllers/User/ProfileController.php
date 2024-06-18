@@ -5,6 +5,8 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProfileController extends Controller
 {
@@ -37,5 +39,26 @@ class ProfileController extends Controller
         $user->save();
 
         return redirect()->route('user.index')->with('success', 'Profile updated successfully.');
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|min:8|confirmed',
+
+        ]);
+
+        $user = Auth::guard('user')->user();
+
+        if (!Hash::check($request->old_password, $user->password)) {
+            Alert::error('Password lama salah');
+            return back()->withErrors(['old_password' => 'Password lama salah']);
+        }
+
+        $user->password = Hash::make($request->new_password);
+        $user->save();
+        Alert::success('Password berhasil diubah');
+        return back()->with('status', 'Password berhasil diubah');
     }
 }

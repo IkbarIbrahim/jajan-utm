@@ -47,7 +47,7 @@
                         id="dropdown-user">
                         <div class="px-4 py-3" role="none">
                             <p class="text-sm text-gray-900 dark:text-white" role="none">
-                                Neil Sims
+                                {{ Auth::guard('admin')->user()->username }}
                             </p>
 
                         </div>
