@@ -3,8 +3,9 @@
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
-                <a href="" class="flex items-center">
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Jajan UTM</span>
+                <a href="" class="flex items-start flex-col">
+                    
+                    <img src="/assets/img/logos/logohome.png" class="size-12 w-60" alt="">
                 </a>
             </div>
             <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
