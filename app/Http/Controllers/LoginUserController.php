@@ -16,17 +16,19 @@ class LoginUserController extends Controller
         $this->middleware('guest:user,merchant')->except('logout');
     }
 
-    public function index(){
-        return view('Auth.login');
+    public function index()
+    {
+        return view('Auth.Login');
     }
 
-    public function login_users(Request $request){
+    public function login_users(Request $request)
+    {
         // Validate the incoming request data
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
             'user_type' => 'required|in:user,merchant'
-        ],[
+        ], [
             'email.required' => 'Email wajib diisi',
             'email.email' => 'Format email tidak valid',
             'password.required' => 'Password wajib diisi',
@@ -55,7 +57,6 @@ class LoginUserController extends Controller
             } else {
                 return redirect('/')->with('success', 'Login berhasil!');
             }
-
         } else {
             Log::warning('Login failed', [
                 'guard' => $guard,
@@ -67,9 +68,10 @@ class LoginUserController extends Controller
         }
     }
 
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
 
-        $userType = $request->input('user_type', 'user'); 
+        $userType = $request->input('user_type', 'user');
 
         Auth::guard($userType)->logout();
 

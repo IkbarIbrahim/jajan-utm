@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Hash;
  */
 class MerchantFactory extends Factory
 {
+    protected static ?int $i = 0;
+
     /**
      * The current password being used by the factory.
      */
@@ -22,6 +24,9 @@ class MerchantFactory extends Factory
      */
     public function definition(): array
     {
+        static::$i++;
+        if (static::$i > 10) static::$i = 1;
+
         return [
             'name' => fake()->company(),
             'email' => fake()->unique()->safeEmail(),
@@ -30,8 +35,8 @@ class MerchantFactory extends Factory
             'address' => fake()->address(),
             'type' => fake()->randomElement(['Cafe', 'Lapak Mahasiswa', 'Pedagang Keliling', 'UMKM', 'Warung Makan']),
             'owner' => fake()->name(),
-            'logo' => fake()->uuid() .  '.png',
-            'cover' => fake()->uuid() .  '.png',
+            'logo' => 'logo/logo-' . static::$i . '.jpg',
+            'cover' => 'cover/cover-' . static::$i . '.jpg',
         ];
     }
 }

@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function home(){
+    public function home()
+    {
         // if (Auth::guard('merchant')->check()) {
         //     return redirect('/merchant');
         // } else {
@@ -16,14 +17,13 @@ class HomeController extends Controller
         // }
 
 
-        $featured=Product::with('merchant')->where('status','tersedia')->orderBy('id','DESC')->limit(6)->get();
-        $new_merchant=Merchant::limit(4)->orderBy('id','DESC')->get();
+        $featured = Product::with('merchant')->where('status', 'tersedia')->orderBy('id', 'DESC')->limit(6)->get();
+        $new_merchant = Merchant::limit(4)->orderBy('id', 'DESC')->get();
 
         return view('Homepage')
-                ->with('featured',$featured)
-                ->with('new_merchant',$new_merchant);
-          
-    }   
+            ->with('featured', $featured)
+            ->with('new_merchant', $new_merchant);
+    }
 
     public function productDetail($slug)
     {
@@ -40,14 +40,14 @@ class HomeController extends Controller
         if (!$merchant_detail) {
             abort(404, 'merchant not found');
         }
-        
+
         $products_paginate = Product::where('merchant_id', $merchant_detail->id)->paginate(5);
         return view('Pages.Merchant-desc')->with('merchant_detail', $merchant_detail)->with('products_paginate', $products_paginate);
     }
-    
+
 
     public function productGrids(Request $request)
-        {
+    {
         $products = Product::query();
 
         // Filter by merchant type
@@ -59,7 +59,7 @@ class HomeController extends Controller
         }
 
 
-        // rating 
+        // rating
         if ($request->filled('rating')) {
             $rating = $request->input('rating');
             $products->where('rating', '>=', $rating);
@@ -101,13 +101,13 @@ class HomeController extends Controller
         $show = $request->input('show', 6);
         $products = $products->with('merchant')->paginate($show);
 
-        return view('Pages.postingan')->with('products', $products);
+        return view('Pages.Postingan')->with('products', $products);
     }
 
     public function merchantGrids(Request $request)
     {
         $merchants = Merchant::query();
-        
+
 
 
         // Search logic

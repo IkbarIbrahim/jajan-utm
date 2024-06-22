@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ProductFactory extends Factory
 {
+    protected static ?int $i = 0;
+
     /**
      * Define the model's default state.
      *
@@ -16,6 +18,9 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
+        static::$i++;
+        if (static::$i > 10) static::$i = 1;
+
         return [
             'name' => fake()->company(),
             'description' =>  fake()->paragraph(),
@@ -23,7 +28,7 @@ class ProductFactory extends Factory
             'price' => fake()->randomNumber(5, true),
             'rating' => fake()->randomFloat(1, 0, 5),
             'status' => fake()->randomElement(['tersedia', 'habis']),
-            'photo' => fake()->uuid() .  '.png',
+            'photo' => 'product_photos/food-' . static::$i . '.jpg',
         ];
     }
 }

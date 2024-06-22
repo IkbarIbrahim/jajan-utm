@@ -11,6 +11,8 @@ use Illuminate\Support\Str;
  */
 class UserFactory extends Factory
 {
+    protected static ?int $i = 0;
+
     /**
      * The current password being used by the factory.
      */
@@ -23,13 +25,16 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        static::$i++;
+        if (static::$i > 10) static::$i = 1;
+
         return [
             'first_name' => fake()->firstName(),
             'last_name' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => bcrypt('password'),
-            'photo' => fake()->uuid() .  '.png',
+            'photo' => 'photos/person-' . static::$i . '.jpg',
             'remember_token' => Str::random(10),
         ];
     }
