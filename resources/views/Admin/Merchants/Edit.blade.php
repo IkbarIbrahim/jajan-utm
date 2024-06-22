@@ -54,8 +54,8 @@
                     <div class="max-w-2xl">
                         <div class="mb-4 flex flex-col gap-4 md:flex-row md:items-center">
                             <img class="h-20 w-20 rounded-full"
-                                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/helene-engels.png"
-                                alt="Helene avatar">
+                                src="{{asset('storage/' . $merchant->logo)   }}"
+                                alt="{{ $merchant->name }}">
                             <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
                                 {{ $merchant->name }}
                             </h2>
@@ -76,7 +76,7 @@
                             <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Cover:</dt>
                             <dd class="mb-4 font-light text-gray-500 dark:text-gray-400">
                                 <img class="h-20 rounded-lg"
-                                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/computer-dark.png"
+                                    src="{{asset('storage/' . $merchant->cover)   }}"
                                     alt="Helene avatar">
                             </dd>
                         </dl>

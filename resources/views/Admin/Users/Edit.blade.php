@@ -54,8 +54,8 @@
                     <div class="max-w-2xl">
                         <div class="mb-4 flex flex-col gap-4 md:flex-row md:items-center">
                             <img class="h-20 w-20 rounded-full"
-                                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/helene-engels.png"
-                                alt="Helene avatar">
+                                src="{{ asset('storage/' . $user->photo) }}"
+                                alt="user photo">
                             <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
                                 {{ $user->first_name }} {{ $user->last_name }}
                             </h2>

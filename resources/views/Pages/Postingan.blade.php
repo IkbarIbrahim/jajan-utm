@@ -6,7 +6,7 @@
         <div class="container py-4 flex items-center gap-3 ps-10 lg:ps-20 dark:bg-gray-700">
             <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                 <li class="inline-flex items-center">
-                    <a href="#"
+                    <a href="{{ route('home') }}"
                         class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-dark-600 dark:text-gray-400 dark:hover:text-white">
                         <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 20 20">
@@ -332,7 +332,7 @@
                     @foreach ($products as $product)
                     <div :class="layout === 'grid' ? 'bg-white dark:bg-gray-600 shadow rounded overflow-hidden group' : 'flex items-center p-4 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-700 rounded-lg shadow-md'">
                         <div class="relative ">
-                            <img src="assets/img/product/food1.jpg" alt="product 1" class="w-full h-48 object-cover">
+                            <img src="{{ asset('storage/' . $product->photo) }}" alt="{{ $product->name }}" class="w-full h-48 object-cover">
                             <div :class="layout === 'grid' ? 'absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition ' : 'inset-0 flex gap-2 mt-2'">
                                 <a href="{{route('post-product-detail',$product->id)}}" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="view product">
                                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -356,7 +356,7 @@
                             </div>
         
                             <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
-                                <a class="flex items-center gap-2 font-medium" href="">
+                                <a target="_blank" class="flex items-center gap-2 font-medium" href="https://www.google.com/maps/search/{{$product->merchant->address}} ">
                                     <ion-icon name="pin"></ion-icon><p class="text-xs font-light text-blue-800 dark:text-blue-300">{{$product->merchant->address}} </p>
                                 </a>
                                 <a href="">

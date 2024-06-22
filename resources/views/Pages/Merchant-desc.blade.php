@@ -6,7 +6,7 @@
         <div class="container py-4 flex items-center gap-3 ps-10 lg:ps-20 dark:bg-gray-700">
             <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                 <li class="inline-flex items-center">
-                    <a href="#"
+                    <a href="{{ route('home') }}"
                         class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-dark-600 dark:text-gray-400 dark:hover:text-white">
                         <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 20 20">
@@ -17,7 +17,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#"
+                    <a href="{{ route('merch-list') }}"
                         class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-dark-600 dark:text-gray-400 dark:hover:text-white">
                         <div class="flex items-center">
                             <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true"
@@ -47,10 +47,10 @@
                 <div class="mt-14 rounded-lg p-4">
                     <div
                         class="max-w-xl lg:max-w-4xl mx-auto p-5 rounded-lg  bg-white items-center md:items-start space-y-1 md:space-x-4">
-                        <img src="https://via.placeholder.com/1100x300" alt="Cover Toko" class="w-full rounded-lg mb-4">
+                        <img src="{{ asset('storage/' . $merchant_detail->cover) }}" alt="Cover Toko" class="w-full rounded-lg mb-4">
                         <div class="p-4 flex flex-col lg:flex-row space-y-2 lg:space-x-5 lg:ml-6">
-                            <img src="https://placehold.co/85x85" alt="Business Logo"
-                                class=" object-cover items-end rounded-lg">
+                            <img src="{{ asset('storage/' . $merchant_detail->logo) }}" alt="Business Logo"
+                                class=" object-cover items-end rounded-lg size-20">
                             <div class="flex-grow-0 lg:bg-white sm:bg-blur-600">
                                 <div class="space-x-2">
                                     <h2 class="text-xl font-bold">{{ $merchant_detail->name }}</h2>
@@ -82,7 +82,7 @@
                                 <div
                                     class="bg-white border border-gray-200 rounded-lg shadow-md p-4 hover:translate-y-[-5px] transition-transform duration-300 relative">
                                     <div class="relative">
-                                        <img src="https://via.placeholder.com/300" alt="Product Image"
+                                        <img src="{{ asset('storage/' . $product->photo) }}" alt="Product Image"
                                             class="w-full rounded-lg mb-4">
                                     </div>
                                     <h2 class="text-purple-800 text-lg font-medium">{{ $product->name }}</h2>

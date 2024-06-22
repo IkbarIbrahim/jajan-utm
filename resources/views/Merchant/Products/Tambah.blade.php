@@ -17,18 +17,6 @@
                 </div>
 
                 <div class="mb-4">
-                    <label class="block font-medium mb-1 ml-3">Foto Produk Promosi</label>
-                    <div class="h-20 w-20 ml-2 md:ml-[12rem] border-dashed border-2 border-zinc-300 dark:border-zinc-600 rounded-lg text-center">
-                        <input type="file" name="promotion_photos[]" class="hidden" id="promotion-photos" multiple>
-                        <button type="button" onclick="document.getElementById('promotion-photos').click()" class="text-red-600 text-xs mt-5">Tambahkan Foto (0/3)</button>
-                    </div>
-                    <ul class="text-xs text-zinc-600 dark:text-zinc-400 ml-2 md:ml-48 list-inside list-disc">
-                        <li>Upload Foto 1:1</li>
-                        <li>Foto Produk Promosi akan digunakan dibawah foto utama pada deskripsi produk. Meng-upload foto produk promosi, akan meningkatkan minat belanja Pembeli.</li>
-                    </ul>
-                </div>
-
-                <div class="mb-4">
                     <label class="flex flex-col md:flex-row font-medium mb-1 ml-2 md:ml-16">Nama Produk
                         <input type="text" name="name" class="w-[15rem] md:w-[40rem] border-zinc-300 border rounded-lg p-2 ml-0 md:ml-5" placeholder="Nama Produk" required>
                     </label>

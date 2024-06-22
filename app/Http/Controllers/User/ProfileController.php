@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ProfileController extends Controller
@@ -31,10 +33,10 @@ class ProfileController extends Controller
         $user->last_name = $request->input('last_name');
         $user->email = $request->input('email');
 
-        if ($request->hasFile('photo')) {
-            $path = $request->file('photo')->store('public/photos');
-            $user->photo = basename($path);
-        }
+        // if ($request->hasFile('photo')) {
+        //     $path = $request->file('photo')->store('public/photos');
+        //     $user->photo = basename($path);
+        // }
 
         $user->save();
 
@@ -61,4 +63,63 @@ class ProfileController extends Controller
         Alert::success('Password berhasil diubah');
         return back()->with('status', 'Password berhasil diubah');
     }
+
+    public function updatePhoto(Request $request)
+    {
+        $user = Auth::user();
+    
+        $request->validate([
+            'photo' => 'required|image|max:2048',
+        ]);
+    
+        // Hapus foto lama jika ada
+        if ($user->photo) {
+            Storage::delete('public/' . $user->photo);
+        }
+    
+        // Menggunakan nama asli file
+        $file = $request->file('photo');
+        $fileName = 'photos/' . $file->getClientOriginalName();
+    
+        // Memastikan nama file unik untuk menghindari konflik
+        $path = $file->storeAs('public', $fileName);
+    
+        $user->photo = $fileName; // Menyimpan path lengkap ke database
+    
+        $user->save();
+    
+        // Bersihkan cache view
+        Artisan::call('view:clear');
+        Artisan::call('cache:clear');
+        Artisan::call('config:clear');
+        Artisan::call('route:clear');
+        
+        Alert::success('Photo updated successfully!');
+        return redirect()->back()->with('success', 'Photo updated successfully!');
+    }
+    
+    public function deletePhoto()
+    {
+        $user = Auth::user();
+    
+        // Hapus foto jika ada
+        if ($user->photo) {
+            Storage::delete('public/photos/' . $user->photo);
+            $user->photo = null;
+            $user->save();
+        }
+    
+        // Set user ke Auth untuk memastikan data terbaru
+        Auth::setUser($user);
+    
+        // Bersihkan cache view
+        Artisan::call('view:clear');
+        Artisan::call('cache:clear');
+        Artisan::call('config:clear');
+        Artisan::call('route:clear');
+    
+        Alert::success('Photo deleted successfully!');
+        return redirect()->back()->with('success', 'Photo deleted successfully!');
+    }
+
 }

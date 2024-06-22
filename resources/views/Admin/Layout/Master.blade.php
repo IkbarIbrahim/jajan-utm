@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{-- <link rel="icon" href="{{ asset('assets/img/logos/main-logo.png') }}" type="image/png" /> --}}
+    <link rel="icon" href="{{ asset('assets/img/logos/main-logo.png') }}" type="image/png" />
     <title>@yield('title')</title>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
