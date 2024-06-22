@@ -23,10 +23,9 @@
                                     deleniti, consequuntur eaque itaque corrupti, obcaecati doloremque corporis quasi a,
                                     autem labore rerum voluptatum mollitia. Ducimus, impedit non.
                                 </p>
-                                <button id="dropdownHoverButton2" data-dropdown-toggle="dropdownHover2"
-                                    data-dropdown-trigger="hover"
-                                    class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center md:inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                    type="button">Get Started </button>
+
+                                <a href="{{ route('post-product') }}" class="z-12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center md:inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                    >Get Started </a>
 
 
                             </div>
@@ -73,14 +72,14 @@
                     </div>
 
                 </div>
-                <div class="mt-5 lg:mt-[-210px] w-full z-10 absolute ">
+                {{-- <div class="mt-5 lg:mt-[-210px] w-full z-2 absolute ">
                     <svg class="dark:fill-gray-500 fill-gray-200" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 1440 320">
                         <path f fill-opacity="1"
                             d="M0,224L48,240C96,256,192,288,288,293.3C384,299,480,277,576,266.7C672,256,768,256,864,245.3C960,235,1056,213,1152,218.7C1248,224,1344,256,1392,272L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
                         </path>
                     </svg>
-                </div>
+                </div> --}}
         </section>
         <section class="pb-12 pt-20 lg:pb-[90px] lg:pt-[120px] dark:bg-dark">
             <div class="container mx-auto">
@@ -106,10 +105,10 @@
                     @if ($featured)
                         @foreach ($featured as $item)
                             <div class="w-full px-4 md:w-1/2 lg:w-1/3 ">
-                                <div class="mb-9 rounded-sm bg-white  shadow-2 hover:shadow-lg  dark:bg-gray-600">
+                                <div class="mb-6 rounded-sm bg-white  shadow-2 hover:shadow-lg  dark:bg-gray-600">
                                     <div class="mb-2 flex items-center justify-center  bg-white-300 dark:bg-gray-700">
-                                        <img class="w-full h-full rounded-sm mx-auto" src="assets/img/sate.jpg"
-                                            alt="">
+                                        <img src="{{ asset('storage/' . $item->photo) }}" alt="{{ $item->name }}" class="w-full h-48 object-cover">
+
                                     </div>
                                     <div class="p-4">
                                         <h4
@@ -121,15 +120,20 @@
                                             class="text-body-color hover:text-pretty dark:text-white mb-8 text-start truncate hover:text-clip">
                                             {{ $item->description }}
                                         </p>
-                                        <div class="flex flex-col gap-5 text-black dark:text-white">
-                                            <a class="flex items-center gap-2 font-medium" href="">
-                                                <ion-icon name="pin"></ion-icon>
-                                                <p class="text-sm text-blue-800 dark:text-blue-300">
+                                        <div class="flex flex-col gap-2 text-black dark:text-white">
+                                            <p class="flex flex-row font-medium " href="">
+                                                <p class="text-xs text-blue-800 dark:text-blue-300">
                                                     {{ $item->merchant->address }} </p>
-                                            </a>
-                                            <a href="">
-                                                <ion-icon name="cart"></ion-icon> {{ $item->merchant->name }}
-                                            </a>
+                                            </p>
+                                            <p href="" class="flex">
+                                                <svg class="size-6 me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                    <g>
+                                                        <path fill="none" d="M0 0h24v24H0z"/>
+                                                        <path d="M21 11.646V21a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-9.354A3.985 3.985 0 0 1 2 9V3a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v6c0 1.014-.378 1.94-1 2.646zm-2 1.228a4.007 4.007 0 0 1-4-1.228A3.99 3.99 0 0 1 12 13a3.99 3.99 0 0 1-3-1.354 3.99 3.99 0 0 1-4 1.228V20h14v-7.126zM14 9a1 1 0 0 1 2 0 2 2 0 1 0 4 0V4H4v5a2 2 0 1 0 4 0 1 1 0 1 1 2 0 2 2 0 1 0 4 0z"/>
+                                                    </g>
+                                                </svg>
+                                                {{ $item->merchant->name }}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -140,6 +144,9 @@
                 </div>
             </div>
         </section>
+
+
+        
 
         <section class="dark:bg-gray-400 bg-gray-300 overflow-hidden bg-tg-bg pb-20 pt-20 lg:pb-[120px] lg:pt-[120px]">
             <div class="container mx-auto">
@@ -170,7 +177,8 @@
                         <div
                             class="shadow-1 dark:shadow-box-dark group mb-8 rounded-[5px] bg-white px-5 pb-10 pt-12 dark:bg-gray-600">
                             <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
-                                <img src="" alt="profile" class="h-[120px] w-[120px] rounded-full">
+                                
+                                <img src=" {{ asset('storage/' . $nMerchant->logo)  }}" alt="profile" class="h-[120px] w-[120px] rounded-full">
                                 <span
                                     class="absolute bottom-0 left-0 -z-10 h-10 w-10 rounded-full bg-secondary opacity-0 transition-all group-hover:opacity-100"></span>
                                 <span

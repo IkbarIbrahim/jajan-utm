@@ -32,7 +32,7 @@ use Illuminate\Support\Facades\Route;
 // Route untuk membersihkan cache
 // Route::get('cache-clear', function () {
 //     Artisan::call('optimize:clear');
-//     request()->session()->with('success', 'Successfully cache cleared.');
+//     // request()->session()->with('success', 'Successfully cache cleared.');
 //     return redirect()->back();
 // })->name('cache.clear');
 
@@ -97,6 +97,8 @@ Route::prefix('user')->middleware('auth:user')->name('user.')->group(function ()
         return view('User.favourite');
     })->name('fav');
     Route::post('/password-update', [ProfileController::class, 'updatePassword'])->name('password.update');
+    Route::post('user/photo/update', [ProfileController::class, 'updatePhoto'])->name('photo.update');
+    Route::delete('user/photo/delete', [ProfileController::class, 'deletePhoto'])->name('photo.delete');
 });
 
 // Route untuk merchant

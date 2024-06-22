@@ -6,7 +6,7 @@
         <div class="container py-4 flex items-center gap-3 ps-6 lg:ps-20 dark:bg-gray-700">
             <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                 <li class="inline-flex items-center">
-                    <a href="#"
+                    <a href="{{ route('home') }}"
                         class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-dark-600 dark:text-gray-400 dark:hover:text-white">
                         <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 20 20">
@@ -17,7 +17,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#"
+                    <a href="{{ route('post-product') }}"
                         class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-dark-600 dark:text-gray-400 dark:hover:text-white">
                         <div class="flex items-center">
                             <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true"
@@ -48,7 +48,7 @@
             <div class="w-full px-2 lg:px-40">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="justify-center m-3">
-                        <img src="{{ $product_detail->main_image_url ?? 'https://via.placeholder.com/350x350' }}"
+                        <img src="{{ asset('storage/' . $product_detail->photo) ?? 'https://via.placeholder.com/350x350' }}"
                             alt="{{ $product_detail->name }}" class="w-full rounded-lg shadow-md">
                         <div class="flex flex-wrap gap-4 justify-start pt-5">
                             {{-- @foreach ($product_detail->additional_images as $image) --}}
@@ -125,7 +125,8 @@
                         <div class="flex items-center space-x-3 p-2 mb-4 ">
                             <div class="relative">
                                 <img class="w-20 h-20 rounded-full"
-                                    src="{{ $product_detail->merchant->profile_image_url ?? 'https://via.placeholder.com/64' }}"
+                                
+                                    src="{{asset('storage/' . $product_detail->merchant->logo) ?? 'https://via.placeholder.com/64' }}"
                                     alt="Profile Picture">
                             </div>
                             <div>
@@ -161,7 +162,7 @@
                         <div class="space-y-6">
                             <div class="flex">
                                 <div class="flex-shrink-0 mr-4">
-                                    <img class="w-10 h-10 rounded-full" src="https://via.placeholder.com/40x40"
+                                    <img class="w-10 h-10 rounded-full" src="{{ asset('storage/' . $data->user_info->photo) }}"
                                         alt="Avatar">
                                 </div>
                                 <div>

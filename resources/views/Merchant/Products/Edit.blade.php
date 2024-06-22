@@ -16,7 +16,7 @@
                         <div class="flex items-center">
                             <i class="mx-1 w-3 text-gray-400 rtl:rotate-180">|</i>
                             <a class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white md:ms-2"
-                                href="#">Daftar
+                                href="{{ route('merchant.products.index')}}">Daftar
                                 Produk</a>
                         </div>
                     </li>
@@ -82,8 +82,8 @@
             <div class="block rounded-lg border border-gray-200 bg-white p-6 shadow dark:border-gray-700 dark:bg-gray-800">
                 <dl>
                     <dd class="mb-6 font-light text-gray-500 dark:text-gray-400">
-                        <img class="h-20 rounded-lg"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/computer-dark.png"
+                        <img class="size-30 rounded-lg"
+                            src="{{ asset('storage/' . $product->photo) }}"
                             alt="Helene avatar">
                     </dd>
                 </dl>

@@ -2,7 +2,7 @@
     @scroll.window="scroll = (window.pageYOffset > 50) ? true : false"
     :class="{ 'bg-white dark:bg-gray-700 shadow-lg': scroll, 'bg-transparent': !scroll }">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 sticky top-0">
-        <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <a href="{{ route('home') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white flex "><img class="size-12 w-40" src="/assets/img/logos/logohome.png" alt=""></span>
         </a>
         <button id="triggerEl" data-collapse-toggle="navbar-default" type="button"
@@ -166,7 +166,7 @@
                         aria-expanded="false" data-dropdown-toggle="dropdown-user">
                         <span class="sr-only">Open user menu</span>
                         <img class="w-8 h-8 rounded-full"
-                            src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                            src="{{ asset('storage/' .   Auth::guard('user')->user()->photo) }}" alt="Profile photo" >
                     </button>
                 </div>
                 <!-- Dropdown menu for user -->
@@ -210,7 +210,7 @@
                         aria-expanded="false" data-dropdown-toggle="dropdown-merchant">
                         <span class="sr-only">Open user menu</span>
                         <img class="w-8 h-8 rounded-full"
-                            src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                            src="{{ asset('storage/' .   Auth::guard('merchant')->user()->logo) }}" alt="user photo">
                     </button>
                 </div>
                 <!-- Dropdown menu for merchant -->

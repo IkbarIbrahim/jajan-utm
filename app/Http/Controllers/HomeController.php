@@ -86,6 +86,11 @@ class HomeController extends Controller
             $categories = $request->input('category');
             $products->whereIn('category', $categories);
         }
+        // availible filter l
+        if ($request->filled('availability')) {
+            $availability = $request->input('availability');
+            $products->whereIn('status', $availability);
+        }
 
         // Sorting logic
         if ($request->filled('sort')) {

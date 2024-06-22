@@ -6,7 +6,7 @@
         <div class="container py-4 flex items-center gap-3 ps-10 lg:ps-20 dark:bg-gray-700">
             <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                 <li class="inline-flex items-center">
-                    <a href="#"
+                    <a href="{{ route('home') }}"
                         class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-dark-600 dark:text-gray-400 dark:hover:text-white">
                         <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 20 20">
@@ -16,16 +16,6 @@
                         Home
                     </a>
                 </li>
-                {{-- <li >
-                    <a href="#" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-dark-600 dark:text-gray-400 dark:hover:text-white">
-                        <div class="flex items-center">
-                        <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                        </svg>
-                        Postingan
-                        </div>
-                    </a>
-                </li> --}}
                 <li aria-current="page">
                     <div class="flex items-center">
                         <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true"
@@ -81,14 +71,14 @@
                 @foreach($merchants as $merchant)
                 <div :class="layout === 'grid' ? 'dark:bg-gray-600 bg-white border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-4 hover:translate-y-[-5px] transition-transform duration-300 relative' : 'flex items-center p-4 h-40 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-700 rounded-lg shadow-md'">
                     <div class="relative">
-                        <img  src="https://via.placeholder.com/300"  :class="layout === 'grid' ? ' w-full rounded-lg mb-4' :'max-w-32 h-32 lg:h-28 lg:w-28 w-32 rounded-lg '">
+                        <img  src="{{ asset('storage/' . $merchant->cover) }}"  :class="layout === 'grid' ? ' w-full rounded-lg mb-4' :'max-w-32 h-32 lg:h-28 lg:w-28 w-32 rounded-lg '">
                         <div :class=" layout === 'grid' ? 'absolute bottom-0 right-0 mb-2 mr-2 w-10 h-10' : 'absolute bottom-0 right-0 mb-2 mr-2 w-12 h-12 lg:block hidden'">
-                            <img src="https://via.placeholder.com/100"  class="rounded-full border-2 border-white shadow-md ">
+                            <img src="{{ asset('storage/' . $merchant->logo) }}"  class="rounded-full border-2 border-white shadow-md ">
                         </div>
                     </div>
                     <div :class="layout === 'list' ? 'ml-4' : ''">
                         <h2 :class="layout === 'grid' ? 'dark:text-white text-lg font-medium' : 'dark:text-white text-sm font-medium' ">{{$merchant->name}}</h2>
-                        <a href="#" :class="layout === 'grid' ? 'font-sm text-sm text-blue-600 dark:text-blue-500 hover:underline' : 'font-xs text-xs text-blue-600 dark:text-blue-500 hover:underline'">{{$merchant->address}}</a>
+                        <a target="_blank" href="https://www.google.com/maps/search/{{$merchant->address}}" :class="layout === 'grid' ? 'font-sm text-sm text-blue-600 dark:text-blue-500 hover:underline' : 'font-xs text-xs text-blue-600 dark:text-blue-500 hover:underline'">{{$merchant->address}}</a>
                         <p class="dark:text-white mb-3 text-xs line-clamp-2 hover:line-clamp-none">{{$merchant->description}}</p>
                         <a href="{{route('merch-info',$merchant->id)}}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-5 py-2 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             More

@@ -82,6 +82,9 @@
                                             <span class="bg-primary-100 text-primary-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-primary-900 dark:text-primary-300 line-clamp-2"> {{$comment->body}} </span>
                                         </td>
                                         <td class="px-4 py-2">
+                                            <span class="bg-primary-100 text-primary-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-primary-900 dark:text-primary-300 line-clamp-2"> {{$comment->product->name}} </span>
+                                        </td>
+                                        <td class="px-4 py-2">
                                             <span class="bg-primary-100 text-primary-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-primary-900 dark:text-primary-300 line-clamp-2"> {{$comment->rating}} </span>
                                         </td>
                                         <td class="px-4 py-2">{{$comment->created_at}}</td>
