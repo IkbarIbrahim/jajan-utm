@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\MerchantController;
 use App\Http\Controllers\Admin\PostinganController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\FavouriteController;
 use App\Http\Controllers\FormRegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginAdminController;
@@ -93,9 +94,7 @@ Route::get('/global', function () {
 Route::prefix('user')->middleware('auth:user')->name('user.')->group(function () {
     Route::get('/', [ProfileController::class, 'showProfile'])->name('index');
     Route::post('/profile', [ProfileController::class, 'updateProfile'])->name('update');
-    Route::get('/fav', function () {
-        return view('User.favourite');
-    })->name('fav');
+    Route::get('/fav', [FavouriteController::class, 'index'])->name('fav');
     Route::post('/password-update', [ProfileController::class, 'updatePassword'])->name('password.update');
     Route::post('user/photo/update', [ProfileController::class, 'updatePhoto'])->name('photo.update');
     Route::delete('user/photo/delete', [ProfileController::class, 'deletePhoto'])->name('photo.delete');
