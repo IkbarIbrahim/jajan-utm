@@ -222,309 +222,157 @@
 
         <div class="col-span-4 mb-12" x-data="layoutData()">
             
-            <div class="flex justify-between mb-4">
-                <form class="w-40px">
-                    <select id="sort" class="bg-gray-50 px-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                        <option class="py-2" selected>default</option>
-                        <option class="py-2">Terbaru</option>
-                        <option class="py-2">terlama</option>
-                    </select>
-                </form>
-    
-                <div class="flex gap-2 ml-auto">
-                    <div @click="setLayout('grid')" :class="{ 'bg-blue-700 text-white': layout === 'grid', 'dark:bg-gray-600 bg-white': layout !== 'grid' }" class="w-10 h-9 flex items-center justify-center rounded cursor-pointer">
-                        <i class="fa-solid fa-grip-vertical"></i>
+            
+            
+            <div class='flex flex-col gap-4'>
+                @if($products->count() > 0)
+                    @foreach ($products as $product)
+                    <div class='flex items-center p-4 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-700 rounded-lg shadow-md'>
+                        <div class="relative ">
+                            <img src="{{ asset('assets/img/product/food1.jpg') }}" alt="product 1" class="w-full h-48 object-cover">
+                            <div class='inset-0 flex gap-2 mt-2'>
+                                <a href="{{route('post-product-detail',$product->id)}}" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="view product">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </a>
+                                <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="add to wishlist">
+                                    <i class="fa-solid fa-heart"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class=" 'pt-5 pb-3 px-4">
+                            <a href="#">
+                                @if ( $product->status == 'tersedia') 
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">{{$product->status}}</span>
+                                @else
+                                <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">{{$product->status}}</span>
+                                @endif
+                                <h4 class="uppercase dark:text-white font-bold text-xl mb-2 text-gray-800 hover:text-blue-800 transition">{{$product->name}}</h4>
+                            </a>
+                            <div class="flex items-baseline mb-1 space-x-2">
+                                <p class="text-xl dark:text-white font-semibold">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
+                            </div>
+            
+                            <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
+                                <a class="flex items-center gap-2 font-medium" href="">
+                                    <ion-icon name="pin"></ion-icon><p class="text-xs font-light text-blue-800 dark:text-blue-300">{{$product->merchant->address}} </p>
+                                </a>
+                                <a href="">
+                                    <p class="text-sm font-bold" >[ {{$product->merchant->type}} ]</p> {{$product->merchant->name}} 
+                                </a>
+                            </div>
+                            <div class="flex lg:items-center mt-2 flex-col lg:flex-row ">
+                                @php
+                                    $rating = $product->rating; 
+                                    $fullStars = floor($rating); 
+                                    $halfStar = ($rating - $fullStars) >= 0.5 ? 1 : 0; 
+                                    $emptyStars = 5 - ($fullStars + $halfStar); 
+                                @endphp
+                                <div class="flex gap-1 text-sm text-yellow-400 ">
+                                    @for ($i = 0; $i < $fullStars; $i++)
+                                    <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor"
+                                    viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    @endfor
+                                    @if ($halfStar)
+                                    <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <clipPath id="half">
+                                                <rect x="0" y="0" width="10" height="20" />
+                                            </clipPath>
+                                        </defs>
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            fill="currentColor"
+                                            clip-path="url(#half)"/>
+                                        <path fill='none'  stroke="currentColor" stroke-width="1" 
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    
+                                    @endif
+                                    @for ($i = 0; $i < $emptyStars; $i++)
+                                    <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" stroke-width="1" 
+                                    viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    @endfor
+                                </div>
+                                <span class="m-0 lg:ml-1 text-gray-500 dark:text-gray-400">{{$product->rating}}</span>
+                                <div class="text-xs text-gray-500 m-0 lg:ml-3">{{$product['getReview']->count()}} Review</div>
+                            </div>
+                        </div>
                     </div>
-                    <div @click="setLayout('list')" :class="{ 'bg-blue-700 text-white': layout === 'list', 'dark:bg-gray-600 bg-white': layout !== 'list' }" class="border border-gray-300 w-10 h-9 flex items-center justify-center  rounded cursor-pointer">
-                        <i class="fa-solid fa-list"></i>
-                    </div>
-                </div>
+                    @endforeach
+                @else
+                    <h4 class="text-lg w-full text-center text-gray-500 dark:text-gray-400">There are no products.</h4>
+                @endif
             </div>
             
-            <div :class="layout === 'grid' ? 'grid md:grid-cols-4 grid-cols-2 gap-6' : 'flex flex-col gap-4'">
-                <div :class="layout === 'grid' ? 'bg-white dark:bg-gray-600 shadow rounded overflow-hidden group hover:translate-y-[-5px] transition-transform duration-300' : 'flex items-center p-4 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-700 rounded-lg shadow-md hover:translate-y-[-5px] transition-transform duration-300'">
-                    <div class="relative">
-                        <img src="assets/img/product/food1.jpg" alt="product 1" class="w-full h-48 object-cover">
-                        <div :class="layout === 'grid' ? 'absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition ' : 'inset-0 flex gap-2 mt-2'">
-                            <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="view product">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </a>
-                            <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="delete bookmark">
-                                <i class="fa-solid fa-trash"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div :class="layout === 'list' ? 'ml-4' : 'pt-5 pb-3 px-4'">
-                        <a href="#">
-                            <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Tersedia</span>
-                            <h4 class="uppercase dark:text-white font-bold text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
-                        </a>
-                        <div class="flex items-baseline mb-1 space-x-2">
-                            <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
-                        </div>
-    
-                        <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
-                            <a href="">
-                                <ion-icon name="pin"></ion-icon> Lokasi
-                            </a>
-                            <a href="">
-                                <ion-icon name="cart"></ion-icon> Toko
-                            </a>
-                        </div>
-                        <div class="flex items-center mt-2">
-                            <div class="flex gap-1 text-sm text-yellow-400">
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                            </div>
-                            <div class="text-xs text-gray-500 ml-3">(150)</div>
-                        </div>
-                    </div>
-                </div>
-                <div :class="layout === 'grid' ? 'bg-white dark:bg-gray-600 shadow rounded overflow-hidden group hover:translate-y-[-5px] transition-transform duration-300' : 'flex items-center p-4 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-700 rounded-lg shadow-md hover:translate-y-[-5px] transition-transform duration-300'">
-                    <div class="relative ">
-                        <img src="assets/img/product/food2.jpg" alt="product 1" class="w-full h-48 object-cover">
-                        <div :class="layout === 'grid' ? 'absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition ' : 'inset-0 flex gap-2 mt-2'">
-                            <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="view product">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </a>
-                            <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="delete bookmark">
-                                <i class="fa-solid fa-trash"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div :class="layout === 'list' ? 'ml-4' : 'pt-5 pb-3 px-4'">
-                        <a href="#">
-                            <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Tersedia</span>
-                            <h4 class="uppercase dark:text-white font-bold text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
-                        </a>
-                        <div class="flex items-baseline mb-1 space-x-2">
-                            <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
-                        </div>
-    
-                        <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
-                            <a href="">
-                                <ion-icon name="pin"></ion-icon> Lokasi
-                            </a>
-                            <a href="">
-                                <ion-icon name="cart"></ion-icon> Toko
-                            </a>
-                        </div>
-                        <div class="flex items-center mt-2">
-                            <div class="flex gap-1 text-sm text-yellow-400">
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                            </div>
-                            <div class="text-xs text-gray-500 ml-3">(150)</div>
-                        </div>
-                    </div>
-                </div>
-                <div :class="layout === 'grid' ? 'bg-white dark:bg-gray-600 shadow rounded overflow-hidden group hover:translate-y-[-5px] transition-transform duration-300' : 'flex items-center p-4 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-700 rounded-lg shadow-md hover:translate-y-[-5px] transition-transform duration-300'">
-                    <div class="relative ">
-                        <img src="assets/img/product/food3.jpg" alt="product 1" class="w-full h-48 object-cover">
-                        <div :class="layout === 'grid' ? 'absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition ' : 'inset-0 flex gap-2 mt-2'">
-                            <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="view product">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </a>
-                            <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="delete bookmark">
-                                <i class="fa-solid fa-trash"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div :class="layout === 'list' ? 'ml-4' : 'pt-5 pb-3 px-4'">
-                        <a href="#">
-                            <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Tersedia</span>
-                            <h4 class="uppercase dark:text-white font-bold text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
-                        </a>
-                        <div class="flex items-baseline mb-1 space-x-2">
-                            <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
-                        </div>
-    
-                        <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
-                            <a href="">
-                                <ion-icon name="pin"></ion-icon> Lokasi
-                            </a>
-                            <a href="">
-                                <ion-icon name="cart"></ion-icon> Toko
-                            </a>
-                        </div>
-                        <div class="flex items-center mt-2">
-                            <div class="flex gap-1 text-sm text-yellow-400">
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                            </div>
-                            <div class="text-xs text-gray-500 ml-3">(150)</div>
-                        </div>
-                    </div>
-                </div>
-                <div :class="layout === 'grid' ? 'bg-white dark:bg-gray-600 shadow rounded overflow-hidden group hover:translate-y-[-5px] transition-transform duration-300' : 'flex items-center p-4 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-700 rounded-lg shadow-md hover:translate-y-[-5px] transition-transform duration-300'">
-                    <div class="relative ">
-                        <img src="assets/img/product/food4.jpg" alt="product 1" class="w-full h-48 object-cover">
-                        <div :class="layout === 'grid' ? 'absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition ' : 'inset-0 flex gap-2 mt-2'">
-                            <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="view product">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </a>
-                            <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="delete bookmark">
-                                <i class="fa-solid fa-trash"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div :class="layout === 'list' ? 'ml-4' : 'pt-5 pb-3 px-4'">
-                        <a href="#">
-                            <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Tersedia</span>
-                            <h4 class="uppercase dark:text-white font-bold text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
-                        </a>
-                        <div class="flex items-baseline mb-1 space-x-2">
-                            <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
-                        </div>
-    
-                        <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
-                            <a href="">
-                                <ion-icon name="pin"></ion-icon> Lokasi
-                            </a>
-                            <a href="">
-                                <ion-icon name="cart"></ion-icon> Toko
-                            </a>
-                        </div>
-                        <div class="flex items-center mt-2">
-                            <div class="flex gap-1 text-sm text-yellow-400">
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                            </div>
-                            <div class="text-xs text-gray-500 ml-3">(150)</div>
-                        </div>
-                    </div>
-                </div>
-                <div :class="layout === 'grid' ? 'bg-white dark:bg-gray-600 shadow rounded overflow-hidden group hover:translate-y-[-5px] transition-transform duration-300' : 'flex items-center p-4 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-700 rounded-lg shadow-md hover:translate-y-[-5px] transition-transform duration-300'">
-                    <div class="relative ">
-                        <img src="assets/img/product/food5.jpg" alt="product 1" class="w-full h-48 object-cover">
-                        <div :class="layout === 'grid' ? 'absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition ' : 'inset-0 flex gap-2 mt-2'">
-                            <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="view product">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </a>
-                            <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="delete bookmark">
-                                <i class="fa-solid fa-trash"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div :class="layout === 'list' ? 'ml-4' : 'pt-5 pb-3 px-4'">
-                        <a href="#">
-                            <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Tersedia</span>
-                            <h4 class="uppercase dark:text-white font-bold text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
-                        </a>
-                        <div class="flex items-baseline mb-1 space-x-2">
-                            <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
-                        </div>
-    
-                        <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
-                            <a href="">
-                                <ion-icon name="pin"></ion-icon> Lokasi
-                            </a>
-                            <a href="">
-                                <ion-icon name="cart"></ion-icon> Toko
-                            </a>
-                        </div>
-                        <div class="flex items-center mt-2">
-                            <div class="flex gap-1 text-sm text-yellow-400">
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                            </div>
-                            <div class="text-xs text-gray-500 ml-3">(150)</div>
-                        </div>
-                    </div>
-                </div>
-                <div :class="layout === 'grid' ? 'bg-white dark:bg-gray-600 shadow rounded overflow-hidden group hover:translate-y-[-5px] transition-transform duration-300' : 'flex items-center p-4 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-700 rounded-lg shadow-md hover:translate-y-[-5px] transition-transform duration-300'">
-                    <div class="relative ">
-                        <img src="assets/img/product/food1.jpg" alt="product 1" class="w-full h-48 object-cover">
-                        <div :class="layout === 'grid' ? 'absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition ' : 'inset-0 flex gap-2 mt-2'">
-                            <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="view product">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </a>
-                            <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="delete bookmark">
-                                <i class="fa-solid fa-trash"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div :class="layout === 'list' ? 'ml-4' : 'pt-5 pb-3 px-4'">
-                        <a href="#">
-                            <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Tersedia</span>
-                            <h4 class="uppercase dark:text-white font-bold text-2xl mb-2 text-gray-800 hover:text-blue-800 transition">Seblak</h4>
-                        </a>
-                        <div class="flex items-baseline mb-1 space-x-2">
-                            <p class="text-xl dark:text-white font-semibold">Rp. 12.000</p>
-                        </div>
-    
-                        <div class="flex flex-col gap-2 mt-4 text-black dark:text-white">
-                            <a href="">
-                                <ion-icon name="pin"></ion-icon> Lokasi
-                            </a>
-                            <a href="">
-                                <ion-icon name="cart"></ion-icon> Toko
-                            </a>
-                        </div>
-                        <div class="flex items-center mt-2">
-                            <div class="flex gap-1 text-sm text-yellow-400">
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                            </div>
-                            <div class="text-xs text-gray-500 ml-3">(150)</div>
-                        </div>
-                    </div>
-                </div>
-    
-
-
-
+            <!-- Tambahkan Pagination Links -->
+            <nav class="flex-column flex flex-wrap items-center justify-between pt-4 md:flex-row" aria-label="Table navigation">
+                <span class="mb-4 block w-full text-sm font-normal text-gray-500 dark:text-gray-400 md:mb-0 md:inline md:w-auto">
+                    Showing
+                    <span class="font-semibold text-gray-900 dark:text-white">
+                        @if ($products->firstItem())
+                            {{ $products->firstItem() }}-{{ $products->lastItem() }}
+                        @else
+                            {{ $products->count() }}
+                        @endif
+                    </span>
+                    of
+                    <span class="font-semibold text-gray-900 dark:text-white">{{ $products->total() }}</span>
+                </span>
+                <ul class="inline-flex h-8 -space-x-px text-sm rtl:space-x-reverse">
+                    <li>
+                        @if ($products->onFirstPage())
+                            <a href=""
+                                class="ms-0 flex h-8 items-center justify-center rounded-s-lg border border-gray-300 bg-white px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
+                        @else
+                            <a href="{{ $products->previousPageUrl() }}"
+                                class="ms-0 flex h-8 items-center justify-center rounded-s-lg border border-gray-300 bg-white px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
+                        @endif
+                    </li>
+            
+                    @foreach ($products->links() as $element)
+                        @if (is_string($element))
+                            <li>
+                                <a href=""
+                                    class="flex h-8 items-center justify-center border border-gray-300 bg-white px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{{ $element }}</a>
+                            </li>
+                        @endif
+                        @if (is_array($element))
+                            @foreach ($element as $page => $url)
+                                @if ($page == $products->currentPage())
+                                    <li>
+                                        <a href="" aria-current="page"
+                                            class="flex h-8 items-center justify-center border border-gray-300 bg-blue-50 px-3 text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">{{ $page }}</a>
+                                    </li>
+                                @else
+                                    <li>
+                                        <a href="{{ $url }}"
+                                            class="flex h-8 items-center justify-center border border-gray-300 bg-white px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{{ $page }}</a>
+                                    </li>
+                                @endif
+                            @endforeach
+                        @endif
+                    @endforeach
+            
+                    <li>
+                        @if ($products->hasMorePages())
+                            <a href="{{ $products->nextPageUrl() }}"
+                                class="flex h-8 items-center justify-center rounded-e-lg border border-gray-300 bg-white px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
+                        @else
+                            <a href=""
+                                class="flex h-8 items-center justify-center rounded-e-lg border border-gray-300 bg-white px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
+                        @endif
+                    </li>
+                </ul>
+            </nav>
+            
+            
             </div>
-        <nav aria-label="Page navigation example" class="w-full flex justify-center lg:justify-end  lg:pe-40 mt-12">
-            <ul class="inline-flex -space-x-px text-base h-10">
-                <li>
-                    <a href="#"
-                        class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="flex items-center justify-center px-4 h-10 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
-                </li>
-            </ul>
-        </nav>
         <!-- ./products -->
     </div>
 
