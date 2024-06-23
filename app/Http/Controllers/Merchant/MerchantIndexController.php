@@ -6,7 +6,7 @@ use App\Models\Product;
 use App\Models\Merchant;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -15,7 +15,12 @@ class MerchantIndexController extends Controller
 {
     public function index()
     {
-        return view('Merchant.Index');
+        $products = Product::where('merchant_id', Auth::guard('merchant')->user()->id)->get();
+
+        return view('Merchant.Index', [
+            'products_count' => $products->count(),
+            'comments_count' => Comment::whereIn('product_id', $products->pluck('id'))->get()->count(),
+        ]);
     }
     public function merchantDetail($slug)
     {
@@ -23,7 +28,7 @@ class MerchantIndexController extends Controller
         if (!$merchant_detail) {
             abort(404, 'merchant not found');
         }
-        
+
         $products_paginate = Product::where('merchant_id', $merchant_detail->id)->paginate(5);
         return view('Merchant.Pages.Preview-toko')->with('merchant_detail', $merchant_detail)->with('products_paginate', $products_paginate);
     }
