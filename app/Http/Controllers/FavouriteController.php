@@ -64,7 +64,7 @@ class FavouriteController extends Controller
         ]);
     
         Alert::success('User', 'Produk telah ditambahkan ke favorit');
-        return redirect('/postingan');
+        return redirect()->back();
     }
 
     public function removeFromWishlist(Request $request){
@@ -91,8 +91,9 @@ class FavouriteController extends Controller
         // Hapus record favorit
         $favorite->delete();
         Alert::success('User', 'Produk telah dihapus dari favorit');
-        return redirect('/fav')->with('page', 1);
+        return redirect()->back();
     }
+    
 
     
 

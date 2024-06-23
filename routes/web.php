@@ -45,6 +45,7 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/postingan', [HomeController::class, 'productGrids'])->name('post-product');
 Route::post('/postingan', [FavouriteController::class,'addToWishlist'])->name('add-fav');
 Route::get('/postingan/detail/{slug}', [HomeController::class, 'productDetail'])->name('post-product-detail');
+Route::post('/add-to-favourites', [HomeController::class, 'addToFavourites'])->name('add-to-favourites');
 Route::post('/comments', [CommentController::class, 'store'])->middleware('auth:user')->name('comments.store');
 Route::get('/merchant-list', [HomeController::class, 'merchantGrids'])->name('merch-list');
 Route::get('/merchant/detail/{slug}', [HomeController::class, 'merchantDetail'])->name('merch-info');
