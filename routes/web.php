@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ChatController;
+use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\KomentarController;
 use App\Http\Controllers\Admin\MerchantController;
 use App\Http\Controllers\Admin\PostinganController;
@@ -53,7 +54,7 @@ Route::middleware('guest:user,merchant')->group(function () {
     Route::get('/register', function () {
         return view('Auth.Register');
     })->name('register');
-    Route::get('/login', [LoginUserController::class, 'index'])->name('login');       
+    Route::get('/login', [LoginUserController::class, 'index'])->name('login');
     Route::post('/login', [LoginUserController::class, 'login_users']);
 });
 
@@ -113,15 +114,15 @@ Route::prefix('merchant')->middleware('auth:merchant')->name('merchant.')->group
         Route::put('/{product}', [ProductController::class, 'update'])->name('update');
         Route::delete('/{product}', [ProductController::class, 'destroy'])->name('destroy');
     });
-    
+
     Route::prefix('coment')
         ->name('coment.')
         ->group(function () {
             Route::get('/', function () {
                 return view('Merchant.coment.index');
             })->name('index');
-        });    
-  
+        });
+
     Route::prefix('edit_profile')
         ->name('edit_profile.')
         ->group(function () {
@@ -129,15 +130,13 @@ Route::prefix('merchant')->middleware('auth:merchant')->name('merchant.')->group
                 return view('Merchant.edit_profile.index');
             })->name('index');
         });
-    
+
     Route::post('/password-update', [MerchantIndexController::class, 'updatePassword'])->name('password.update');
 });
 
 // Route untuk admin
 Route::prefix('admin')->middleware('auth:admin')->name('admin.')->group(function () {
-    Route::get('/', function () {
-        return view('Admin.Index');
-    })->name('index');
+    Route::get('/', AdminHomeController::class)->name('index');
 
     Route::get('/change_password', function () {
         return view('Admin.change_password');
@@ -149,14 +148,14 @@ Route::prefix('admin')->middleware('auth:admin')->name('admin.')->group(function
         Route::put('/{user}/change-password', [UserController::class, 'updatePassword'])->name('update-password');
         Route::delete('/{user}', [UserController::class, 'destroy'])->name('destroy');
     });
-        
+
     Route::prefix('coment')
-    ->name('coment.')
-    ->group(function () {
-        Route::get('/', function () {
-            return view('Admin.coment.index');
-        })->name('index');
-    });
+        ->name('coment.')
+        ->group(function () {
+            Route::get('/', function () {
+                return view('Admin.coment.index');
+            })->name('index');
+        });
 
     Route::prefix('merchants')->name('merchants.')->group(function () {
         Route::get('/', [MerchantController::class, 'index'])->name('index');
