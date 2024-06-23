@@ -234,8 +234,8 @@
                                 <a href="{{route('post-product-detail',$product->id)}}" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="view product">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </a>
-                                <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="add to wishlist">
-                                    <i class="fa-solid fa-heart"></i>
+                                <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="delete this favorite">
+                                    <i class="fa-solid fa-trash"></i>
                                 </a>
                             </div>
                         </div>
