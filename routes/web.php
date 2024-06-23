@@ -43,6 +43,7 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 
 // Route untuk produk dan merchant
 Route::get('/postingan', [HomeController::class, 'productGrids'])->name('post-product');
+Route::post('/postingan', [FavouriteController::class,'addToWishlist'])->name('add-fav');
 Route::get('/postingan/detail/{slug}', [HomeController::class, 'productDetail'])->name('post-product-detail');
 Route::post('/comments', [CommentController::class, 'store'])->middleware('auth:user')->name('comments.store');
 Route::get('/merchant-list', [HomeController::class, 'merchantGrids'])->name('merch-list');
@@ -95,6 +96,7 @@ Route::prefix('user')->middleware('auth:user')->name('user.')->group(function ()
     Route::get('/', [ProfileController::class, 'showProfile'])->name('index');
     Route::post('/profile', [ProfileController::class, 'updateProfile'])->name('update');
     Route::get('/fav', [FavouriteController::class, 'index'])->name('fav');
+    Route::post('/fav/delete', [FavouriteController::class, 'removeFromWishlist'])->name('remove.from.wishlist');
     Route::post('/password-update', [ProfileController::class, 'updatePassword'])->name('password.update');
     Route::post('user/photo/update', [ProfileController::class, 'updatePhoto'])->name('photo.update');
     Route::delete('user/photo/delete', [ProfileController::class, 'deletePhoto'])->name('photo.delete');

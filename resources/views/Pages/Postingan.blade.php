@@ -337,9 +337,13 @@
                                 <a href="{{route('post-product-detail',$product->id)}}" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="view product">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </a>
-                                <a href="#" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="add to wishlist">
-                                    <i class="fa-solid fa-heart"></i>
-                                </a>
+                                <form action="{{ route('add-fav') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                    <button type="submit" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="add to wishlist">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                </form>                                
                             </div>
                         </div>
                         <div :class="layout === 'list' ? 'ml-4' : 'pt-5 pb-3 px-4'">
