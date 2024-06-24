@@ -144,9 +144,13 @@
                         </div>
 
                         <div class="flex items-center mb-4">
-                            <button
-                                class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition-colors duration-300 mr-2"> Add Favourite
-                            </button>
+                            <form action="{{ route('add-to-favourites') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="productId" value="{{ $product_detail->id }}">
+                                <button type="submit" class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition-colors duration-300 mr-2">
+                                    Add Favourite
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>

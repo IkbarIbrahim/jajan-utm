@@ -39,33 +39,62 @@ class FavouriteController extends Controller
     }
 
     public function addToWishlist(Request $request){
-        $user = Auth::user();
-        $product_id = $request->input('product_id');
+        
+        $user_id = Auth::guard('user')->user();
 
-        if (!$user) {
+        $product_id = $request->input('product_id');
+        if (Auth::check()) {
             Alert::info('User', 'Silahkan login terlebih dahulu');
             return redirect('/postingan');
         }
-
-        dd($user);
-
+    
         // Check if the product is already in the wishlist
-        $existingFavorite = Favorite::where('user_id', $user->id)
+        $existingFavorite = Favorite::where('user_id', $user_id->id)
                                     ->where('product_id', $product_id)
                                     ->first();
-
+    
         if ($existingFavorite) {
             Alert::info('User', 'Produk ini sudah difavoritkan');
             return redirect('/postingan');
         }
-
+    
         Favorite::create([
-            'user_id' => $user->id,
+            'user_id' => $user_id->id,
             'product_id' => $product_id
         ]);
-
-        Alert::info('User', 'Produk telah ditambahkan ke favorit');
-        return redirect('/postingan');
+    
+        Alert::success('User', 'Produk telah ditambahkan ke favorit');
+        return redirect()->back();
     }
+
+    public function removeFromWishlist(Request $request){
+        $user_id = Auth::id();
+        $product_id = $request->input('product_id');
+    
+        // Cek apakah user sudah login
+        if (!$user_id) {
+            Alert::info('User', 'Silahkan login terlebih dahulu');
+            return redirect('/postingan');
+        }
+    
+        // Cari record favorit berdasarkan user_id dan product_id
+        $favorite = Favorite::where('user_id', $user_id)
+                            ->where('product_id', $product_id)
+                            ->first();
+    
+        // Jika tidak ditemukan, beri alert dan redirect
+        if (!$favorite) {
+            Alert::info('User', 'Produk ini tidak ada dalam favorit');
+            return redirect('/postingan');
+        }
+    
+        // Hapus record favorit
+        $favorite->delete();
+        Alert::success('User', 'Produk telah dihapus dari favorit');
+        return redirect()->back();
+    }
+    
+
+    
 
 }
