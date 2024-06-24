@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ChatController;
+use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\KomentarController;
 use App\Http\Controllers\Admin\MerchantController;
 use App\Http\Controllers\Admin\PostinganController;
@@ -11,8 +12,10 @@ use App\Http\Controllers\FormRegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\LoginUserController;
+use App\Http\Controllers\Merchant\CommentController as MerchantCommentController;
 use App\Http\Controllers\Merchant\MerchantIndexController;
 use App\Http\Controllers\Merchant\ProductController;
+use App\Http\Controllers\Merchant\ProfileController as MerchantProfileController;
 use App\Http\Controllers\RegisterMerchantController;
 use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\User\ProfileController;
@@ -43,7 +46,7 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 
 // Route untuk produk dan merchant
 Route::get('/postingan', [HomeController::class, 'productGrids'])->name('post-product');
-Route::post('/postingan', [FavouriteController::class,'addToWishlist'])->name('add-fav');
+Route::post('/postingan', [FavouriteController::class, 'addToWishlist'])->name('add-fav');
 Route::get('/postingan/detail/{slug}', [HomeController::class, 'productDetail'])->name('post-product-detail');
 Route::post('/add-to-favourites', [HomeController::class, 'addToFavourites'])->name('add-to-favourites');
 Route::post('/comments', [CommentController::class, 'store'])->middleware('auth:user')->name('comments.store');
@@ -55,7 +58,7 @@ Route::middleware('guest:user,merchant')->group(function () {
     Route::get('/register', function () {
         return view('Auth.Register');
     })->name('register');
-    Route::get('/login', [LoginUserController::class, 'index'])->name('login');       
+    Route::get('/login', [LoginUserController::class, 'index'])->name('login');
     Route::post('/login', [LoginUserController::class, 'login_users']);
 });
 
@@ -116,31 +119,27 @@ Route::prefix('merchant')->middleware('auth:merchant')->name('merchant.')->group
         Route::put('/{product}', [ProductController::class, 'update'])->name('update');
         Route::delete('/{product}', [ProductController::class, 'destroy'])->name('destroy');
     });
-    
+
     Route::prefix('coment')
         ->name('coment.')
         ->group(function () {
-            Route::get('/', function () {
-                return view('Merchant.coment.index');
-            })->name('index');
-        });    
-  
+            Route::get('/', [MerchantCommentController::class, 'index'])->name('index');
+            Route::delete('/{comment}', [MerchantCommentController::class, 'destroy'])->name('destroy');
+        });
+
     Route::prefix('edit_profile')
         ->name('edit_profile.')
         ->group(function () {
-            Route::get('/', function () {
-                return view('Merchant.edit_profile.index');
-            })->name('index');
+            Route::get('/', [MerchantProfileController::class, 'index'])->name('index');
+            Route::put('/', [MerchantProfileController::class, 'update'])->name('update');
         });
-    
+
     Route::post('/password-update', [MerchantIndexController::class, 'updatePassword'])->name('password.update');
 });
 
 // Route untuk admin
 Route::prefix('admin')->middleware('auth:admin')->name('admin.')->group(function () {
-    Route::get('/', function () {
-        return view('Admin.Index');
-    })->name('index');
+    Route::get('/', AdminHomeController::class)->name('index');
 
     Route::get('/change_password', function () {
         return view('Admin.change_password');
@@ -152,14 +151,14 @@ Route::prefix('admin')->middleware('auth:admin')->name('admin.')->group(function
         Route::put('/{user}/change-password', [UserController::class, 'updatePassword'])->name('update-password');
         Route::delete('/{user}', [UserController::class, 'destroy'])->name('destroy');
     });
-        
+
     Route::prefix('coment')
-    ->name('coment.')
-    ->group(function () {
-        Route::get('/', function () {
-            return view('Admin.coment.index');
-        })->name('index');
-    });
+        ->name('coment.')
+        ->group(function () {
+            Route::get('/', function () {
+                return view('Admin.coment.index');
+            })->name('index');
+        });
 
     Route::prefix('merchants')->name('merchants.')->group(function () {
         Route::get('/', [MerchantController::class, 'index'])->name('index');
