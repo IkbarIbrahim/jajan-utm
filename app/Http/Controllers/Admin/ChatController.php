@@ -10,8 +10,7 @@ class ChatController extends Controller
 {
     public function index()
     {
-        $chats = Chat::with('user')
-            ->when(request('search'), function ($query, $search) {
+        $chats = Chat::with('sender')->when(request('search'), function ($query, $search) {
                 return $query->where('body', 'LIKE', "%$search%");
             })
             ->paginate(10);

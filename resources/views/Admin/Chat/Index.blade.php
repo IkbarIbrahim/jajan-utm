@@ -74,7 +74,27 @@
                                     <tr class="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
                                         
                                         <th scope="row" class="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                            {{$chat->user->email}}
+                                          
+                                            @php
+                                            $nowchat = $chat->sender_id;
+                                            $nowchattype = $chat->sender_type;
+                                        
+                                            if($nowchattype == 'App\Models\Merchant'){
+                                                $merchant = DB::table('merchants')->where('id', $nowchat)->first();
+                                                if ($merchant) {
+                                                    echo $merchant->owner;
+                                                } else {
+                                                    echo "Merchant not found";
+                                                }
+                                            } else {
+                                                $user = DB::table('users')->where('id', $chat->sender_id)->first();
+                                                if ($user) {
+                                                    echo $user->first_name;
+                                                } else {
+                                                    echo "User not found";
+                                                }
+                                            }
+                                        @endphp
                                         </th>
                                         <td class="px-4 py-2">
                                             <span class="bg-primary-100 text-primary-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-primary-900 dark:text-primary-300 line-clamp-2"> {{$chat->body}} </span>

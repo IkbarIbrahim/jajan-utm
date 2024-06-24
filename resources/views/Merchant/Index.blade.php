@@ -3,7 +3,8 @@
 @section('content')
     <div class="min-h-screen p-4 sm:ml-64">
         <div class="mt-14 rounded-lg p-4">
-            <div class="mt-4 grid w-full grid-cols-1 gap-4 xl:grid-cols-2">
+            <h1 class="text-xl font-bold">Mulai konfigurasi toko anda di edit profile toko</h1>
+            <div  class="mt-4 grid w-full grid-cols-1 gap-4 xl:grid-cols-2">
                 <div
                     class="items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:flex sm:p-6">
                     <div class="w-full">

@@ -16,13 +16,14 @@ class GlobalChatController extends Controller
 
         // Mengambil semua pesan chat bersama dengan pengirimnya (sender)
         $messages = Chat::with('sender')
-                        ->where(function ($query) use ($user) {
-                            $query->where('sender_type', 'App\Models\User')
-                                  ->orWhere('sender_type', 'App\Models\Merchant');
-                        })
-                        ->orderBy('created_at', 'asc')
-                        ->limit(30)
-                        ->get();
+        ->where(function ($query) use ($user) {
+            $query->where('sender_type', 'App\Models\User')
+                  ->orWhere('sender_type', 'App\Models\Merchant');
+        })
+        ->orderBy('created_at', 'desc')  // Ambil 30 pesan terbaru
+        ->limit(30)
+        ->get()
+        ->sortBy('created_at');
         
         return view('Pages.Global-chat', compact('messages'));
     }

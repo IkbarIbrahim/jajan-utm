@@ -66,11 +66,10 @@
                                         <path
                                             d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                                     </svg>
-                                    <span class="text-yellow-500 font-bold">4.7</span>
-                                    <span class="text-zinc-600">Rating & Ulasan</span>
+                                    <span class="text-zinc-600">Soon</span>
                                 </div>
                                 <div class="border-l border-zinc-300 h-6 mx-2 md:mx-4"></div>
-                                <div class="text-zinc-600 ">Buka 08:00-19:00</div>
+                                <div class="text-zinc-600 ">{{ $merchant_detail->email }}</div>
                             </div>
                         </div>
                     </div>
@@ -88,8 +87,8 @@
                                     <h2 class="text-purple-800 text-lg font-medium">{{ $product->name }}</h2>
                                     <p class="text-gray-500 mb-3 text-xs">Rp
                                         {{ number_format($product->price, 0, ',', '.') }}</p>
-                                    <button
-                                        class="bg-blue-700 text-white px-3 py-1 rounded hover:bg-blue-500 transition-colors duration-300 text-sm">View</button>
+                                    <a href="{{ route('post-product-detail', $product->id) }}"
+                                        class="bg-blue-700 text-white px-3 py-1 rounded hover:bg-blue-500 transition-colors duration-300 text-sm">View</a>
                                 </div>
                             @endforeach
                         </div>

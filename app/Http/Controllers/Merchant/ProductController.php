@@ -101,7 +101,7 @@ class ProductController extends Controller
             Rule::in(['makanan', 'minuman']),
         ],
         'price' => ['required', 'numeric'],
-        'rating' => ['required', 'numeric', 'min:0', 'max:5'],
+        // 'rating' => ['required', 'numeric', 'min:0', 'max:5'],
         'status' => [
             'required',
             Rule::in(['tersedia', 'habis']),

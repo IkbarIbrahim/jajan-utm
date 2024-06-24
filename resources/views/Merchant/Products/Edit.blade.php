@@ -61,12 +61,12 @@
                     {{ $message }}
                 </div>
             @enderror
-            @error('rating')
+            {{-- @error('rating')
                 <div class="mb-4 rounded-lg bg-red-50 p-4 text-sm text-red-800 dark:bg-gray-800 dark:text-red-400"
                     role="alert">
                     {{ $message }}
                 </div>
-            @enderror
+            @enderror --}}
             @error('status')
                 <div class="mb-4 rounded-lg bg-red-50 p-4 text-sm text-red-800 dark:bg-gray-800 dark:text-red-400"
                     role="alert">
@@ -136,14 +136,14 @@
                             id="number-input" name="price" type="number" aria-describedby="helper-text-explanation"
                             placeholder="90210" value="{{ old('price') ?? $product->price }}" required>
                     </div>
-                    <div class="mb-6">
+                    {{-- <div class="mb-6">
                         <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                             for="text-input">Rating</label>
                         <input
                             class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                             id="text-input" name="rating" type="text" aria-describedby="helper-text-explanation"
                             value="{{ old('rating') ?? $product->rating }}" required>
-                    </div>
+                    </div> --}}
                     <div class="mb-6">
                         <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                             for="message">Status</label>
