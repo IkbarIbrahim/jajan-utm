@@ -15,6 +15,7 @@ use App\Http\Controllers\LoginUserController;
 use App\Http\Controllers\Merchant\CommentController as MerchantCommentController;
 use App\Http\Controllers\Merchant\MerchantIndexController;
 use App\Http\Controllers\Merchant\ProductController;
+use App\Http\Controllers\Merchant\ProfileController as MerchantProfileController;
 use App\Http\Controllers\RegisterMerchantController;
 use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\User\ProfileController;
@@ -45,7 +46,7 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 
 // Route untuk produk dan merchant
 Route::get('/postingan', [HomeController::class, 'productGrids'])->name('post-product');
-Route::post('/postingan', [FavouriteController::class,'addToWishlist'])->name('add-fav');
+Route::post('/postingan', [FavouriteController::class, 'addToWishlist'])->name('add-fav');
 Route::get('/postingan/detail/{slug}', [HomeController::class, 'productDetail'])->name('post-product-detail');
 Route::post('/add-to-favourites', [HomeController::class, 'addToFavourites'])->name('add-to-favourites');
 Route::post('/comments', [CommentController::class, 'store'])->middleware('auth:user')->name('comments.store');
@@ -129,9 +130,8 @@ Route::prefix('merchant')->middleware('auth:merchant')->name('merchant.')->group
     Route::prefix('edit_profile')
         ->name('edit_profile.')
         ->group(function () {
-            Route::get('/', function () {
-                return view('Merchant.edit_profile.index');
-            })->name('index');
+            Route::get('/', [MerchantProfileController::class, 'index'])->name('index');
+            Route::put('/', [MerchantProfileController::class, 'update'])->name('update');
         });
 
     Route::post('/password-update', [MerchantIndexController::class, 'updatePassword'])->name('password.update');
