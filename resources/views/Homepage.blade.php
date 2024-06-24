@@ -111,11 +111,13 @@
 
                                     </div>
                                     <div class="p-4">
-                                        <h4
+                                        <a href="{{route('post-product-detail',$item->id)}}"
                                             class="mb-[14px] text-2xl font-semibold text-dark dark:text-white flex flex-col">
-                                            {{ $item->name }} <span class="text-lg font-bold ">Rp
+                                                {{ $item->name }} 
+                                                
+                                                <span class="text-lg font-bold ">Rp
                                                 {{ number_format($item->price, 0, ',', '.') }}</span>
-                                        </h4>
+                                        </a>
                                         <p
                                             class="text-body-color hover:text-pretty dark:text-white mb-8 text-start truncate hover:text-clip">
                                             {{ $item->description }}
