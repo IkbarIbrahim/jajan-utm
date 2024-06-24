@@ -12,17 +12,10 @@ class Chat extends Model
 
     const UPDATED_AT = null;
 
-    protected $casts = [
-        'id' => 'integer',
-        'body' => 'string',
-        'created_at' => 'date',
-        'user_id' => 'integer',
-    ];
+    protected $fillable = ['body', 'sender_id', 'sender_type'];
 
-    protected $fillable = ['body', 'created_at', 'user_id'];
-
-    public function user(): BelongsTo
+    public function sender()
     {
-        return $this->belongsTo(User::class);
+        return $this->morphTo();
     }
 }

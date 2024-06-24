@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FavouriteController;
 use App\Http\Controllers\FormRegisterController;
+use App\Http\Controllers\GlobalChatController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\LoginUserController;
@@ -91,9 +92,18 @@ Route::middleware('guest')->group(function () {
 Route::get('/contact', function () {
     return view('Pages.Contact');
 })->name('contact');
-Route::get('/global', function () {
-    return view('Pages.Global-chat');
-})->name('global');
+
+// Rute untuk User
+// Rute untuk User dan Merchant
+Route::middleware(['auth:user'])->group(function () {
+    Route::get('/global-chat', [GlobalChatController::class, 'index'])->name('global');
+    Route::post('/chat/store', [GlobalChatController::class, 'store'])->name('chat.store');
+});
+
+Route::middleware(['auth:merchant'])->group(function () {
+    Route::get('/merchant-chat', [GlobalChatController::class, 'index'])->name('merchant.global');
+    Route::post('/merchant-chat/store', [GlobalChatController::class, 'storeMerchant'])->name('merchant.chat.store');
+});
 
 // Route untuk user
 Route::prefix('user')->middleware('auth:user')->name('user.')->group(function () {
@@ -183,3 +193,7 @@ Route::prefix('admin')->middleware('auth:admin')->name('admin.')->group(function
         Route::delete('/{comment}', [KomentarController::class, 'destroy'])->name('destroy');
     });
 });
+
+
+
+Route::get('/soon', [HomeController::class, 'soon'])->name('soon');
