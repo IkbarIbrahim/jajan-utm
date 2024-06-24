@@ -49,13 +49,13 @@ class LoginUserController extends Controller
 
         if ($check) {
             // Redirect based on the user type
-            Alert::success('Success', 'Berhasil Login');
+            Alert::toast('Berhasil Login','Success');
             Log::info('Login successful', ['guard' => $guard]);
 
             if ($guard == 'user') {
-                return redirect('/')->with('success', 'Login berhasil!');
+                return redirect('/');
             } else {
-                return redirect('/')->with('success', 'Login berhasil!');
+                return redirect('/');
             }
         } else {
             Log::warning('Login failed', [

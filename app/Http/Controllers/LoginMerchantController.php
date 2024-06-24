@@ -32,8 +32,8 @@ class LoginMerchantController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::guard('merchant')->attempt($credentials)) {
-            Alert::success('Success', 'Berhasil Login');
-            return redirect()->route('merchant.index')->with('success', 'Login berhasil!');
+            Alert::toast('Berhasil Login','Success');
+            return redirect()->route('merchant.index');
         } else {
             Alert::error('Error', 'Username dan password yang dimasukkan tidak sesuai');
             return redirect()->route('login-merchant')

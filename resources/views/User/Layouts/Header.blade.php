@@ -10,6 +10,11 @@
             aria-controls="navbar-default">
             <ion-icon class="text-8xl font-bold" onclick="onToggleMenu(this)" name="menu"></ion-icon>
         </button>
+        @php
+        $user = Auth::guard('user')->user();
+        $merchant = Auth::guard('merchant')->user();
+        @endphp
+
         <div id="navbar-default" class="hidden w-full md:block md:w-auto">
             <ul
                 class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-700 md:dark:bg-transparent dark:border-gray-700">
@@ -28,9 +33,16 @@
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:py-2.5 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Merchant</a>
                 </li>
                 <li>
-                    <a href="{{ route('global') }}"
+                    @if ($user)
+                        <a href="{{ route('global') }}"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:py-2.5 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Global chat</a>
+                        
+                    @elseif ($merchant)
+                        <a href="{{ route('merchant.global') }}"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:py-2.5 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Global
                         chat</a>
+                    @endif
+                   
                 </li>
                 <li>
                     <a href="{{ route('contact') }}"
@@ -131,11 +143,7 @@
                 </svg>
             </button>
 
-            @php
-                $user = Auth::guard('user')->user();
-                $merchant = Auth::guard('merchant')->user();
-            @endphp
-
+           
             @if(!$user && !$merchant)
                 <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center md:inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
