@@ -25,8 +25,8 @@ class ProfileController extends Controller
             'email' => ['required', 'email', 'max:255', Rule::unique('merchants')->ignore($merchant->id)],
             'description' => ['required'],
             'address' => ['required'],
-            'logo' => ['required', 'file', 'mimes:jpg,png', 'max:2048'],
-            'cover' => ['required', 'file', 'mimes:jpg,png', 'max:2048'],
+            'logo' => ['nullable', 'file', 'mimes:jpg,png', 'max:2048'],
+            'cover' => ['nullable', 'file', 'mimes:jpg,png', 'max:2048'],
         ]);
 
         if ($request->hasFile('logo')) {
