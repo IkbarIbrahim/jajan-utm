@@ -12,6 +12,7 @@ use App\Http\Controllers\FormRegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\LoginUserController;
+use App\Http\Controllers\Merchant\CommentController as MerchantCommentController;
 use App\Http\Controllers\Merchant\MerchantIndexController;
 use App\Http\Controllers\Merchant\ProductController;
 use App\Http\Controllers\RegisterMerchantController;
@@ -118,9 +119,8 @@ Route::prefix('merchant')->middleware('auth:merchant')->name('merchant.')->group
     Route::prefix('coment')
         ->name('coment.')
         ->group(function () {
-            Route::get('/', function () {
-                return view('Merchant.coment.index');
-            })->name('index');
+            Route::get('/', [MerchantCommentController::class, 'index'])->name('index');
+            Route::delete('/{comment}', [MerchantCommentController::class, 'destroy'])->name('destroy');
         });
 
     Route::prefix('edit_profile')
