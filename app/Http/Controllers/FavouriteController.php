@@ -39,33 +39,38 @@ class FavouriteController extends Controller
     }
 
     public function addToWishlist(Request $request){
-        
-        $user_id = Auth::guard('user')->user();
-
-        $product_id = $request->input('product_id');
-        if (Auth::check()) {
+        // Lakukan pengecekan jika user sudah login
+        if (!Auth::guard('user')->check()) {
             Alert::info('User', 'Silahkan login terlebih dahulu');
             return redirect('/postingan');
         }
-    
+
+        // Ambil user yang sedang login
+        $user = Auth::guard('user')->user();
+
+        // Ambil product_id dari request
+        $product_id = $request->input('product_id');
+
         // Check if the product is already in the wishlist
-        $existingFavorite = Favorite::where('user_id', $user_id->id)
+        $existingFavorite = Favorite::where('user_id', $user->id)
                                     ->where('product_id', $product_id)
                                     ->first();
-    
+
         if ($existingFavorite) {
             Alert::info('User', 'Produk ini sudah difavoritkan');
             return redirect('/postingan');
         }
-    
+
+        // Simpan ke dalam database
         Favorite::create([
-            'user_id' => $user_id->id,
+            'user_id' => $user->id,
             'product_id' => $product_id
         ]);
-    
+
         Alert::success('User', 'Produk telah ditambahkan ke favorit');
         return redirect()->back();
     }
+
 
     public function removeFromWishlist(Request $request){
         $user_id = Auth::id();

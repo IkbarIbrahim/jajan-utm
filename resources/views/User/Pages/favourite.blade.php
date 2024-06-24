@@ -75,7 +75,7 @@
                     @foreach ($products as $product)
                     <div class='flex items-center p-4 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-700 rounded-lg shadow-md'>
                         <div class="relative ">
-                            <img src="{{ asset('assets/img/product/food1.jpg') }}" alt="product 1" class="w-full h-48 object-cover">
+                            <img src="{{ asset('storage/' . $product->photo) }}" alt="product 1" class="w-full h-48 object-cover">
                             <div class='inset-0 flex gap-2 mt-2'>
                                 <a href="{{route('post-product-detail',$product->id)}}" class="text-white text-lg w-9 h-8 rounded-full bg-blue-600 flex items-center justify-center hover:bg-gray-800 transition" title="view product">
                                     <i class="fa-solid fa-magnifying-glass"></i>
