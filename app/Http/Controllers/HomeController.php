@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Merchant;
 use App\Models\Product;
+use App\Models\Favorite;
+use App\Models\Merchant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -143,4 +145,43 @@ class HomeController extends Controller
 
         return view('Pages.Merchant')->with('merchants', $merchants);
     }
+
+
+    public function addToFavourites(Request $request){
+        // Validasi request
+        $request->validate([
+            'productId' => 'required|exists:products,id',
+        ]);
+
+        // Ambil user yang sedang login
+        $user = Auth::guard('user')->user();
+
+        // Lakukan pengecekan jika user sudah login
+        if ($user) {
+            // Cek apakah produk sudah ada di favorit user
+            $existingFavorite = Favorite::where('user_id', $user->id)
+                                    ->where('product_id', $request->productId)
+                                    ->first();
+
+            if ($existingFavorite) {
+                // Jika produk sudah ada, tampilkan pesan alert atau notifikasi
+                return redirect()->back()->with('info', 'Produk ini sudah difavoritkan');
+            } else {
+                // Simpan ke dalam database
+                $favourite = new Favorite();
+                $favourite->product_id = $request->productId;
+                $favourite->user_id = $user->id;
+                $favourite->save();
+
+                // Redirect atau response jika berhasil
+                return redirect()->back()->with('success', 'Produk telah ditambahkan ke favorit');
+            }
+        } else {
+            // Redirect atau response jika user belum login
+            return redirect()->back()->with('info', 'Silahkan login terlebih dahulu');
+        }
+    }
+
+
+
 }
