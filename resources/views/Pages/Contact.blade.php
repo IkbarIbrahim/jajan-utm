@@ -112,7 +112,7 @@
                             </div>
                             <div>
                                 <a  href="{{ route('soon') }}"
-                                    class="w-full rounded border border-gray-500 bg-gray-500 p-3 text-white transition hover:bg-opacity-90">
+                                    class="w-full rounded border border-gray-500 bg-gray-500 p-3 text-white t hover:bg-opacity-90">
                                     Send Message
                                 </a>
                             </div>
