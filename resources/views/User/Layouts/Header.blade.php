@@ -5,11 +5,7 @@
         <a href="{{ route('home') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white flex "><img class="size-12 w-40" src="/assets/img/logos/logohome.png" alt=""></span>
         </a>
-        <button id="triggerEl" data-collapse-toggle="navbar-default" type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-dark rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-default">
-            <ion-icon class="text-8xl font-bold" onclick="onToggleMenu(this)" name="menu"></ion-icon>
-        </button>
+     
         @php
         $user = Auth::guard('user')->user();
         $merchant = Auth::guard('merchant')->user();
@@ -99,14 +95,16 @@
                             </ul>
                         
                     @endif
+                    
 
                 
 
             </ul>
+
         </div>
-        <div class="hidden md:flex items-center space-x-4">
+        <div class="flex items-center space-x-4">
             <button id="theme-toggle" type="button"
-                class="text-dark dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                class="  md:flex text-dark dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
                 <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
@@ -122,7 +120,7 @@
            
             @if(!$user && !$merchant)
                 <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center md:inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    class="hidden  text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center md:inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     type="button">Get Started </button>
                 <!-- Dropdown menu -->
                 <div id="dropdownHover"
@@ -223,5 +221,10 @@
             @endif
 
         </div>
+        <button id="triggerEl" data-collapse-toggle="navbar-default" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-dark rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-default">
+        <ion-icon class="text-8xl font-bold" onclick="onToggleMenu(this)" name="menu"></ion-icon>
+    </button>
     </div>
 </nav>

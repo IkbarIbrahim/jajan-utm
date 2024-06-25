@@ -53,8 +53,13 @@
                                             @endif
                                             <div class="flex flex-col gap-1 w-full min-w-[200px] lg:min-w-[300px] max-w-[200px] lg:max-w-[500px]">
                                                 <div class="flex items-center space-x-2 rtl:space-x-reverse">
-                                                 
-                                                    <span class="text-sm font-semibold text-gray-900 dark:text-white">{{ $message->sender->name }}</span>
+                                                    @if ($message->sender_type === 'App\Models\User')
+                                                    <span class="text-sm font-semibold text-gray-900 dark:text-white">{{ $message->sender->first_name }}</span>
+
+                                                    @elseif ($message->sender_type === 'App\Models\Merchant')
+                                                    <span class="text-sm font-semibold text-gray-900 dark:text-white">{{ $message->sender->owner }}</span>
+
+                                                    @endif
                                                     <span class="text-sm font-normal text-gray-500 dark:text-gray-400">{{ $message->created_at->format('H:i') }}</span>
                                                 </div>
                                                 <div class="flex flex-col leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
@@ -76,7 +81,7 @@
                         @endif
                         " method="POST" class="flex flex-row items-center h-16 rounded-xl bg-white w-full px-4">
                         @csrf
-                        <div>
+                        {{-- <div>
                             <button class="flex items-center justify-center text-gray-400 hover:text-gray-600">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -84,7 +89,7 @@
                                     </path>
                                 </svg>
                             </button>
-                        </div>
+                        </div> --}}
                         <div class="flex-grow ml-4 p-2">
                             <div class="relative w-full ">
                                 <input type="text" name="body" placeholder="Type your message" class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10" required />

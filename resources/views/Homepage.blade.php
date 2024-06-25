@@ -13,7 +13,7 @@
                         <div class="w-full px-4 lg:w-5/12">
                             <div class="hero-content ">
                                 <h1
-                                    class=" bg-blue-500 bg-opacity-30 p-2 mb-5 text-3xl font-bold !leading-[1.208] text-white sm:text-[42px] lg:text-[40px] xl:text-4xl dark:text-white">
+                                    class=" bg-blue-500 bg-opacity-30 p-2 mb-5 text-3xl font-bold !leading-[1.208] text-white sm:text-[42px] lg:text-[40px] xl:text-4xl dark:text-white ">
                                     Temukan jajanan yang diinginkan di sini <br />
                                     
                                 </h1>
@@ -255,7 +255,7 @@
                         <div class="w-full px-4">
                             <div class="mx-auto max-w-[570px] text-center sm:z-10">
                                 <h2 class="mb-2.5 text-3xl flex flex-col font-bold leading-snug dark:text-white md:text-[40px]">
-                                    <span class="pr-0.5 text-xl lg:text-4xl">Wanna join for global chat?</span>
+                                    <span class="pr-0.5 text-xl lg:text-4xl">Ingin bergabung dan berdiskusi bersama user lain?</span>
                                 </h2>
                                 <p class="mb-6 text-base leading-relaxed dark:text-white p-5 md:pr-10">
                                     anda bisa bergabung dengan chat global kami, dan berdiskusi dengan pengguna lainnya tentang apa yang mungkin anda inginkan

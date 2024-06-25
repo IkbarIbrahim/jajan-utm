@@ -108,7 +108,7 @@ class HomeController extends Controller
 
         // Pagination
         $show = $request->input('show', 6);
-        $products = $products->with('merchant')->paginate($show);
+        $products = $products->with('merchant')->orderBy('id', 'desc')->paginate($show);
 
         return view('Pages.Postingan')->with('products', $products);
     }

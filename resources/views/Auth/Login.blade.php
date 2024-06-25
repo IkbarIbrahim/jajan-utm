@@ -1,6 +1,6 @@
 @extends('Auth.Master')
 @section('title-auth', 'Login')
-@section('navbar-title', 'Welcome Back ')
+@section('navbar-title', 'Homepage')
 
 @section('content-auth')
 @include('sweetalert::alert')
