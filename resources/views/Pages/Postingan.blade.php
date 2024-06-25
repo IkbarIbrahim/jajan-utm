@@ -424,7 +424,7 @@
            
 
                 
-                    {{$products->appends($_GET)->links('Pages.Pagination')}}
+                    {{$products->appends($_GET)->onEachSide(1)->links('Pages.Pagination')}}
                 
             
             <!-- ./products -->

@@ -197,7 +197,7 @@
                         </table>
                     </div>
                     <div class="w-full p-8">
-                        {{ $products->links('Admin.Partials.Pagination') }}
+                        {{ $products->onEachSide(1)->links('Admin.Partials.Pagination') }}
                     </div>
                 </div>
             </div>

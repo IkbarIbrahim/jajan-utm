@@ -92,7 +92,7 @@
                 @endif
 
             </div>
-            {{$merchants->appends($_GET)->links('Pages.Pagination')}}
+            {{$merchants->appends($_GET)->onEachSide(1)->links('Pages.Pagination')}}
         </div>
         
         <!-- Tambahkan script Alpine.js -->

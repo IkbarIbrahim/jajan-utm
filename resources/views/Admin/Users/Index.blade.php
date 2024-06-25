@@ -123,7 +123,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $users->links('Admin.Partials.Pagination') }}
+                    {{ $users->onEachSide(1)->links('Admin.Partials.Pagination') }}
                 </div>
             </div>
         </div>

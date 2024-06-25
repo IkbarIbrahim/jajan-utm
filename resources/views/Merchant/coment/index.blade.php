@@ -117,7 +117,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $comments->links('Merchant.Partials.Pagination') }}
+                    {{ $comments->onEachSide(1)->links('Merchant.Partials.Pagination') }}
                 </div>
             </div>
         </div>

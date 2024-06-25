@@ -123,7 +123,7 @@
                             </table>
                         </div>
                         <div class="w-full p-8">
-                        {{ $chats->links('Admin.Partials.Pagination') }}
+                        {{ $chats->onEachSide(1)->links('Admin.Partials.Pagination') }}
                         </div>
                     </div>
                 </div>
