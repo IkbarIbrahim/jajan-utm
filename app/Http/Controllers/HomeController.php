@@ -45,7 +45,7 @@ class HomeController extends Controller
             abort(404, 'merchant not found');
         }
 
-        $products_paginate = Product::where('merchant_id', $merchant_detail->id)->paginate(5);
+        $products_paginate = Product::where('merchant_id', $merchant_detail->id)->paginate(4);
         return view('Pages.Merchant-desc')->with('merchant_detail', $merchant_detail)->with('products_paginate', $products_paginate);
     }
 

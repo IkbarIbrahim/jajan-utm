@@ -110,7 +110,7 @@
                             </table>
                         </div>
                         <div class="w-full p-8">
-                        {{ $comments->onEachSide(1)->links('Admin.Partials.Pagination') }}
+                        {{ $comments->onEachSide(0)->links('Admin.Partials.Pagination') }}
                         </div>
                     </div>
                 </div>

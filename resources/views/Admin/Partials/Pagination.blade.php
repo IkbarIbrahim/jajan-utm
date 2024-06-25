@@ -37,14 +37,16 @@
                 <!-- Array Of Links -->
                 @if (is_array($element))
                     @foreach ($element as $page => $url)
-                        @if ($page == $paginator->currentPage())
-                            <li>
-                                <span class="flex h-8 items-center justify-center border border-gray-300 bg-blue-50 px-3 text-blue-600 dark:border-gray-700 dark:bg-gray-700 dark:text-white">{{ $page }}</span>
-                            </li>
-                        @else
-                            <li>
-                                <a href="{{ $url }}" class="flex h-8 items-center justify-center border border-gray-300 bg-white px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{{ $page }}</a>
-                            </li>
+                        @if ($page == 1 || $page == $paginator->lastPage() || $page == $paginator->currentPage() || $page == $paginator->currentPage() - 1 || $page == $paginator->currentPage() + 1)
+                            @if ($page == $paginator->currentPage())
+                                <li>
+                                    <span class="flex h-8 items-center justify-center border border-gray-300 bg-blue-50 px-3 text-blue-600 dark:border-gray-700 dark:bg-gray-700 dark:text-white">{{ $page }}</span>
+                                </li>
+                            @else
+                                <li>
+                                    <a href="{{ $url }}" class="flex h-8 items-center justify-center border border-gray-300 bg-white px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{{ $page }}</a>
+                                </li>
+                            @endif
                         @endif
                     @endforeach
                 @endif

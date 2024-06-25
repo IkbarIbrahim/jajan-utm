@@ -128,7 +128,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $merchants->onEachSide(1)->links('Admin.Partials.Pagination') }}
+                    {{ $merchants->onEachSide(0)->links('Admin.Partials.Pagination') }}
                 </div>
             </div>
         </div>

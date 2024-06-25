@@ -53,7 +53,7 @@
                     @endforeach
                 </div>
                 <div class="mt-4">
-                    {{ $products_paginate->onEachSide(1)->links('Pages.Pagination') }}
+                    {{ $products_paginate->onEachSide(0)->links('Pages.Pagination') }}
                 </div>
 
             </div>
