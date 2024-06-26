@@ -144,7 +144,7 @@ class HomeController extends Controller
 
         // Pagination
         $show = $request->input('show', 10);
-        $merchants = $merchants->paginate($show);
+        $merchants = $merchants->orderBy('id', 'desc')->paginate($show);
 
         return view('Pages.Merchant')->with('merchants', $merchants);
     }
