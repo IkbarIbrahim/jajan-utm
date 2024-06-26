@@ -340,23 +340,23 @@
                             </div>
                         </div>
                         <div :class="layout === 'list' ? 'ml-4' : 'pt-5 pb-3 px-2 lg:px-4'">
-                            <a href="">
+                            <p >
                                 @if ( $product-> status == 'tersedia') 
                                 <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">{{$product->status}}</span>
                                 @else
                                 <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">{{$product->status}}</span>
                                 @endif
                                 <h4 class="uppercase dark:text-white font-bold text-sm lg:text-xl mb-2 text-gray-800 hover:text-blue-800 transition">{{$product->name}}</h4>
-                            </a>
+                            </p>
                             <div class="flex items-baseline mb-1 space-x-2">
                                 <p class="text-base lg:text-xl dark:text-white font-semibold">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
                             </div>
         
                             <div class="flex flex-col gap-2 mt-2 text-black dark:text-white">
-                                <a target="_blank" class="flex items-center gap-2 font-medium" href="https://www.google.com/maps/search/{{$product->merchant->address}} ">
+                                <a target="_blank" class="flex items-center gap-2 font-medium" href="{{ route('merch-info', $product->merchant->id) }}">
                                     <p class="text-[10px] lg:text-xs font-light text-blue-800 dark:text-blue-300 lg:line-clamp-none line-clamp-2">{{$product->merchant->address}} </p>
                                 </a>
-                                <a href="">
+                                <a href="{{ route('merch-info', $product->merchant->id) }}">
                                     <p class="text-[10px] lg:text-sm font-bold" >[ {{$product->merchant->type}} ]</p> <p class="text-xs">{{$product->merchant->name}} </p>
                                 </a>
                             </div>
