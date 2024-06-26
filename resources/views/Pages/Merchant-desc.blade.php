@@ -61,21 +61,17 @@
 
                             <div class="flex  items-center md:space-x-5 mt-4 md:mt-0 ">
                                 <div class="flex items-center space-x-1 gap-1 lg:ml-10">
-                                    <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                        <path
-                                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                    </svg>
+                                
                                     <button onclick="openModal()"
                                     class=" px-2 py-2 rounded-lg text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
                                     Location
                                     </button>
                                 </div>
                                 <div class="border-l border-zinc-300 h-6 mx-2 md:mx-4"></div>
-                                <div class="text-zinc-600 ">{{ $merchant_detail->email }}</div>
+                                <div class="text-zinc-600 lg:text-base text-xs">{{ $merchant_detail->email }}</div>
                             </div>
                             <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed  top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                                <div class="relative p-4 w-full max-w-2xl max-h-full mt-20 ms-40">
+                                <div class="relative p-4 w-full max-w-2xl max-h-full mt-20 ms-0 lg:ms-40">
                                     <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                                         <!-- Modal header -->
                                         <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
