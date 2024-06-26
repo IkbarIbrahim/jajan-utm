@@ -32,6 +32,7 @@
         @include('User.Layouts.Footer')
     </div>
 
+    @yield('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');

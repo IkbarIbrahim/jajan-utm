@@ -21,6 +21,8 @@ class Merchant extends Authenticatable
         'owner',
         'logo',
         'cover',
+        'latitude', 
+        'longitude'
     ];
 
     protected $hidden = [

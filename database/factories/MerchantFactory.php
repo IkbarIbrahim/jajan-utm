@@ -37,6 +37,8 @@ class MerchantFactory extends Factory
             'owner' => fake()->name(),
             'logo' => 'logo/logo-' . static::$i . '.jpg',
             'cover' => 'cover/cover-' . static::$i . '.jpg',
+            'latitude' => -6.200000, // Koordinat Contoh
+            'longitude' => 106.816666, // Koordinat Contoh
         ];
     }
 }

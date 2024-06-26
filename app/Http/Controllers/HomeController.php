@@ -49,6 +49,7 @@ class HomeController extends Controller
         return view('Pages.Merchant-desc')->with('merchant_detail', $merchant_detail)->with('products_paginate', $products_paginate);
     }
 
+    
 
     public function productGrids(Request $request)
     {

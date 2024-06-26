@@ -52,4 +52,27 @@ class MerchantIndexController extends Controller
         Alert::success('Password berhasil diubah');
         return back()->with('status', 'Password berhasil diubah');
     }
+
+
+    public function storeLocation(Request $request ,$id)
+    {
+        $request->validate([
+            'latitude' => 'required|numeric',
+            'longitude' => 'required|numeric',
+        ]);
+
+        $merchant = Merchant::findOrFail($id);
+        $merchant->latitude = $request->latitude;
+        $merchant->longitude = $request->longitude;
+        $merchant->save();
+
+
+        return redirect()->route('merchant.location',$merchant->id)->with('success', 'Lokasi berhasil disimpan!');
+    }
+
+    public function showLocationForm($id)
+    {
+        $merchant = Merchant::findOrFail($id);
+        return view('Merchant.edit_profile.EditLokasi')->with('merchant', $merchant);
+    }
 }

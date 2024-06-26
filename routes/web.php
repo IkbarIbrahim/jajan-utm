@@ -145,6 +145,8 @@ Route::prefix('merchant')->middleware('auth:merchant')->name('merchant.')->group
         });
 
     Route::post('/password-update', [MerchantIndexController::class, 'updatePassword'])->name('password.update');
+    Route::get('/{id}/edit-location', [MerchantIndexController::class, 'showLocationForm'])->name('location');
+    Route::post('/{id}/update-location', [MerchantIndexController::class, 'storeLocation'])->name('storeLocation');
 });
 
 // Route untuk admin
