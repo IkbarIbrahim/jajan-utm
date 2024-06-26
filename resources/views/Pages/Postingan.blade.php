@@ -361,6 +361,7 @@
                                 </a>
                             </div>
                             <div class="flex lg:items-center mt-2 flex-col lg:flex-row ">
+                                
                                 @php
                                     $rating = $product->rating; 
                                     $fullStars = floor($rating); 
